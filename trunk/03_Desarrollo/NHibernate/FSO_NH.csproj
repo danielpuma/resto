@@ -48,6 +48,10 @@
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="ToolBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Shared\ToolBox.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bussines\FNegocio.cs" />
@@ -65,12 +69,6 @@
     <Compile Include="Data\StoredProcedureHandler.cs" />
     <Compile Include="UserInterfaz\IFSOComboDataSource.cs" />
     <Compile Include="UtilDomain.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ToolBox\ToolBox.csproj">
-      <Project>{6946ED3D-8BA4-4B6B-A270-C1D7B26E28B2}</Project>
-      <Name>ToolBox</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
