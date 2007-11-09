@@ -1,0 +1,14 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.0">
+  <joined-subclass name="FastFood.Core.Articulo, FastFood.Core" table="Articulo" extends="FastFood.Core.Parametro, FastFood.Core">
+    <key>
+      <column name="IdArticulo" />
+    </key>
+    <property name="Precio" type="System.Decimal" column="Precio" not-null="true" />
+    <bag name="MisDetallePedidos" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="IdArticulo" not-null="true" />
+      </key>
+      <one-to-many class="FastFood.Core.DetallePedidos, FastFood.Core" />
+    </bag>
+  </joined-subclass>
+</hibernate-mapping>

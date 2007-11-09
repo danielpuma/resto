@@ -1,0 +1,188 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2ED0DAAB-B2BF-41F5-A68F-3E94D7DCC02A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastFood.Core</RootNamespace>
+    <AssemblyName>FastFood.Core</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NHibernate, Version=1.0.2.0, Culture=neutral, PublicKeyToken=154fdcb44c4484fc">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Shared\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Articulo.hbm.bb.cs">
+      <DependentUpon>Articulo.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Articulo.hbm.cs">
+      <DependentUpon>Articulo.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Articulo.hbm.ex.cs">
+      <DependentUpon>Articulo.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DetallePedidos.hbm.bb.cs">
+      <DependentUpon>DetallePedidos.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DetallePedidos.hbm.cs">
+      <DependentUpon>DetallePedidos.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DetallePedidos.hbm.ex.cs">
+      <DependentUpon>DetallePedidos.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mesa.hbm.bb.cs">
+      <DependentUpon>Mesa.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Mesa.hbm.cs">
+      <DependentUpon>Mesa.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Mesa.hbm.ex.cs">
+      <DependentUpon>Mesa.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parametro.hbm.bb.cs">
+      <DependentUpon>Parametro.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parametro.hbm.cs">
+      <DependentUpon>Parametro.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Parametro.hbm.ex.cs">
+      <DependentUpon>Parametro.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pedido.hbm.bb.cs">
+      <DependentUpon>Pedido.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pedido.hbm.cs">
+      <DependentUpon>Pedido.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Pedido.hbm.ex.cs">
+      <DependentUpon>Pedido.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Persona.hbm.ex.cs">
+      <DependentUpon>Personal.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Personal.hbm.bb.cs">
+      <DependentUpon>Personal.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Personal.hbm.cs">
+      <DependentUpon>Personal.hbm.xml</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\NHibernate\FSO_NH.csproj">
+      <Project>{1EEBBE8F-3011-4ACF-9708-EB1ADEDE3B4B}</Project>
+      <Name>FSO_NH</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NHMapping.nhs">
+      <Generator>NHibernateMappingCodeGeneratorCustomTool</Generator>
+      <LastGenOutput>NHMapping.ReadMe.txt</LastGenOutput>
+    </None>
+    <None Include="NHMapping.nhs.diagram">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Articulo.hbm.xml">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+      <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>
+      <LastGenOutput>Articulo.hbm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetallePedidos.hbm.xml">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+      <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>
+      <LastGenOutput>DetallePedidos.hbm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mesa.hbm.xml">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+      <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>
+      <LastGenOutput>Mesa.hbm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Parametro.hbm.xml">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+      <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>
+      <LastGenOutput>Parametro.hbm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedido.hbm.xml">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+      <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>
+      <LastGenOutput>Pedido.hbm.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal.hbm.xml">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+      <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>
+      <LastGenOutput>Personal.hbm.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NHMapping.ReadMe.txt">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

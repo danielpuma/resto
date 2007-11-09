@@ -1,0 +1,27 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.0">
+  <class name="FastFood.Core.Pedido, FastFood.Core" table="Pedido">
+    <id name="ID" type="System.Int32" column="IdPedido" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="NroPedido" type="System.Int32" column="NroPedido" not-null="true" />
+    <property name="Fecha" type="System.DateTime" column="Fecha" not-null="true" />
+    <property name="Total" type="System.Decimal" column="Total" not-null="true" />
+    <property name="Descuento" type="System.Decimal" column="Descuento" not-null="true" />
+    <property name="Paga" type="System.Decimal" column="Paga" not-null="true" />
+    <property name="Vuelto" type="System.Decimal" column="Vuelto" not-null="true" />
+    <property name="TotalACobrar" type="System.Decimal" column="TotalACobrar" not-null="true" />
+    <property name="Observaciones" type="System.String" column="Observaciones" not-null="false" length="255" />
+    <many-to-one name="MiPersonal" class="FastFood.Core.Personal, FastFood.Core" fetch="join">
+      <column name="IdPersonal" not-null="true" />
+    </many-to-one>
+    <bag name="MisDetalles" inverse="true" lazy="true" cascade="delete">
+      <key>
+        <column name="IdPedido" not-null="true" />
+      </key>
+      <one-to-many class="FastFood.Core.DetallePedidos, FastFood.Core" />
+    </bag>
+    <many-to-one name="MiMesa" class="FastFood.Core.Mesa, FastFood.Core" fetch="join">
+      <column name="IdMesa" not-null="true" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

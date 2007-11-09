@@ -1,0 +1,11 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.0">
+  <class name="FastFood.Core.Parametro, FastFood.Core" table="Parametro">
+    <id name="ID" type="System.Int32" column="IdParametro" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="Codigo" type="System.String" column="Codigo" not-null="true" length="10" />
+    <property name="Descripcion" type="System.String" column="Descripcion" not-null="true" length="255" />
+    <property name="Baja" type="System.Boolean" column="Baja" not-null="true" />
+    <property name="SubTipo" type="System.String" column="SubTipo" not-null="true" length="50" />
+  </class>
+</hibernate-mapping>
