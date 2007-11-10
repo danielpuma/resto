@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Presentación de la versión 2006 del sistema FastFood.
 
 =FastFood=
 == Versión 2006 ==
