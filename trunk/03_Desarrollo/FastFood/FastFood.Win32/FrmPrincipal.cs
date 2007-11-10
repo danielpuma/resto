@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using FastFood.Core;
+using FastFood.Win32.ABM.Mesas;
+using FastFood.Win32.Cocina;
 
 namespace FastFood.Win32
 {
@@ -26,18 +28,23 @@ namespace FastFood.Win32
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog(this);
 
             Cursor.Current = Cursors.WaitCursor;
             FormularioSplash.Visible = false;
-            LasMesas = Mesa.GetAll();
-            fsoPersonal.SetComboBinding(new BBPersonal(), "", "");
+            BindearLockUp();
             BindearGrilla();
             dgDatos.Focus();
             Cursor.Current = Cursors.Default; 
         }
+        private void BindearLockUp()
+        {
+            fsoPersonal.SetComboBinding(new BBPersonal(), "EsBaja", "false");                        
+        }
         private void BindearGrilla()
         {
+            LasMesas = Mesa.GetAllActive();
             dgDatos.AutoGenerateColumns = false;
             dgDatos.DataSource = LasMesas;
             dgDatos.Columns[0].DataPropertyName = "ID";
@@ -48,6 +55,78 @@ namespace FastFood.Win32
         private void Ingreso_FormClosing(object sender, FormClosingEventArgs e)
         {
             FormularioSplash.Close();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmParametrosList F = new FrmParametrosList(ParametrosSoportados.eMesas);
+            F.ShowDialog(this);
+            LasMesas = Mesa.GetAllActive();
+            BindearGrilla();
+        }
+
+        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void personalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmParametrosList F = new FrmParametrosList(ParametrosSoportados.sPersonal);
+            F.ShowDialog(this);
+            BindearLockUp();
+
+        }
+
+        private void cmdCocina_Click(object sender, EventArgs e)
+        {
+            GoToCocina();
+        }
+        private void GoToCocina()
+        {
+            frmAdminCocina frm = new frmAdminCocina();
+            frm.ShowDialog(this);
+        }
+
+
+        private void FrmPrincipal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F12)
+            {
+                GoToCocina();
+            }
+            if (e.KeyCode == Keys.End)
+            {
+                frmLogin frm = new frmLogin();
+                frm.ShowDialog(this);
+            }
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgDatos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgDatos_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Int32 id = 0;
+                id = Convert.ToInt32(dgDatos.SelectedRows[0].Cells[0].Value);
+                fsoMesa.ObjetoActual = Mesa.GetById(id);
+            }
+            catch { } 
+        }
+
+        private void cmdBloquear_Click(object sender, EventArgs e)
+        {
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog(this);
         }
 
 

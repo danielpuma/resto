@@ -19,5 +19,6 @@ namespace FastFood.Core
             BBParametro BBP = new BBParametro();
             BBP.Validar((Parametro)dominio);
         }
+
     }
 }

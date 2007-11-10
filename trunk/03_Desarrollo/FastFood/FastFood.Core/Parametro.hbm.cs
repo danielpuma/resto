@@ -20,9 +20,7 @@ namespace FastFood.Core {
         private string codigo;
         
         private string descripcion;
-        
-        private bool baja;
-        
+       
         private string subTipo;
         
 
@@ -42,15 +40,6 @@ namespace FastFood.Core {
             }
             set {
                 this.descripcion = value;
-            }
-        }
-        
-        public virtual bool Baja {
-            get {
-                return this.baja;
-            }
-            set {
-                this.baja = value;
             }
         }
         

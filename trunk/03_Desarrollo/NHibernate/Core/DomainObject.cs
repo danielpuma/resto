@@ -14,6 +14,7 @@ namespace FSO_NH.Core
         { }
 
        
+         private Int32 id = 0; 
         /// <summary>
         /// ID may be of type string, int, custom type, etc.
         /// </summary>
@@ -23,6 +24,13 @@ namespace FSO_NH.Core
             set { id = value; }
         }
 
+        private bool _baja;
+
+        public bool EsBaja
+        {
+            get { return _baja; }
+            set { _baja = value; }
+        }
         /// <summary>
         /// Transient objects are not associated with an item already
         /// in storage.  For instance,
@@ -33,7 +41,7 @@ namespace FSO_NH.Core
             return  ID.Equals(0);
         }
 
-        private Int32 id = 0;
+   
 
         #region Equals And HashCode Overrides
 

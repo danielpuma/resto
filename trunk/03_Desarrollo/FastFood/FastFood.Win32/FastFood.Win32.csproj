@@ -41,11 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABM\Parametros\FrmParametrosList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM\Parametros\FrmParametrosList.Designer.cs">
+      <DependentUpon>FrmParametrosList.cs</DependentUpon>
+    </Compile>
     <Compile Include="AboutBox1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cocina\frmAdminCocina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cocina\frmAdminCocina.Designer.cs">
+      <DependentUpon>frmAdminCocina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -61,9 +79,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ABM\Parametros\FrmParametrosList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmParametrosList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AboutBox1.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cocina\frmAdminCocina.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAdminCocina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <SubType>Designer</SubType>

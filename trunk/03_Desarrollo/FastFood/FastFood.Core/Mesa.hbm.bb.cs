@@ -4,6 +4,8 @@ using System.Text;
 using FSO_NH.UserInterfaz;
 using FSO_NHDATA.DataInterfaces;
 using FSO_NH.bb;
+using System.Collections;
+using NHibernate.Expression;
 
 namespace FastFood.Core
 {
@@ -20,8 +22,15 @@ namespace FastFood.Core
             BBP.Validar((Parametro)dominio);
         }
 
+        public List<Mesa> GetAllActive()
+        {
+            List<ICriterion> filtrosActivos = new List<ICriterion>();
+            ICriterion f1 = Expression.Eq("EsBaja", false);
+            filtrosActivos.Add(f1);
+            return  GetAll(filtrosActivos);         
+            
 
-
-
+        }
+        
     }
 }

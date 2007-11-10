@@ -84,7 +84,7 @@ namespace FSO_NH.bb
                 {
                     Campo = p.Split('=')[0];
                     Valor = p.Split('=')[1];
-                    if (Valor == "TRUE" || Valor == "FALSE")
+                    if (Valor.ToUpper() == "TRUE" || Valor.ToUpper() == "FALSE")
                     {
                         filtro = Expression.Eq(Campo,(Valor == "TRUE"));
                     }
@@ -134,7 +134,7 @@ namespace FSO_NH.bb
                     protected void PersistirDatos(T dominio)
                     {
                         Validar(dominio);
-                        if (dominio.EsNuevo)
+                        if (!dominio.EsNuevo)
                         {
                             SaveOrUpdate(dominio);
                         }

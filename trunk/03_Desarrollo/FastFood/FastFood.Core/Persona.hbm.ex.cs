@@ -4,6 +4,7 @@ using System.Text;
 using System.Collections;
 using FSO_NHDATA;
 using NHibernate.Expression;
+using FSO_NH.UserInterfaz;
 
 namespace FastFood.Core
 {
@@ -19,7 +20,10 @@ namespace FastFood.Core
         {
             BB.Delete(this);
         }
-
+        public static void DeleteByID(Int32 ID)
+        {            
+            BB.BorrarDatos(ID);
+        }
         public new static Personal GetById(Int32 ID)
         {
             return BB.GetById(ID, true);
@@ -33,7 +37,10 @@ namespace FastFood.Core
             return BB.GetAllList();
 
         }
-
+        public static IFSOComboDataSource GetFSODataSource()
+        {
+            return (IFSOComboDataSource)BB;
+        }
 
         public static List<Personal> OrdenarColeccion(List<Personal> Lista, string Propiedad, SortDirection Direccion)
         {
