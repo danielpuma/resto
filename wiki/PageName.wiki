@@ -1,6 +1,6 @@
 #summary One-sentence summary of this page.
 
-= FastFood =
+=FastFood=
 == Versión 2006 ==
 El sistema Fastfood de administración simple de restaurant le permitira en forma agil y económica registrar cada pedido realizado al servicio de delivery o cada pedidos de cada mesa de su restaurant
 
