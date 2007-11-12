@@ -26,7 +26,7 @@ namespace FSO_NH.Core
 
         private bool _baja;
 
-        public bool EsBaja
+        public bool Baja
         {
             get { return _baja; }
             set { _baja = value; }

@@ -65,6 +65,11 @@
       <DependentUpon>DetallePedidos.hbm.xml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ListaDePrecio.hbm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListaDePrecio.hbm.xml</DependentUpon>
+    </Compile>
     <Compile Include="Mesa.hbm.bb.cs">
       <DependentUpon>Mesa.hbm.xml</DependentUpon>
       <SubType>Code</SubType>
@@ -121,6 +126,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="PrecioArticulo.hbm.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrecioArticulo.hbm.xml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,11 +181,21 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ListaDePrecio.hbm.xml">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+      <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>
+      <LastGenOutput>ListaDePrecio.hbm.cs</LastGenOutput>
+    </EmbeddedResource>
     <Content Include="NHMapping.ReadMe.txt">
       <DependentUpon>NHMapping.nhs</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Content>
+    <EmbeddedResource Include="PrecioArticulo.hbm.xml">
+      <DependentUpon>NHMapping.nhs</DependentUpon>
+      <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>
+      <LastGenOutput>PrecioArticulo.hbm.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

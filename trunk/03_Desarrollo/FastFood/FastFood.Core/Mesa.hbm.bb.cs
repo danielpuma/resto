@@ -25,7 +25,7 @@ namespace FastFood.Core
         public List<Mesa> GetAllActive()
         {
             List<ICriterion> filtrosActivos = new List<ICriterion>();
-            ICriterion f1 = Expression.Eq("EsBaja", false);
+            ICriterion f1 = Expression.Eq("Baja", false);
             filtrosActivos.Add(f1);
             return  GetAll(filtrosActivos);         
             

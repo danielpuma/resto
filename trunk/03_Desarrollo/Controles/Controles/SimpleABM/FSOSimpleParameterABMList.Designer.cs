@@ -267,6 +267,7 @@ namespace Controles
             this.GrillaDatos.TabIndex = 2;
             this.GrillaDatos.VirtualMode = true;
             this.GrillaDatos.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.GrillaDatos_CellValueNeeded);
+            this.GrillaDatos.Scroll += new System.Windows.Forms.ScrollEventHandler(this.GrillaDatos_Scroll);
             this.GrillaDatos.DoubleClick += new System.EventHandler(this.GrillaDatos_DoubleClick);
             // 
             // ID

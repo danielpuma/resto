@@ -10,5 +10,11 @@
       </key>
       <one-to-many class="FastFood.Core.DetallePedidos, FastFood.Core" />
     </bag>
+    <bag name="Articulo" inverse="true" lazy="true" cascade="all-delete-orphan">
+      <key>
+        <column name="IdArticulo" not-null="true" />
+      </key>
+      <one-to-many class="FastFood.Core.PrecioArticulo, FastFood.Core" />
+    </bag>
   </joined-subclass>
 </hibernate-mapping>

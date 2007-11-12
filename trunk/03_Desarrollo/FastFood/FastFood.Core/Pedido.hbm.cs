@@ -15,9 +15,10 @@ namespace FastFood.Core {
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FastFood.Core.DetallePedidos))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(FastFood.Core.DetallePedidos))]
-    public class AbstractPedido:DomainObject {
+    public class AbstractPedido : DomainObject
+    {
         
-      
+
         
         private int nroPedido;
         
@@ -40,9 +41,7 @@ namespace FastFood.Core {
         private System.Collections.IList misDetalles;
         
         private FastFood.Core.Mesa miMesa;
-        
-
-        
+               
         public virtual int NroPedido {
             get {
                 return this.nroPedido;

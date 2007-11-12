@@ -13,14 +13,16 @@ namespace FastFood.Core {
     
     
     [System.SerializableAttribute()]
-    public class AbstractParametro:DomainObject {
+    public class AbstractParametro : DomainObject
+    {
         
 
         
         private string codigo;
         
         private string descripcion;
-       
+
+        
         private string subTipo;
         
 
@@ -42,6 +44,8 @@ namespace FastFood.Core {
                 this.descripcion = value;
             }
         }
+        
+
         
         public virtual string SubTipo {
             get {

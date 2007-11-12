@@ -5,7 +5,7 @@
     </id>
     <property name="Codigo" type="System.String" column="Codigo" not-null="true" length="10" />
     <property name="Descripcion" type="System.String" column="Descripcion" not-null="true" length="255" />
-    <property name="EsBaja" type="System.Boolean" column="EsBaja" not-null="true" />
+    <property name="Baja" type="System.Boolean" column="Baja" not-null="true" />
     <property name="SubTipo" type="System.String" column="SubTipo" not-null="true" length="50" />
   </class>
 </hibernate-mapping>

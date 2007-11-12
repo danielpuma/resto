@@ -40,7 +40,7 @@ namespace FastFood.Win32
         }
         private void BindearLockUp()
         {
-            fsoPersonal.SetComboBinding(new BBPersonal(), "EsBaja", "false");                        
+            fsoPersonal.SetComboBinding(new BBPersonal(), "Baja", "false");                        
         }
         private void BindearGrilla()
         {

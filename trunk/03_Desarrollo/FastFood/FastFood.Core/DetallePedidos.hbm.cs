@@ -13,9 +13,10 @@ namespace FastFood.Core {
     
     
     [System.SerializableAttribute()]
-    public class AbstractDetallePedidos:DomainObject {
+    public class AbstractDetallePedidos : DomainObject
+    {
         
-  
+
         
         private string codigoArticulo;
         

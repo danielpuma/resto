@@ -90,13 +90,12 @@ namespace Controles
         {
             if (Lista != null)
             {
-                if (Lista.Count > 0)
-                {
-                    if (Lista.Count >= 50)
-                        GrillaDatos.RowCount = 50;
-                    else
-                        GrillaDatos.RowCount = Lista.Count;
-                }
+
+                if (Lista.Count >= 50)
+                    GrillaDatos.RowCount = 50;
+                else
+                    GrillaDatos.RowCount = Lista.Count;
+            
             }
             GrillaDatos.Refresh();
 
@@ -137,8 +136,8 @@ namespace Controles
                 case 1: valor = Obj.MiCodigo; break;
                 case 2: valor = Obj.MiDescripcion; break;
                 case 3: 
-                        valor = Obj.EsBaja?"Inactivo":"Activo";
-                        if (Obj.EsBaja)
+                        valor = Obj.Baja?"Inactivo":"Activo";
+                        if (Obj.Baja)
                         {
                             PintarGrilla(GrillaDatos, e.RowIndex);
                         }
@@ -337,6 +336,21 @@ namespace Controles
         private void GrillaDatos_DoubleClick(object sender, EventArgs e)
         {
             EditarSeleccion();
+        }
+
+        private void GrillaDatos_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.ScrollOrientation == ScrollOrientation.VerticalScroll)
+            {
+                if (GrillaDatos.Rows.Count < Lista.Count)
+                {
+                    Int32 RowsAdded = 50;
+                    if (GrillaDatos.Rows.Count + RowsAdded > Lista.Count)
+                        RowsAdded = Lista.Count - GrillaDatos.Rows.Count;
+                    GrillaDatos.RowCount += RowsAdded;
+                }
+
+            }
         }
 
     }

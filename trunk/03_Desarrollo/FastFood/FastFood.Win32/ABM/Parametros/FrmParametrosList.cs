@@ -65,14 +65,14 @@ namespace FastFood.Win32.ABM.Mesas
                                 Obj.ID = DatosFinales.ID;
                                 Obj.Codigo = DatosFinales.Codigo;
                                 Obj.Descripcion = DatosFinales.Descripcion;
-                                Obj.EsBaja = DatosFinales.Baja;
+                                Obj.Baja = DatosFinales.Baja;
                             }
                             else
                             {
                                 Obj = Mesa.GetById(DatosFinales.ID);
                                 Obj.Codigo = DatosFinales.Codigo;
                                 Obj.Descripcion = DatosFinales.Descripcion;
-                                Obj.EsBaja = DatosFinales.Baja;
+                                Obj.Baja = DatosFinales.Baja;
                             }
                             Obj.Guardar();
                             break;
@@ -85,14 +85,14 @@ namespace FastFood.Win32.ABM.Mesas
                                 Obj.ID = DatosFinales.ID;
                                 Obj.Codigo = DatosFinales.Codigo;
                                 Obj.Descripcion = DatosFinales.Descripcion;
-                                Obj.EsBaja = DatosFinales.Baja;
+                                Obj.Baja = DatosFinales.Baja;
                             }
                             else
                             {
                                 Obj = Personal.GetById(DatosFinales.ID);
                                 Obj.Codigo = DatosFinales.Codigo;
                                 Obj.Descripcion = DatosFinales.Descripcion;
-                                Obj.EsBaja = DatosFinales.Baja;
+                                Obj.Baja = DatosFinales.Baja;
                             }
                             Obj.Guardar();
                             break;

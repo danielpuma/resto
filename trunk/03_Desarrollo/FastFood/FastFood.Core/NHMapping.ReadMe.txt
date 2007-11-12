@@ -8,7 +8,9 @@ Tables Included In This Design:
 
 Articulo
 DetallePedidos
+ListaDePrecio
 Mesa
 Parametro
 Pedido
 Personal
+PrecioArticulo

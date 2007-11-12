@@ -14,11 +14,15 @@ namespace FastFood.Core {
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(FastFood.Core.DetallePedidos))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(FastFood.Core.DetallePedidos))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(FastFood.Core.PrecioArticulo))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(FastFood.Core.PrecioArticulo))]
     public class AbstractArticulo : Parametro {
         
         private decimal precio;
         
         private System.Collections.IList misDetallePedidos;
+        
+        private System.Collections.IList articulo;
         
         public virtual decimal Precio {
             get {
@@ -35,6 +39,15 @@ namespace FastFood.Core {
             }
             set {
                 this.misDetallePedidos = value;
+            }
+        }
+        
+        public virtual System.Collections.IList Articulo {
+            get {
+                return this.articulo;
+            }
+            set {
+                this.articulo = value;
             }
         }
     }
