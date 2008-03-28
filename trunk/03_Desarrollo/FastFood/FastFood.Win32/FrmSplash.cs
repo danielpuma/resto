@@ -19,13 +19,21 @@ namespace FastFood.Win32
 
         private void T1_Tick(object sender, EventArgs e)
         {
-            T1.Enabled = false;
-            
-            NHibernateSessionManager.Instance.StartSession();
-            NHibernateSessionManager.Instance.CloseSession();
-            FrmPrincipal frmi = new FrmPrincipal();
-            frmi.FormularioSplash = this;
-            frmi.Show();
+            try
+            {
+                T1.Enabled = false;
+
+                NHibernateSessionManager.Instance.StartSession();
+                NHibernateSessionManager.Instance.CloseSession();
+                FrmPrincipal frmi = new FrmPrincipal();
+                frmi.FormularioSplash = this;
+                frmi.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
         }
     }
 }
