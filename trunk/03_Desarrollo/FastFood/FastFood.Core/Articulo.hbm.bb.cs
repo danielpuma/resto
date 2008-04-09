@@ -16,7 +16,7 @@ namespace FastFood.Core
         }
         public override void Validar(Articulo Obj)
         {
-            BBParametro BBP = new BBParametro();
+            BBParametro BBP = new BBParametro("Articulo");
             BBP.Validar((Parametro)Obj);
         }
     }

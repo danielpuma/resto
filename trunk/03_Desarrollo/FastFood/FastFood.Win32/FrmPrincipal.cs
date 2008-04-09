@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using FastFood.Core;
 using FastFood.Win32.ABM.Mesas;
 using FastFood.Win32.Cocina;
+using FastFood.Win32.Pedidos;
 
 namespace FastFood.Win32
 {
@@ -40,7 +41,7 @@ namespace FastFood.Win32
         }
         private void BindearLockUp()
         {
-            fsoPersonal.SetComboBinding(new BBPersonal(), "Baja", "false");                        
+            
         }
         private void BindearGrilla()
         {
@@ -88,12 +89,20 @@ namespace FastFood.Win32
             frm.ShowDialog(this);
         }
 
-
+        private void CargarPedido()
+        {
+            FrmPedido frm = new FrmPedido();
+            frm.ShowDialog(this);
+        }
         private void FrmPrincipal_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F12)
             {
                 GoToCocina();
+            }
+            if (e.KeyCode == Keys.F5)
+            {
+                CargarPedido();
             }
             if (e.KeyCode == Keys.End)
             {
@@ -127,6 +136,11 @@ namespace FastFood.Win32
         {
             frmLogin frm = new frmLogin();
             frm.ShowDialog(this);
+        }
+
+        private void cmdNuevoPedido_Click(object sender, EventArgs e)
+        {
+            CargarPedido();
         }
 
 

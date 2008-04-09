@@ -60,6 +60,13 @@ namespace FastFood.Win32.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap control_panel {
+            get {
+                object obj = ResourceManager.GetObject("control_panel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap TWIRLbluewhite2 {
             get {
                 object obj = ResourceManager.GetObject("TWIRLbluewhite2", resourceCulture);

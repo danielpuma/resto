@@ -34,6 +34,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +66,46 @@
     <Compile Include="DetallePedidos.hbm.ex.cs">
       <DependentUpon>DetallePedidos.hbm.xml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSO_FW\Genericos\BB\BBPersona.cs" />
+    <Compile Include="FSO_FW\Genericos\BB\BBTipoDeDocumento.cs" />
+    <Compile Include="FSO_FW\Genericos\Core\Persona.cs" />
+    <Compile Include="FSO_FW\Genericos\Core\Tipo_Documento.cs" />
+    <Compile Include="FSO_FW\Seguridad\BB\BBPermiso.cs" />
+    <Compile Include="FSO_FW\Seguridad\BB\BBRol.cs" />
+    <Compile Include="FSO_FW\Seguridad\BB\BBUsuario.cs" />
+    <Compile Include="FSO_FW\Seguridad\Core\Permiso.cs" />
+    <Compile Include="FSO_FW\Seguridad\Core\Rol.cs" />
+    <Compile Include="FSO_FW\Seguridad\Core\Usuario.cs" />
+    <Compile Include="FSO_FW\Seguridad\UI\LogIN\Ingreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSO_FW\Seguridad\UI\LogIN\Ingreso.Designer.cs">
+      <DependentUpon>Ingreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSO_FW\Seguridad\UI\RolesYPermisos\frmPermisosPorRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSO_FW\Seguridad\UI\RolesYPermisos\frmPermisosPorRol.Designer.cs">
+      <DependentUpon>frmPermisosPorRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSO_FW\Seguridad\UI\Usuarios\frmRolesDelUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSO_FW\Seguridad\UI\Usuarios\frmRolesDelUsuario.Designer.cs">
+      <DependentUpon>frmRolesDelUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSO_FW\Seguridad\UI\Usuarios\frmUserAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSO_FW\Seguridad\UI\Usuarios\frmUserAdmin.Designer.cs">
+      <DependentUpon>frmUserAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FSO_FW\Seguridad\UI\Usuarios\frmUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FSO_FW\Seguridad\UI\Usuarios\frmUserList.Designer.cs">
+      <DependentUpon>frmUserList.cs</DependentUpon>
     </Compile>
     <Compile Include="ListaDePrecio.hbm.cs">
       <AutoGen>True</AutoGen>
@@ -138,6 +180,10 @@
       <Project>{1EEBBE8F-3011-4ACF-9708-EB1ADEDE3B4B}</Project>
       <Name>FSO_NH</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\ToolBox\ToolBox.csproj">
+      <Project>{6946ED3D-8BA4-4B6B-A270-C1D7B26E28B2}</Project>
+      <Name>ToolBox</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="NHMapping.nhs">
@@ -181,16 +227,41 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FSO_FW\Seguridad\UI\LogIN\Ingreso.resx">
+      <DependentUpon>Ingreso.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSO_FW\Seguridad\UI\RolesYPermisos\frmPermisosPorRol.resx">
+      <DependentUpon>frmPermisosPorRol.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSO_FW\Seguridad\UI\Usuarios\frmRolesDelUsuario.resx">
+      <DependentUpon>frmRolesDelUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSO_FW\Seguridad\UI\Usuarios\frmUserAdmin.resx">
+      <DependentUpon>frmUserAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FSO_FW\Seguridad\UI\Usuarios\frmUserList.resx">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListaDePrecio.hbm.xml">
       <DependentUpon>NHMapping.nhs</DependentUpon>
       <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>
       <LastGenOutput>ListaDePrecio.hbm.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="FSO_FW\Genericos\Core\Tipo_Documento.hbm.xml" />
+    <Content Include="FSO_FW\Genericos\Core\xmlPersona.hbm.xml" />
     <Content Include="NHMapping.ReadMe.txt">
       <DependentUpon>NHMapping.nhs</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Content>
+    <Content Include="FSO_FW\Seguridad\Core\Usuario.hbm.xml" />
+    <Content Include="FSO_FW\Seguridad\Core\Rol.hbm.xml" />
+    <Content Include="FSO_FW\Seguridad\Core\Permiso.hbm.xml" />
     <EmbeddedResource Include="PrecioArticulo.hbm.xml">
       <DependentUpon>NHMapping.nhs</DependentUpon>
       <Generator>NHibernateEntityCodeGeneratorCustomTool</Generator>

@@ -33,6 +33,7 @@ namespace FastFood.Win32
             this.archivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.personalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,7 @@ namespace FastFood.Win32
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.cmdCocina = new System.Windows.Forms.Button();
+            this.cmdBloquear = new System.Windows.Forms.Button();
             this.cmdEstadisticas = new System.Windows.Forms.Button();
             this.cmdNuevoPedido = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -54,16 +55,6 @@ namespace FastFood.Win32
             this.CodigoMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fsoMesa = new Controles.FSOCombo();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.fsoCombo2 = new Controles.FSOCombo();
-            this.dgPendientes = new System.Windows.Forms.DataGridView();
-            this.IdPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TiempoEspera = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fsoPersonal = new Controles.FSOCombo();
-            this.cmdBloquear = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -76,8 +67,6 @@ namespace FastFood.Win32
             this.splitContainer3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPendientes)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -97,6 +86,7 @@ namespace FastFood.Win32
             this.archivosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.articulosToolStripMenuItem,
             this.clientesToolStripMenuItem,
+            this.clientesToolStripMenuItem1,
             this.personalToolStripMenuItem,
             this.toolStripSeparator1,
             this.salirToolStripMenuItem});
@@ -119,6 +109,12 @@ namespace FastFood.Win32
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.clientesToolStripMenuItem.Text = "Mesas";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            // 
+            // clientesToolStripMenuItem1
+            // 
+            this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
+            this.clientesToolStripMenuItem1.Text = "Clientes";
             // 
             // personalToolStripMenuItem
             // 
@@ -182,15 +178,13 @@ namespace FastFood.Win32
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.cmdCocina);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.cmdNuevoPedido);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(727, 550);
-            this.splitContainer1.SplitterDistance = 70;
+            this.splitContainer1.SplitterDistance = 49;
             this.splitContainer1.TabIndex = 1;
             // 
             // label1
@@ -214,26 +208,29 @@ namespace FastFood.Win32
             // 
             this.splitContainer2.Panel1.Controls.Add(this.cmdBloquear);
             this.splitContainer2.Panel1.Controls.Add(this.cmdEstadisticas);
+            this.splitContainer2.Panel1.Controls.Add(this.cmdNuevoPedido);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(725, 474);
+            this.splitContainer2.Size = new System.Drawing.Size(725, 495);
             this.splitContainer2.SplitterDistance = 98;
             this.splitContainer2.TabIndex = 1;
             // 
-            // cmdCocina
+            // cmdBloquear
             // 
-            this.cmdCocina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cmdCocina.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmdCocina.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCocina.Location = new System.Drawing.Point(312, 3);
-            this.cmdCocina.Name = "cmdCocina";
-            this.cmdCocina.Size = new System.Drawing.Size(94, 58);
-            this.cmdCocina.TabIndex = 2;
-            this.cmdCocina.Text = "Cocina (F12)";
-            this.cmdCocina.UseVisualStyleBackColor = false;
-            this.cmdCocina.Click += new System.EventHandler(this.cmdCocina_Click);
+            this.cmdBloquear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdBloquear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cmdBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmdBloquear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdBloquear.Location = new System.Drawing.Point(3, 131);
+            this.cmdBloquear.Name = "cmdBloquear";
+            this.cmdBloquear.Size = new System.Drawing.Size(94, 62);
+            this.cmdBloquear.TabIndex = 2;
+            this.cmdBloquear.Text = "Bloquear (FIN)";
+            this.cmdBloquear.UseVisualStyleBackColor = false;
+            this.cmdBloquear.Click += new System.EventHandler(this.cmdBloquear_Click);
             // 
             // cmdEstadisticas
             // 
@@ -255,12 +252,13 @@ namespace FastFood.Win32
             this.cmdNuevoPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.cmdNuevoPedido.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdNuevoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevoPedido.Location = new System.Drawing.Point(212, 3);
+            this.cmdNuevoPedido.Location = new System.Drawing.Point(3, 67);
             this.cmdNuevoPedido.Name = "cmdNuevoPedido";
             this.cmdNuevoPedido.Size = new System.Drawing.Size(94, 58);
             this.cmdNuevoPedido.TabIndex = 0;
             this.cmdNuevoPedido.Text = "Pedidos (F5)";
             this.cmdNuevoPedido.UseVisualStyleBackColor = false;
+            this.cmdNuevoPedido.Click += new System.EventHandler(this.cmdNuevoPedido_Click);
             // 
             // splitContainer3
             // 
@@ -271,17 +269,12 @@ namespace FastFood.Win32
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.Controls.Add(this.panel1);
-            this.splitContainer3.Panel1.Controls.Add(this.dgDatos);
             this.splitContainer3.Panel1.Controls.Add(this.fsoMesa);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.lblDireccion);
-            this.splitContainer3.Panel2.Controls.Add(this.panel2);
-            this.splitContainer3.Panel2.Controls.Add(this.fsoCombo2);
-            this.splitContainer3.Panel2.Controls.Add(this.dgPendientes);
-            this.splitContainer3.Panel2.Controls.Add(this.fsoPersonal);
-            this.splitContainer3.Size = new System.Drawing.Size(623, 474);
+            this.splitContainer3.Panel2.Controls.Add(this.dgDatos);
+            this.splitContainer3.Size = new System.Drawing.Size(623, 495);
             this.splitContainer3.SplitterDistance = 300;
             this.splitContainer3.TabIndex = 4;
             // 
@@ -310,21 +303,19 @@ namespace FastFood.Win32
             // 
             this.dgDatos.AllowUserToAddRows = false;
             this.dgDatos.AllowUserToDeleteRows = false;
-            this.dgDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgDatos.BackgroundColor = System.Drawing.Color.White;
             this.dgDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IDMesa,
             this.CodigoMesa,
             this.DescripcionMesa});
-            this.dgDatos.Location = new System.Drawing.Point(3, 104);
+            this.dgDatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgDatos.Location = new System.Drawing.Point(0, 0);
             this.dgDatos.Name = "dgDatos";
             this.dgDatos.ReadOnly = true;
             this.dgDatos.RowHeadersVisible = false;
             this.dgDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgDatos.Size = new System.Drawing.Size(289, 367);
+            this.dgDatos.Size = new System.Drawing.Size(319, 495);
             this.dgDatos.StandardTab = true;
             this.dgDatos.TabIndex = 1;
             this.dgDatos.SelectionChanged += new System.EventHandler(this.dgDatos_SelectionChanged);
@@ -360,132 +351,12 @@ namespace FastFood.Win32
             this.fsoMesa.FiltrosCampos = "";
             this.fsoMesa.FiltrosValores = "";
             this.fsoMesa.IdSelected = -1;
-            this.fsoMesa.Location = new System.Drawing.Point(3, 41);
+            this.fsoMesa.Location = new System.Drawing.Point(9, 40);
             this.fsoMesa.Name = "fsoMesa";
             this.fsoMesa.ObjetoActual = null;
-            this.fsoMesa.Size = new System.Drawing.Size(295, 24);
+            this.fsoMesa.Size = new System.Drawing.Size(283, 24);
             this.fsoMesa.TabIndex = 3;
             this.fsoMesa.Texto = "Mesas: ";
-            // 
-            // lblDireccion
-            // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(64, 88);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(65, 13);
-            this.lblDireccion.TabIndex = 3;
-            this.lblDireccion.Text = "Dirección:";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(319, 35);
-            this.panel2.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 7);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Pedidos Pendientes:";
-            // 
-            // fsoCombo2
-            // 
-            this.fsoCombo2.AnchoBoton = 20;
-            this.fsoCombo2.AnchoLabel = 50;
-            this.fsoCombo2.AnchoTxtCod = 50;
-            this.fsoCombo2.CodigoActual = "";
-            this.fsoCombo2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.fsoCombo2.FiltrosCampos = "";
-            this.fsoCombo2.FiltrosValores = "";
-            this.fsoCombo2.IdSelected = -1;
-            this.fsoCombo2.Location = new System.Drawing.Point(10, 64);
-            this.fsoCombo2.Name = "fsoCombo2";
-            this.fsoCombo2.ObjetoActual = null;
-            this.fsoCombo2.Size = new System.Drawing.Size(302, 21);
-            this.fsoCombo2.TabIndex = 3;
-            this.fsoCombo2.Texto = "Cliente: ";
-            // 
-            // dgPendientes
-            // 
-            this.dgPendientes.AllowUserToAddRows = false;
-            this.dgPendientes.AllowUserToDeleteRows = false;
-            this.dgPendientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgPendientes.BackgroundColor = System.Drawing.Color.White;
-            this.dgPendientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPendientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdPedido,
-            this.ColMesa,
-            this.TiempoEspera});
-            this.dgPendientes.Location = new System.Drawing.Point(10, 104);
-            this.dgPendientes.Name = "dgPendientes";
-            this.dgPendientes.ReadOnly = true;
-            this.dgPendientes.RowHeadersVisible = false;
-            this.dgPendientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgPendientes.Size = new System.Drawing.Size(302, 367);
-            this.dgPendientes.TabIndex = 1;
-            // 
-            // IdPedido
-            // 
-            this.IdPedido.HeaderText = "Column1";
-            this.IdPedido.Name = "IdPedido";
-            this.IdPedido.ReadOnly = true;
-            this.IdPedido.Visible = false;
-            // 
-            // ColMesa
-            // 
-            this.ColMesa.HeaderText = "Mesa";
-            this.ColMesa.Name = "ColMesa";
-            this.ColMesa.ReadOnly = true;
-            // 
-            // TiempoEspera
-            // 
-            this.TiempoEspera.HeaderText = "Espera (Min.)";
-            this.TiempoEspera.Name = "TiempoEspera";
-            this.TiempoEspera.ReadOnly = true;
-            // 
-            // fsoPersonal
-            // 
-            this.fsoPersonal.AnchoBoton = 20;
-            this.fsoPersonal.AnchoLabel = 50;
-            this.fsoPersonal.AnchoTxtCod = 50;
-            this.fsoPersonal.CodigoActual = "";
-            this.fsoPersonal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.fsoPersonal.FiltrosCampos = "";
-            this.fsoPersonal.FiltrosValores = "";
-            this.fsoPersonal.IdSelected = -1;
-            this.fsoPersonal.Location = new System.Drawing.Point(10, 40);
-            this.fsoPersonal.Name = "fsoPersonal";
-            this.fsoPersonal.ObjetoActual = null;
-            this.fsoPersonal.Size = new System.Drawing.Size(302, 21);
-            this.fsoPersonal.TabIndex = 2;
-            this.fsoPersonal.Texto = "Mozo: ";
-            // 
-            // cmdBloquear
-            // 
-            this.cmdBloquear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdBloquear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cmdBloquear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cmdBloquear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBloquear.Location = new System.Drawing.Point(3, 64);
-            this.cmdBloquear.Name = "cmdBloquear";
-            this.cmdBloquear.Size = new System.Drawing.Size(94, 58);
-            this.cmdBloquear.TabIndex = 2;
-            this.cmdBloquear.Text = "Bloquear (FIN)";
-            this.cmdBloquear.UseVisualStyleBackColor = false;
-            this.cmdBloquear.Click += new System.EventHandler(this.cmdBloquear_Click);
             // 
             // FrmPrincipal
             // 
@@ -515,14 +386,10 @@ namespace FastFood.Win32
             this.splitContainer2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel2.ResumeLayout(false);
-            this.splitContainer3.Panel2.PerformLayout();
             this.splitContainer3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPendientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,29 +409,20 @@ namespace FastFood.Win32
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Button cmdNuevoPedido;
-        private Controles.FSOCombo fsoPersonal;
         private System.Windows.Forms.Button cmdEstadisticas;
         private System.Windows.Forms.ToolStripMenuItem personalToolStripMenuItem;
-        private System.Windows.Forms.Button cmdCocina;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private Controles.FSOCombo fsoMesa;
-        private System.Windows.Forms.DataGridView dgPendientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColMesa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TiempoEspera;
         private System.Windows.Forms.DataGridView dgDatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDMesa;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodigoMesa;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionMesa;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.Label lblDireccion;
-        private Controles.FSOCombo fsoCombo2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button cmdBloquear;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem1;
     }
 }
 

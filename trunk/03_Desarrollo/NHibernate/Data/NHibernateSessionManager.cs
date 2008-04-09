@@ -212,14 +212,14 @@ namespace FSO_NH.Data
 
         private ITransaction threadTransaction
         {
-            get { return (ITransaction)CallContext.GetData("FastFood.Core"); }
-            set { CallContext.SetData("FastFood.Core", value); }
+            get { return (ITransaction)CallContext.GetData(Assembly); }
+            set { CallContext.SetData(Assembly, value); }
         }
 
         private ISession threadSession
         {
-            get { return (ISession)CallContext.GetData("FastFood.Core"); }
-            set { CallContext.SetData("FastFood.Core", value); }
+            get { return (ISession)CallContext.GetData(Assembly); }
+            set { CallContext.SetData(Assembly, value); }
         }
 
         private ISessionFactory sessionFactory;

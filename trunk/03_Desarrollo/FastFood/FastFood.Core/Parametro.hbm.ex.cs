@@ -16,7 +16,7 @@ namespace FastFood.Core
         {
             get { return Descripcion; }
         }
-        private static BBParametro BBA = new BBParametro();
+        private static BBParametro BBA = new BBParametro("");
         public  void Guardar()
         {
             BBA.Guardar(this);

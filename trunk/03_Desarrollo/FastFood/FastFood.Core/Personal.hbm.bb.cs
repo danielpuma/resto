@@ -16,7 +16,7 @@ namespace FastFood.Core
         }
         public override void Validar(Personal dominio)
         {
-            BBParametro BBP = new BBParametro();
+            BBParametro BBP = new BBParametro("Personal");
             BBP.Validar((Parametro)dominio);
         }
 
