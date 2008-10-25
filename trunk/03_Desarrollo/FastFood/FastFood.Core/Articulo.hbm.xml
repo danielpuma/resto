@@ -1,5 +1,4 @@
-﻿
-<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.0">
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.0">
   <joined-subclass name="FastFood.Core.Articulo, FastFood.Core" table="Articulo" extends="FastFood.Core.Parametro, FastFood.Core">
     <key>
       <column name="IdArticulo" />
