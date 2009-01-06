@@ -1,0 +1,14 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FastFood.Core.Exportacion, FastFood.Core" table="Exportacion">
+    <id name="ID" type="System.Int32" column="IdExportacion" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="FechaCreacion" type="System.DateTime" column="FechaCreacion" not-null="true" />
+    <bag name="DetalleExportacion" inverse="true" lazy="false" cascade="delete">
+      <key>
+        <column name="IdExportacion" not-null="true" />
+      </key>
+      <one-to-many class="FastFood.Core.DetalleExportacion, FastFood.Core" />
+    </bag>
+  </class>
+</hibernate-mapping>

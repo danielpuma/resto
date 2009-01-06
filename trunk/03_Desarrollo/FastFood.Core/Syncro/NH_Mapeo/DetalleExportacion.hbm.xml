@@ -1,0 +1,12 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FastFood.Core.DetalleExportacion, FastFood.Core" table="DetalleExportacion">
+    <id name="ID" type="System.Int32" column="IdDetalleExportacion" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="Objeto" type="System.String" column="Objeto" not-null="true" length="150" />
+    <property name="Identificador" type="System.Int32" column="Identificador" not-null="true" />
+    <many-to-one name="Exportacion" class="FastFood.Core.Exportacion, FastFood.Core" fetch="select">
+      <column name="IdExportacion" not-null="true" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,7 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <joined-subclass name="FastFood.Core.GrupoArticulo, FastFood.Core" table="GrupoArticulo" extends="FSO.NH.ClasesBase.Core.Parametro,  FSO.NH">
+    <key>
+      <column name="IdGrupoArticulo" />
+    </key>
+  </joined-subclass>
+</hibernate-mapping>

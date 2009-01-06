@@ -1,0 +1,12 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <joined-subclass name="FastFood.Core.Cliente, FastFood.Core" table="Cliente" extends="FSO.NH.ClasesBase.Core.Persona, FSO.NH">
+    <key>
+      <column name="IdCliente" />
+    </key>
+    <property name="RazonSocial" type="System.String" column="RazonSocial" not-null="false" length="80" />
+    <property name="Direccion" type="System.String" column="Direccion" not-null="true" length="255" />
+    <property name="Telefonos" type="System.String" column="Telefonos" not-null="true" length="255" />
+    <property name="Email" type="System.String" column="Email" not-null="false" length="255" />
+    <property name="FechaNacimiento" type="System.DateTime" column="FechaNacimiento" not-null="false" />
+  </joined-subclass>
+</hibernate-mapping>

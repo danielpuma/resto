@@ -1,0 +1,14 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FastFood.Core.PrecioArticulo, FastFood.Core" table="PrecioArticulo">
+    <id name="ID" type="System.Int32" column="IdPrecioArticulo" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="Neto" type="System.Decimal" column="Neto" not-null="true" />
+    <many-to-one name="Articulo" class="FastFood.Core.Articulo, FastFood.Core" fetch="join">
+      <column name="IdArticulo" not-null="true" />
+    </many-to-one>
+    <many-to-one name="ListaDePrecio" class="FastFood.Core.ListaDePrecio, FastFood.Core" fetch="join">
+      <column name="IdListaDePrecio" not-null="true" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

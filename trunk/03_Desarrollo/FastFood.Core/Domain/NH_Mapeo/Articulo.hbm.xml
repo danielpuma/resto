@@ -1,0 +1,23 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FastFood.Core.Articulo, FastFood.Core" table="Articulo" >
+    <id name="ID" type="System.Int32" column="IdArticulo" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property column="Codigo" type="String" name="Codigo" not-null="true" 	length="50" />
+    <property column="Nombre" type="String" name="Nombre" not-null="true" 	length="255" />
+    <property name="PermitePrestamos" type="System.Boolean" column="PermitePrestamos" not-null="true" />
+    <property name="PlazoPrestamoDias" type="System.Int32" column="PlazoPrestamoDias" not-null="true" />
+    <property name="PermiteStockNegativo" type="System.Boolean" column="PermiteStockNegativo" not-null="true" />
+    <property name="Descripcion" type="System.String" column="Descripcion" not-null="true" />
+    <property name="PuntoDePedido" type="System.Decimal" column="PuntoDePedido" not-null="true" />
+    <many-to-one name="MyGrupoArticulo" class="FastFood.Core.GrupoArticulo, FastFood.Core" fetch="join">
+      <column name="IdGrupoArticulo" not-null="true" />
+    </many-to-one>
+    <bag name="PrecioArticulo" inverse="true" lazy="true" cascade="none">
+      <key>
+        <column name="IdArticulo" not-null="true" />
+      </key>
+      <one-to-many class="FastFood.Core.PrecioArticulo, FastFood.Core" />
+    </bag>
+  </class>
+</hibernate-mapping>
