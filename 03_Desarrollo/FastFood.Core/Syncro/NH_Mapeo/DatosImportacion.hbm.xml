@@ -1,0 +1,13 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FastFood.Core.DatosImportacion, FastFood.Core" table="DatosImportacion">
+    <id name="ID" type="System.Int32" column="IdDatoImportacion" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="Objeto" type="System.String" column="Objeto" not-null="true" length="150" />
+    <property name="IdSucursalOrigen" type="System.Int32" column="IdSucursalOrigen" not-null="true" />
+    <property name="IdentificadorOrigen" type="System.Int32" column="IdentificadorOrigen" not-null="true" />
+    <property name="IdentificadorLocal" type="System.Int32" column="IdentificadorLocal" not-null="true" />
+    <property name="FechaImportacion" type="System.DateTime" column="FechaImportacion" not-null="true" />
+    <property name="IdExportacionOrigen" type="System.Int32" column="IdExportacionOrigen" not-null="true" />
+  </class>
+</hibernate-mapping>

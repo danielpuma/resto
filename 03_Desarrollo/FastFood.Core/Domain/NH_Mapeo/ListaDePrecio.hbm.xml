@@ -1,0 +1,15 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <joined-subclass name="FastFood.Core.ListaDePrecio, FastFood.Core" table="ListaDePrecio" extends="FSO.NH.ClasesBase.Core.Parametro,  FSO.NH">
+    <key>
+      <column name="IdListaDePrecio" />
+    </key>
+    <property name="Predeterminado" type="System.Boolean" column="Predeterminado" not-null="false" />
+
+    <bag name="PrecioArticulo" inverse="true" lazy="false" cascade="none">
+      <key>
+        <column name="IdListaDePrecio" not-null="true" />
+      </key>
+      <one-to-many class="FastFood.Core.PrecioArticulo, FastFood.Core" />
+    </bag>
+  </joined-subclass>
+</hibernate-mapping>
