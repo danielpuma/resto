@@ -1,0 +1,26 @@
+Pasos 1:
+LISTADOS
+1.Tener el Objeto del core correspondiente
+2.Crear el Objeto BB Correspondiente
+3. Modificar el metodo GetNuevo de la clase -FastFood.BB.Extend.BBParametro_FastFood-
+4. Modificar el metodo Guardar de la clase -FastFood.BB.Extend.BBParametro_FastFood-
+5. Crear un Formulario List y hacerlo heredar de frmParamList.cs
+6. Insertar en el Formulario el Control ListUserControl.cs
+7. Copiar el Codigo Comun de un formulario modelo previamente creado
+8. Bindear los eventos ClickNuevo, ClickBuscar, y CellDoubleClick, 
+	con los metodos previamente copiados del formulario modelo
+9. Llamar desde el contructor del form al metodo FormConfig(); (Tambien debe ser copiado de un form modelo
+10. Parametrizar el Form desde el metodo FormConfig();
+
+ADMINISTRACION
+1. Crear el Nuevo formulario.
+2.Copiar de un formulario modelo los controles.
+3.Copiar de un formulario modelo el codigo común.
+4.Setear el botón por defecto del form en el boton guardar.
+5. Bindear los eventos click de los botones y el load del form 
+  con el codigo previamente copiado.
+6. Si es necesario agregar los controles extra necesarios
+7. Si es necesario sobreescribir el metodo BindearOtrosDatos
+8. Configurar el form copiando el contenido del constructor de un form modelo
+   y parametrizar el from desde allí.
+   
