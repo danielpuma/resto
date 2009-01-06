@@ -1,0 +1,73 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BADB6870-139C-4844-A041-898371DEBD74}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FastFood.BB</RootNamespace>
+    <AssemblyName>FastFood.BB</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FSO.NH, Version=2008.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Shared\FSO_NH2\FSO.NH.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=2.0.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Shared\FSO_NH2\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseExtension\BBParametro_FastFood.cs" />
+    <Compile Include="CoreExtension\BBArticulo.cs" />
+    <Compile Include="CoreExtension\BBCliente.cs" />
+    <Compile Include="CoreExtension\BBListaDePrecio.cs" />
+    <Compile Include="CoreExtension\BBGrupoArticulo.cs" />
+    <Compile Include="CoreExtension\BBNumerador.cs" />
+    <Compile Include="CoreExtension\BBPrecioArticulo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupporClass\LocalCache.cs" />
+    <Compile Include="Syncro\BBDatosImportacion.cs" />
+    <Compile Include="Syncro\BBDetalleExportacion.cs" />
+    <Compile Include="Syncro\BBExportacion.cs" />
+    <Compile Include="Syncro\BBExportadorDeDatos.cs" />
+    <Compile Include="Syncro\BBImportadorDeDatos.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FastFood.Core\FastFood.Core.csproj">
+      <Project>{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}</Project>
+      <Name>FastFood.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
