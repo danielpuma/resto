@@ -1,0 +1,281 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{297753EF-E158-4DD3-9A79-24A31FC9CD33}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinFastFood</RootNamespace>
+    <AssemblyName>WinFastFood</AssemblyName>
+    <ApplicationIcon>windowb.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Controles, Version=2.0.3283.27956, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Shared\Controles\Controles.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DataGridViewExtension, Version=1.1.1.0, Culture=neutral, PublicKeyToken=81fb70b94a00c054, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Archivos de programa\CompletIT\DataGridView Extension\v1.1.1\Bin\DataGridViewExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="DGVEExcelExporting, Version=1.1.1.0, Culture=neutral, PublicKeyToken=81fb70b94a00c054, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Archivos de programa\CompletIT\DataGridView Extension\v1.1.1\Bin\DGVEExcelExporting.dll</HintPath>
+    </Reference>
+    <Reference Include="FSO.NH, Version=2008.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Shared\FSO_NH2\FSO.NH.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ToolBox, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Shared\ToolBox\ToolBox.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\frmBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base\frmBase.Designer.cs">
+      <DependentUpon>frmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\frmInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio\frmInicial.Designer.cs">
+      <DependentUpon>frmInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio\frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio\Ingreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio\Ingreso.Designer.cs">
+      <DependentUpon>Ingreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\frmClienteAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cliente\frmClienteAdmin.Designer.cs">
+      <DependentUpon>frmClienteAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\frmClienteList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cliente\frmClienteList.Designer.cs">
+      <DependentUpon>frmClienteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\GenericParameter\frmParamAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\GenericParameter\frmParamAdmin.Designer.cs">
+      <DependentUpon>frmParamAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\GenericParameter\frmParamList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\GenericParameter\frmParamList.Designer.cs">
+      <DependentUpon>frmParamList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\GenericParameter\ListUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modulos\GenericParameter\ListUserControl.Designer.cs">
+      <DependentUpon>ListUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Parametros\frmParametrosAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Parametros\frmParametrosAdmin.Designer.cs">
+      <DependentUpon>frmParametrosAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Parametros\frmParametrosList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Parametros\frmParametrosList.Designer.cs">
+      <DependentUpon>frmParametrosList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\RolesYPermisos\frmPermisosPorRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\RolesYPermisos\frmPermisosPorRol.Designer.cs">
+      <DependentUpon>frmPermisosPorRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Usuarios\frmRolesDelUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Usuarios\frmRolesDelUsuario.Designer.cs">
+      <DependentUpon>frmRolesDelUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Usuarios\frmUserAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Usuarios\frmUserAdmin.Designer.cs">
+      <DependentUpon>frmUserAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Usuarios\frmUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Usuarios\frmUserList.Designer.cs">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Inicio\frmInicial.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\Ingreso.resx">
+      <DependentUpon>Ingreso.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\frmClienteAdmin.resx">
+      <DependentUpon>frmClienteAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\frmClienteList.resx">
+      <DependentUpon>frmClienteList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\GenericParameter\frmParamAdmin.resx">
+      <DependentUpon>frmParamAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\GenericParameter\ListUserControl.resx">
+      <DependentUpon>ListUserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Parametros\frmParametrosAdmin.resx">
+      <DependentUpon>frmParametrosAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Parametros\frmParametrosList.resx">
+      <DependentUpon>frmParametrosList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\RolesYPermisos\frmPermisosPorRol.resx">
+      <DependentUpon>frmPermisosPorRol.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Usuarios\frmRolesDelUsuario.resx">
+      <DependentUpon>frmRolesDelUsuario.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Usuarios\frmUserAdmin.resx">
+      <DependentUpon>frmUserAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Usuarios\frmUserList.resx">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityCode\frmActivacion.resx">
+      <DependentUpon>frmActivacion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SecurityCode\frmActivacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityCode\frmActivacion.Designer.cs">
+      <DependentUpon>frmActivacion.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FastFood.BB\FastFood.BB.csproj">
+      <Project>{BADB6870-139C-4844-A041-898371DEBD74}</Project>
+      <Name>FastFood.BB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FastFood.Core\FastFood.Core.csproj">
+      <Project>{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}</Project>
+      <Name>FastFood.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modulos\GenericParameter\Para Armar un ABM Parametrico.txt" />
+    <None Include="Resources\hdlocked.png" />
+    <None Include="Resources\wizard.png" />
+    <None Include="Resources\infoabout32.png" />
+    <None Include="Resources\help32.png" />
+    <Content Include="windowb.ico" />
+    <None Include="Resources\textfile32.png" />
+    <None Include="Resources\money32.png" />
+    <None Include="Resources\adduser.png" />
+    <None Include="Resources\add32.png" />
+    <None Include="Resources\gotoapp.png" />
+    <None Include="Resources\userb.png" />
+    <None Include="Resources\RestaurantSmall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
