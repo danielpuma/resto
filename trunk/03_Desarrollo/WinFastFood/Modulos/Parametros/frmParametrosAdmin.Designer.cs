@@ -187,6 +187,8 @@ namespace FastFood.ABM.Parametros
             this.Controls.Add(this.cmdGuardar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmParametrosAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmRolesAdmin";
