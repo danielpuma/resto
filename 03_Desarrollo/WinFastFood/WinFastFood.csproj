@@ -86,6 +86,18 @@
     <Compile Include="Inicio\Ingreso.Designer.cs">
       <DependentUpon>Ingreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Articulos\frmArticuloAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Articulos\frmArticuloAdmin.Designer.cs">
+      <DependentUpon>frmArticuloAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Articulos\frmArticuloList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Articulos\frmArticuloList.Designer.cs">
+      <DependentUpon>frmArticuloList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Cliente\frmClienteAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +176,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\Ingreso.resx">
       <DependentUpon>Ingreso.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Articulos\frmArticuloAdmin.resx">
+      <DependentUpon>frmArticuloAdmin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Articulos\frmArticuloList.resx">
+      <DependentUpon>frmArticuloList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cliente\frmClienteAdmin.resx">

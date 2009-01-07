@@ -32,42 +32,42 @@ namespace WinFastFood.Inicio
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicial));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.XfastFoodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.XconfiguraciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.XseguridadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.XcerrarSesiónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.XtoolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip = new System.Windows.Forms.ToolStrip();
-            this.Xsep = new System.Windows.Forms.ToolStripSeparator();
-            this.xSep2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.XstatusStrip = new System.Windows.Forms.StatusStrip();
-            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.XtabPages = new System.Windows.Forms.TabControl();
-            this.dgExt = new CompletIT.Windows.DataGridViewExtension.DataGridViewExtensionComponent(this.components);
-            this.StateUserName = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StateDB = new System.Windows.Forms.ToolStripStatusLabel();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.xCmdSalir = new System.Windows.Forms.ToolStripButton();
-            this.xCmdImprimir = new System.Windows.Forms.ToolStripButton();
-            this.xCMDExportarExcel = new System.Windows.Forms.ToolStripButton();
-            this.xCmdNuevoPedido = new System.Windows.Forms.ToolStripButton();
             this.XgenerarNuevoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XgestiónDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XreportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XconsultaDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.XconfiguraciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XtiposDeDocumentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XlistasDePrecioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XgruposDeArtículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XmesasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.artìculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.XseguridadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XusuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XrolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XpermisosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.XcerrarSesiónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.XtoolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.activarSoftwareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip = new System.Windows.Forms.ToolStrip();
+            this.xCmdSalir = new System.Windows.Forms.ToolStripButton();
+            this.Xsep = new System.Windows.Forms.ToolStripSeparator();
+            this.xCmdImprimir = new System.Windows.Forms.ToolStripButton();
+            this.xCMDExportarExcel = new System.Windows.Forms.ToolStripButton();
+            this.xSep2 = new System.Windows.Forms.ToolStripSeparator();
+            this.xCmdNuevoPedido = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.XstatusStrip = new System.Windows.Forms.StatusStrip();
+            this.StateUserName = new System.Windows.Forms.ToolStripStatusLabel();
+            this.StateDB = new System.Windows.Forms.ToolStripStatusLabel();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.XtabPages = new System.Windows.Forms.TabControl();
+            this.dgExt = new CompletIT.Windows.DataGridViewExtension.DataGridViewExtensionComponent(this.components);
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.cmdSalir = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.cmdExportExcel = new System.Windows.Forms.ToolStripButton();
@@ -82,8 +82,8 @@ namespace WinFastFood.Inicio
             // 
             this.menuStrip.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.XfastFoodToolStripMenuItem1,
             this.XconfiguraciónToolStripMenuItem1,
+            this.XfastFoodToolStripMenuItem1,
             this.XseguridadToolStripMenuItem1,
             this.XcerrarSesiónToolStripMenuItem1,
             this.XtoolStripMenuItem2});
@@ -102,163 +102,6 @@ namespace WinFastFood.Inicio
             this.XfastFoodToolStripMenuItem1.Name = "XfastFoodToolStripMenuItem1";
             this.XfastFoodToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.XfastFoodToolStripMenuItem1.Text = "FastFood";
-            // 
-            // XconfiguraciónToolStripMenuItem1
-            // 
-            this.XconfiguraciónToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.XtiposDeDocumentoToolStripMenuItem1,
-            this.XlistasDePrecioToolStripMenuItem,
-            this.XgruposDeArtículosToolStripMenuItem,
-            this.XmesasToolStripMenuItem1,
-            this.artìculosToolStripMenuItem});
-            this.XconfiguraciónToolStripMenuItem1.Name = "XconfiguraciónToolStripMenuItem1";
-            this.XconfiguraciónToolStripMenuItem1.Size = new System.Drawing.Size(96, 20);
-            this.XconfiguraciónToolStripMenuItem1.Text = "Configuración";
-            // 
-            // XseguridadToolStripMenuItem1
-            // 
-            this.XseguridadToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.XusuariosToolStripMenuItem1,
-            this.XrolesToolStripMenuItem1,
-            this.XpermisosToolStripMenuItem1});
-            this.XseguridadToolStripMenuItem1.Name = "XseguridadToolStripMenuItem1";
-            this.XseguridadToolStripMenuItem1.Size = new System.Drawing.Size(76, 20);
-            this.XseguridadToolStripMenuItem1.Text = "Seguridad";
-            // 
-            // XcerrarSesiónToolStripMenuItem1
-            // 
-            this.XcerrarSesiónToolStripMenuItem1.Name = "XcerrarSesiónToolStripMenuItem1";
-            this.XcerrarSesiónToolStripMenuItem1.Size = new System.Drawing.Size(95, 20);
-            this.XcerrarSesiónToolStripMenuItem1.Text = "Cerrar Sesión";
-            this.XcerrarSesiónToolStripMenuItem1.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
-            // 
-            // XtoolStripMenuItem2
-            // 
-            this.XtoolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.activarSoftwareToolStripMenuItem,
-            this.acercaDeToolStripMenuItem,
-            this.manualesToolStripMenuItem});
-            this.XtoolStripMenuItem2.Name = "XtoolStripMenuItem2";
-            this.XtoolStripMenuItem2.Size = new System.Drawing.Size(25, 20);
-            this.XtoolStripMenuItem2.Text = "?";
-            // 
-            // toolStrip
-            // 
-            this.toolStrip.ImageScalingSize = new System.Drawing.Size(25, 25);
-            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xCmdSalir,
-            this.Xsep,
-            this.xCmdImprimir,
-            this.xCMDExportarExcel,
-            this.xSep2,
-            this.xCmdNuevoPedido});
-            this.toolStrip.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(632, 32);
-            this.toolStrip.TabIndex = 1;
-            this.toolStrip.Text = "ToolStrip";
-            // 
-            // Xsep
-            // 
-            this.Xsep.Name = "Xsep";
-            this.Xsep.Size = new System.Drawing.Size(6, 32);
-            // 
-            // xSep2
-            // 
-            this.xSep2.Name = "xSep2";
-            this.xSep2.Size = new System.Drawing.Size(6, 32);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // XstatusStrip
-            // 
-            this.XstatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StateUserName,
-            this.StateDB});
-            this.XstatusStrip.Location = new System.Drawing.Point(0, 431);
-            this.XstatusStrip.Name = "XstatusStrip";
-            this.XstatusStrip.Size = new System.Drawing.Size(632, 22);
-            this.XstatusStrip.TabIndex = 2;
-            this.XstatusStrip.Text = "StatusStrip";
-            // 
-            // XtabPages
-            // 
-            this.XtabPages.Dock = System.Windows.Forms.DockStyle.Top;
-            this.XtabPages.Location = new System.Drawing.Point(0, 56);
-            this.XtabPages.Name = "XtabPages";
-            this.XtabPages.SelectedIndex = 0;
-            this.XtabPages.Size = new System.Drawing.Size(632, 21);
-            this.XtabPages.TabIndex = 4;
-            this.XtabPages.SelectedIndexChanged += new System.EventHandler(this.tabPages_SelectedIndexChanged);
-            // 
-            // StateUserName
-            // 
-            this.StateUserName.Name = "StateUserName";
-            this.StateUserName.Size = new System.Drawing.Size(47, 17);
-            this.StateUserName.Text = "Usuario:";
-            // 
-            // StateDB
-            // 
-            this.StateDB.Name = "StateDB";
-            this.StateDB.Size = new System.Drawing.Size(46, 17);
-            this.StateDB.Text = "StateDB";
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // xCmdSalir
-            // 
-            this.xCmdSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.xCmdSalir.Image = ((System.Drawing.Image)(resources.GetObject("xCmdSalir.Image")));
-            this.xCmdSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.xCmdSalir.Name = "xCmdSalir";
-            this.xCmdSalir.Size = new System.Drawing.Size(29, 29);
-            this.xCmdSalir.Text = "toolStripButton1";
-            this.xCmdSalir.Click += new System.EventHandler(this.cmdSalir_Click);
-            // 
-            // xCmdImprimir
-            // 
-            this.xCmdImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.xCmdImprimir.Image = ((System.Drawing.Image)(resources.GetObject("xCmdImprimir.Image")));
-            this.xCmdImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.xCmdImprimir.Name = "xCmdImprimir";
-            this.xCmdImprimir.Size = new System.Drawing.Size(29, 29);
-            this.xCmdImprimir.Text = "toolStripButton2";
-            this.xCmdImprimir.Click += new System.EventHandler(this.printToolStripButton_Click_1);
-            // 
-            // xCMDExportarExcel
-            // 
-            this.xCMDExportarExcel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.xCMDExportarExcel.Image = ((System.Drawing.Image)(resources.GetObject("xCMDExportarExcel.Image")));
-            this.xCMDExportarExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.xCMDExportarExcel.Name = "xCMDExportarExcel";
-            this.xCMDExportarExcel.Size = new System.Drawing.Size(29, 29);
-            this.xCMDExportarExcel.Text = "toolStripButton3";
-            this.xCMDExportarExcel.Click += new System.EventHandler(this.cmdExportExcel_Click);
-            // 
-            // xCmdNuevoPedido
-            // 
-            this.xCmdNuevoPedido.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.xCmdNuevoPedido.Image = ((System.Drawing.Image)(resources.GetObject("xCmdNuevoPedido.Image")));
-            this.xCmdNuevoPedido.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.xCmdNuevoPedido.Name = "xCmdNuevoPedido";
-            this.xCmdNuevoPedido.Size = new System.Drawing.Size(29, 29);
-            this.xCmdNuevoPedido.Text = "toolStripButton4";
             // 
             // XgenerarNuevoPedidoToolStripMenuItem
             // 
@@ -293,6 +136,18 @@ namespace WinFastFood.Inicio
             this.XconsultaDePedidosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.XconsultaDePedidosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.XconsultaDePedidosToolStripMenuItem.Text = "Consulta de Pedidos";
+            // 
+            // XconfiguraciónToolStripMenuItem1
+            // 
+            this.XconfiguraciónToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.XtiposDeDocumentoToolStripMenuItem1,
+            this.XlistasDePrecioToolStripMenuItem,
+            this.XgruposDeArtículosToolStripMenuItem,
+            this.XmesasToolStripMenuItem1,
+            this.artìculosToolStripMenuItem});
+            this.XconfiguraciónToolStripMenuItem1.Name = "XconfiguraciónToolStripMenuItem1";
+            this.XconfiguraciónToolStripMenuItem1.Size = new System.Drawing.Size(96, 20);
+            this.XconfiguraciónToolStripMenuItem1.Text = "Configuración";
             // 
             // XtiposDeDocumentoToolStripMenuItem1
             // 
@@ -334,11 +189,21 @@ namespace WinFastFood.Inicio
             this.artìculosToolStripMenuItem.Text = "Artículos";
             this.artìculosToolStripMenuItem.Click += new System.EventHandler(this.artìculosToolStripMenuItem_Click);
             // 
+            // XseguridadToolStripMenuItem1
+            // 
+            this.XseguridadToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.XusuariosToolStripMenuItem1,
+            this.XrolesToolStripMenuItem1,
+            this.XpermisosToolStripMenuItem1});
+            this.XseguridadToolStripMenuItem1.Name = "XseguridadToolStripMenuItem1";
+            this.XseguridadToolStripMenuItem1.Size = new System.Drawing.Size(76, 20);
+            this.XseguridadToolStripMenuItem1.Text = "Seguridad";
+            // 
             // XusuariosToolStripMenuItem1
             // 
             this.XusuariosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("XusuariosToolStripMenuItem1.Image")));
             this.XusuariosToolStripMenuItem1.Name = "XusuariosToolStripMenuItem1";
-            this.XusuariosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.XusuariosToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.XusuariosToolStripMenuItem1.Text = "Usuarios";
             this.XusuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -346,7 +211,7 @@ namespace WinFastFood.Inicio
             // 
             this.XrolesToolStripMenuItem1.Image = global::WinFastFood.Properties.Resources.userb;
             this.XrolesToolStripMenuItem1.Name = "XrolesToolStripMenuItem1";
-            this.XrolesToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.XrolesToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.XrolesToolStripMenuItem1.Text = "Roles";
             this.XrolesToolStripMenuItem1.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
@@ -354,9 +219,26 @@ namespace WinFastFood.Inicio
             // 
             this.XpermisosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("XpermisosToolStripMenuItem1.Image")));
             this.XpermisosToolStripMenuItem1.Name = "XpermisosToolStripMenuItem1";
-            this.XpermisosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.XpermisosToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.XpermisosToolStripMenuItem1.Text = "Permisos";
             this.XpermisosToolStripMenuItem1.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click);
+            // 
+            // XcerrarSesiónToolStripMenuItem1
+            // 
+            this.XcerrarSesiónToolStripMenuItem1.Name = "XcerrarSesiónToolStripMenuItem1";
+            this.XcerrarSesiónToolStripMenuItem1.Size = new System.Drawing.Size(95, 20);
+            this.XcerrarSesiónToolStripMenuItem1.Text = "Cerrar Sesión";
+            this.XcerrarSesiónToolStripMenuItem1.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // XtoolStripMenuItem2
+            // 
+            this.XtoolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.activarSoftwareToolStripMenuItem,
+            this.acercaDeToolStripMenuItem,
+            this.manualesToolStripMenuItem});
+            this.XtoolStripMenuItem2.Name = "XtoolStripMenuItem2";
+            this.XtoolStripMenuItem2.Size = new System.Drawing.Size(25, 20);
+            this.XtoolStripMenuItem2.Text = "?";
             // 
             // activarSoftwareToolStripMenuItem
             // 
@@ -378,6 +260,124 @@ namespace WinFastFood.Inicio
             this.manualesToolStripMenuItem.Name = "manualesToolStripMenuItem";
             this.manualesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manualesToolStripMenuItem.Text = "Manuales";
+            // 
+            // toolStrip
+            // 
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(25, 25);
+            this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xCmdSalir,
+            this.Xsep,
+            this.xCmdImprimir,
+            this.xCMDExportarExcel,
+            this.xSep2,
+            this.xCmdNuevoPedido});
+            this.toolStrip.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip.Name = "toolStrip";
+            this.toolStrip.Size = new System.Drawing.Size(632, 32);
+            this.toolStrip.TabIndex = 1;
+            this.toolStrip.Text = "ToolStrip";
+            // 
+            // xCmdSalir
+            // 
+            this.xCmdSalir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.xCmdSalir.Image = ((System.Drawing.Image)(resources.GetObject("xCmdSalir.Image")));
+            this.xCmdSalir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.xCmdSalir.Name = "xCmdSalir";
+            this.xCmdSalir.Size = new System.Drawing.Size(29, 29);
+            this.xCmdSalir.Text = "Salir";
+            this.xCmdSalir.Click += new System.EventHandler(this.cmdSalir_Click);
+            // 
+            // Xsep
+            // 
+            this.Xsep.Name = "Xsep";
+            this.Xsep.Size = new System.Drawing.Size(6, 32);
+            // 
+            // xCmdImprimir
+            // 
+            this.xCmdImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.xCmdImprimir.Image = ((System.Drawing.Image)(resources.GetObject("xCmdImprimir.Image")));
+            this.xCmdImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.xCmdImprimir.Name = "xCmdImprimir";
+            this.xCmdImprimir.Size = new System.Drawing.Size(29, 29);
+            this.xCmdImprimir.Text = "Imprimir";
+            this.xCmdImprimir.Click += new System.EventHandler(this.printToolStripButton_Click_1);
+            // 
+            // xCMDExportarExcel
+            // 
+            this.xCMDExportarExcel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.xCMDExportarExcel.Image = ((System.Drawing.Image)(resources.GetObject("xCMDExportarExcel.Image")));
+            this.xCMDExportarExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.xCMDExportarExcel.Name = "xCMDExportarExcel";
+            this.xCMDExportarExcel.Size = new System.Drawing.Size(29, 29);
+            this.xCMDExportarExcel.Text = "Exportar a Excel";
+            this.xCMDExportarExcel.Click += new System.EventHandler(this.cmdExportExcel_Click);
+            // 
+            // xSep2
+            // 
+            this.xSep2.Name = "xSep2";
+            this.xSep2.Size = new System.Drawing.Size(6, 32);
+            // 
+            // xCmdNuevoPedido
+            // 
+            this.xCmdNuevoPedido.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.xCmdNuevoPedido.Image = ((System.Drawing.Image)(resources.GetObject("xCmdNuevoPedido.Image")));
+            this.xCmdNuevoPedido.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.xCmdNuevoPedido.Name = "xCmdNuevoPedido";
+            this.xCmdNuevoPedido.Size = new System.Drawing.Size(29, 29);
+            this.xCmdNuevoPedido.Text = "Nuevo Pedido";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // XstatusStrip
+            // 
+            this.XstatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StateUserName,
+            this.StateDB});
+            this.XstatusStrip.Location = new System.Drawing.Point(0, 431);
+            this.XstatusStrip.Name = "XstatusStrip";
+            this.XstatusStrip.Size = new System.Drawing.Size(632, 22);
+            this.XstatusStrip.TabIndex = 2;
+            this.XstatusStrip.Text = "StatusStrip";
+            // 
+            // StateUserName
+            // 
+            this.StateUserName.Name = "StateUserName";
+            this.StateUserName.Size = new System.Drawing.Size(47, 17);
+            this.StateUserName.Text = "Usuario:";
+            // 
+            // StateDB
+            // 
+            this.StateDB.Name = "StateDB";
+            this.StateDB.Size = new System.Drawing.Size(46, 17);
+            this.StateDB.Text = "StateDB";
+            // 
+            // XtabPages
+            // 
+            this.XtabPages.Dock = System.Windows.Forms.DockStyle.Top;
+            this.XtabPages.Location = new System.Drawing.Point(0, 56);
+            this.XtabPages.Name = "XtabPages";
+            this.XtabPages.SelectedIndex = 0;
+            this.XtabPages.Size = new System.Drawing.Size(632, 21);
+            this.XtabPages.TabIndex = 4;
+            this.XtabPages.SelectedIndexChanged += new System.EventHandler(this.tabPages_SelectedIndexChanged);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // cmdSalir
             // 
@@ -442,6 +442,7 @@ namespace WinFastFood.Inicio
             this.MainMenuStrip = this.menuStrip;
             this.Name = "frmInicial";
             this.Text = "FastFood 2009";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmInicial_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmInicial_MdiChildActivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInicial_FormClosing);

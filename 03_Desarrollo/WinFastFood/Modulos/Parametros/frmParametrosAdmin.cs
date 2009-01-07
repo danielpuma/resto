@@ -60,7 +60,11 @@ namespace FastFood.ABM.Parametros
                     permiso = "GrupoArticulo";
                     this.Text = "Marcas de Articulo";
                     break;
-                
+
+                case "Mesa":
+                    permiso = "Mesa";
+                    this.Text = "Mesas";
+                    break;
             }
             ControlDeSeguridad(permiso, cmdGuardar,CmdDelete); 
             Cursor.Current = Cursors.Default;

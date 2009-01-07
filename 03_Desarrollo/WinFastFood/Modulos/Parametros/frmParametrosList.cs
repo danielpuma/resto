@@ -17,7 +17,6 @@ namespace FastFood.ABM.Parametros
     {
         BBParametro_FastFood ParamAdmin;
         List<Parametro> LstParams;
-        //DataGridViewPrinter MyDataGridViewPrinter;
 
         private string SubTipo;
         public frmParametrosList(string pSubTipo)
@@ -50,7 +49,11 @@ namespace FastFood.ABM.Parametros
                     this.Text = "Listas de Precios";
                     ParamAdmin = new BBParametro_FastFood("ListaPrecio");
                     break;
-
+                case "Mesa":
+                    label2.Text = "Administración de Mesas";
+                    this.Text = "Mesas";
+                    ParamAdmin = new BBParametro_FastFood("Mesa");
+                    break;
                 case "GrupoArticulo":
                     label2.Text = "Administración de Grupos de Artículos";
                     this.Text = "Grupos de Artículos";

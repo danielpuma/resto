@@ -14,6 +14,7 @@ using ABM.Usuarios.FastFood;
 using System.Drawing.Printing;
 using CompletIT.Windows.Forms.Export.Excel;
 using FastFood.ABM.Parametros;
+using FastFood.ABM.Articulo;
 
 namespace WinFastFood.Inicio
 {
@@ -282,12 +283,12 @@ namespace WinFastFood.Inicio
 
         private void XmesasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ShowWindows(new frmParametrosList("TipoDeDoc"));
+            ShowWindows(new frmParametrosList("Mesa"));
         }
 
         private void artìculosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            ShowWindows(new frmArticuloList());
         }
 
         private void XgestiónDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
