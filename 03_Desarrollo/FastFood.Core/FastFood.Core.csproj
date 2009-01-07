@@ -41,6 +41,7 @@
     <Compile Include="Domain\Cliente.hbm.cs" />
     <Compile Include="Domain\ListaDePrecio.hbm.cs" />
     <Compile Include="Domain\GrupoArticulo.hbm.cs" />
+    <Compile Include="Domain\Mesa.hbm.cs" />
     <Compile Include="Domain\Numerador.hbm.cs" />
     <Compile Include="Domain\PrecioArticulo.hbm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +59,9 @@
     <EmbeddedResource Include="Syncro\NH_Mapeo\DatosImportacion.hbm.xml" />
     <EmbeddedResource Include="Syncro\NH_Mapeo\DetalleExportacion.hbm.xml" />
     <EmbeddedResource Include="Syncro\NH_Mapeo\Exportacion.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\NH_Mapeo\Mesa.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

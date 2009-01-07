@@ -70,22 +70,16 @@ namespace FastFood.Core {
     
         #endregion
 
-
-        public virtual bool PermitePrestamos {
+        public virtual string GrupoNombre
+        {
             get {
-                return this.permitePrestamos;
-            }
-            set {
-                this.permitePrestamos = value;
-            }
-        }
-        
-        public virtual int PlazoPrestamoDias {
-            get {
-                return this.plazoPrestamoDias;
-            }
-            set {
-                this.plazoPrestamoDias = value;
+                if (MyGrupoArticulo != null)
+                {
+                    return MyGrupoArticulo.Nombre;
+                }
+                else {
+                    return "S/D";
+                }
             }
         }
         

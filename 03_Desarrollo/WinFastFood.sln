@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFastFood", "WinFastFood\WinFastFood.csproj", "{297753EF-E158-4DD3-9A79-24A31FC9CD33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFood.BB", "FastFood.BB\FastFood.BB.csproj", "{BADB6870-139C-4844-A041-898371DEBD74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFood.Core", "FastFood.Core\FastFood.Core.csproj", "{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{297753EF-E158-4DD3-9A79-24A31FC9CD33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{297753EF-E158-4DD3-9A79-24A31FC9CD33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{297753EF-E158-4DD3-9A79-24A31FC9CD33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{297753EF-E158-4DD3-9A79-24A31FC9CD33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BADB6870-139C-4844-A041-898371DEBD74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BADB6870-139C-4844-A041-898371DEBD74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BADB6870-139C-4844-A041-898371DEBD74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BADB6870-139C-4844-A041-898371DEBD74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

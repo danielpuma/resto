@@ -5,13 +5,11 @@
     </id>
     <property column="Codigo" type="String" name="Codigo" not-null="true" 	length="50" />
     <property column="Nombre" type="String" name="Nombre" not-null="true" 	length="255" />
-    <property name="PermitePrestamos" type="System.Boolean" column="PermitePrestamos" not-null="true" />
-    <property name="PlazoPrestamoDias" type="System.Int32" column="PlazoPrestamoDias" not-null="true" />
     <property name="PermiteStockNegativo" type="System.Boolean" column="PermiteStockNegativo" not-null="true" />
-    <property name="Descripcion" type="System.String" column="Descripcion" not-null="true" />
-    <property name="PuntoDePedido" type="System.Decimal" column="PuntoDePedido" not-null="true" />
+    <property name="Descripcion" type="System.String" column="Descripcion" not-null="false" />
+    <property name="PuntoDePedido" type="System.Decimal" column="PuntoDePedido" not-null="false" />
     <many-to-one name="MyGrupoArticulo" class="FastFood.Core.GrupoArticulo, FastFood.Core" fetch="join">
-      <column name="IdGrupoArticulo" not-null="true" />
+      <column name="IdGrupoArticulo" not-null="false" />
     </many-to-one>
     <bag name="PrecioArticulo" inverse="true" lazy="true" cascade="none">
       <key>

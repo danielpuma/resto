@@ -22,6 +22,7 @@ namespace FastFood.BB.BaseExtension
             {
                 case "ListaPrecio": MyParam = new ListaDePrecio(); break;
                 case "GrupoArticulo": MyParam = new GrupoArticulo(); break;
+                case "Mesa": MyParam = new Mesa(); break;
                 default: return base.GetNuevo(); 
                
             }
@@ -51,6 +52,13 @@ namespace FastFood.BB.BaseExtension
                         return (Parametro)F.GetById(id, shouldLock);
                     }
                     break;
+
+                case "Mesa":
+                    {
+                        FSO.NH.bb.FNegocio<Mesa> F = new FSO.NH.bb.FNegocio<Mesa>();
+                        return (Parametro)F.GetById(id, shouldLock);
+                    }
+                    break;
                 default: return base.GetById(id, shouldLock); 
                
             }                           
@@ -77,6 +85,11 @@ namespace FastFood.BB.BaseExtension
                     BBDEx.MarcarParaReexportar(dominio);
                     BBGrupoArticulo BBMA = new BBGrupoArticulo();
                     BBMA.Guardar((GrupoArticulo)dominio);
+                    break;
+                case "Mesa":
+                    BBDEx.MarcarParaReexportar(dominio);
+                    BBMesa BBMe = new BBMesa();
+                    BBMe.Guardar((Mesa)dominio);
                     break;
                 default: base.Guardar(dominio);  break;
             }
