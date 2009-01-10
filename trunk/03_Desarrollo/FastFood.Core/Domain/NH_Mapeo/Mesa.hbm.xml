@@ -3,5 +3,6 @@
     <key>
       <column name="IdMesa" />
     </key>
+    <property name="Ocupada" type="System.Boolean" column="Ocupada" not-null="true" />
   </joined-subclass>
 </hibernate-mapping>

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFood.BB", "FastFood.BB\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastFood.Core", "FastFood.Core\FastFood.Core.csproj", "{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controles", "..\..\..\PSV2008\trunk\Desarrollo\PSV\Controles\Controles\Controles.csproj", "{95342C30-D349-4C81-BB12-A1D1202A5884}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78F54A1D-8AA7-47D5-9F30-8667E1789BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95342C30-D349-4C81-BB12-A1D1202A5884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95342C30-D349-4C81-BB12-A1D1202A5884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95342C30-D349-4C81-BB12-A1D1202A5884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95342C30-D349-4C81-BB12-A1D1202A5884}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

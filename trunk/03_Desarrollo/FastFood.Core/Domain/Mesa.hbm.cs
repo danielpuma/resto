@@ -16,6 +16,13 @@ namespace FastFood.Core
     [System.SerializableAttribute()]
     public class AbstractMesa: Parametro
     {
+        private bool ocupada;
+
+        public virtual bool Ocupada
+        {
+            get { return ocupada; }
+            set { ocupada = value; }
+        }
     }
 
     [System.SerializableAttribute()]

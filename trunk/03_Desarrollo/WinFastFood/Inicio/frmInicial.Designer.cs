@@ -31,17 +31,17 @@ namespace WinFastFood.Inicio
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicial));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.XfastFoodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.XgenerarNuevoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.XgestiónDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.XreportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.XconsultaDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XconfiguraciónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XtiposDeDocumentoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XlistasDePrecioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XgruposDeArtículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XmesasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.artìculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.XfastFoodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.XgenerarNuevoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.XgestiónDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.XreportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.XconsultaDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XseguridadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XusuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XrolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,50 +92,6 @@ namespace WinFastFood.Inicio
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
-            // 
-            // XfastFoodToolStripMenuItem1
-            // 
-            this.XfastFoodToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.XgenerarNuevoPedidoToolStripMenuItem,
-            this.XgestiónDeClientesToolStripMenuItem,
-            this.XreportesToolStripMenuItem});
-            this.XfastFoodToolStripMenuItem1.Name = "XfastFoodToolStripMenuItem1";
-            this.XfastFoodToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
-            this.XfastFoodToolStripMenuItem1.Text = "FastFood";
-            // 
-            // XgenerarNuevoPedidoToolStripMenuItem
-            // 
-            this.XgenerarNuevoPedidoToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.add32;
-            this.XgenerarNuevoPedidoToolStripMenuItem.Name = "XgenerarNuevoPedidoToolStripMenuItem";
-            this.XgenerarNuevoPedidoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.XgenerarNuevoPedidoToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.XgenerarNuevoPedidoToolStripMenuItem.Text = "Generar Nuevo Pedido";
-            // 
-            // XgestiónDeClientesToolStripMenuItem
-            // 
-            this.XgestiónDeClientesToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.adduser;
-            this.XgestiónDeClientesToolStripMenuItem.Name = "XgestiónDeClientesToolStripMenuItem";
-            this.XgestiónDeClientesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.XgestiónDeClientesToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.XgestiónDeClientesToolStripMenuItem.Text = "Gestión de Clientes";
-            this.XgestiónDeClientesToolStripMenuItem.Click += new System.EventHandler(this.XgestiónDeClientesToolStripMenuItem_Click);
-            // 
-            // XreportesToolStripMenuItem
-            // 
-            this.XreportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.XconsultaDePedidosToolStripMenuItem});
-            this.XreportesToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.textfile32;
-            this.XreportesToolStripMenuItem.Name = "XreportesToolStripMenuItem";
-            this.XreportesToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.XreportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // XconsultaDePedidosToolStripMenuItem
-            // 
-            this.XconsultaDePedidosToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.textfile32;
-            this.XconsultaDePedidosToolStripMenuItem.Name = "XconsultaDePedidosToolStripMenuItem";
-            this.XconsultaDePedidosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.XconsultaDePedidosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.XconsultaDePedidosToolStripMenuItem.Text = "Consulta de Pedidos";
             // 
             // XconfiguraciónToolStripMenuItem1
             // 
@@ -188,6 +144,51 @@ namespace WinFastFood.Inicio
             this.artìculosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.artìculosToolStripMenuItem.Text = "Artículos";
             this.artìculosToolStripMenuItem.Click += new System.EventHandler(this.artìculosToolStripMenuItem_Click);
+            // 
+            // XfastFoodToolStripMenuItem1
+            // 
+            this.XfastFoodToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.XgenerarNuevoPedidoToolStripMenuItem,
+            this.XgestiónDeClientesToolStripMenuItem,
+            this.XreportesToolStripMenuItem});
+            this.XfastFoodToolStripMenuItem1.Name = "XfastFoodToolStripMenuItem1";
+            this.XfastFoodToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
+            this.XfastFoodToolStripMenuItem1.Text = "FastFood";
+            // 
+            // XgenerarNuevoPedidoToolStripMenuItem
+            // 
+            this.XgenerarNuevoPedidoToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.add32;
+            this.XgenerarNuevoPedidoToolStripMenuItem.Name = "XgenerarNuevoPedidoToolStripMenuItem";
+            this.XgenerarNuevoPedidoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.XgenerarNuevoPedidoToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.XgenerarNuevoPedidoToolStripMenuItem.Text = "Generar Nuevo Pedido";
+            this.XgenerarNuevoPedidoToolStripMenuItem.Click += new System.EventHandler(this.XgenerarNuevoPedidoToolStripMenuItem_Click);
+            // 
+            // XgestiónDeClientesToolStripMenuItem
+            // 
+            this.XgestiónDeClientesToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.adduser;
+            this.XgestiónDeClientesToolStripMenuItem.Name = "XgestiónDeClientesToolStripMenuItem";
+            this.XgestiónDeClientesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.XgestiónDeClientesToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.XgestiónDeClientesToolStripMenuItem.Text = "Gestión de Clientes";
+            this.XgestiónDeClientesToolStripMenuItem.Click += new System.EventHandler(this.XgestiónDeClientesToolStripMenuItem_Click);
+            // 
+            // XreportesToolStripMenuItem
+            // 
+            this.XreportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.XconsultaDePedidosToolStripMenuItem});
+            this.XreportesToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.textfile32;
+            this.XreportesToolStripMenuItem.Name = "XreportesToolStripMenuItem";
+            this.XreportesToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.XreportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // XconsultaDePedidosToolStripMenuItem
+            // 
+            this.XconsultaDePedidosToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.textfile32;
+            this.XconsultaDePedidosToolStripMenuItem.Name = "XconsultaDePedidosToolStripMenuItem";
+            this.XconsultaDePedidosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.XconsultaDePedidosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.XconsultaDePedidosToolStripMenuItem.Text = "Consulta de Pedidos";
             // 
             // XseguridadToolStripMenuItem1
             // 
@@ -325,6 +326,7 @@ namespace WinFastFood.Inicio
             this.xCmdNuevoPedido.Name = "xCmdNuevoPedido";
             this.xCmdNuevoPedido.Size = new System.Drawing.Size(29, 29);
             this.xCmdNuevoPedido.Text = "Nuevo Pedido";
+            this.xCmdNuevoPedido.Click += new System.EventHandler(this.xCmdNuevoPedido_Click);
             // 
             // toolStripSeparator1
             // 

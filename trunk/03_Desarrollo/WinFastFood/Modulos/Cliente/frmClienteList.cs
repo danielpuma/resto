@@ -10,6 +10,8 @@ using ToolBox;
 using FastFood.BB.CoreExtension;
 using Controles;
 using FSO.NH.ClasesBase.BB;
+using WinFastFood.Inicio;
+using WinFastFood.Modulos.Pedido;
 
 namespace FastFood.ABM.Cliente
 {
@@ -162,6 +164,18 @@ namespace FastFood.ABM.Cliente
         private Int32 getSelectedCliente()
         {
             return  Convert.ToInt32(MyGrillaDatos.SelectedRows[0].Cells[0].Value);
+        }
+
+        private void cmdAlertas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmdNuevoPedido_Click(object sender, EventArgs e)
+        {
+            PedidoAdmin PA = new PedidoAdmin(getSelectedCliente());
+            ((frmInicial)this.Parent).ShowWindows(PA);
+            PA.Activate();
         }
 
 

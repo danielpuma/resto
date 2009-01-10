@@ -15,6 +15,8 @@ using System.Drawing.Printing;
 using CompletIT.Windows.Forms.Export.Excel;
 using FastFood.ABM.Parametros;
 using FastFood.ABM.Articulo;
+using FastFood.ABM.Cliente;
+using WinFastFood.Modulos.Pedido;
 
 namespace WinFastFood.Inicio
 {
@@ -293,7 +295,19 @@ namespace WinFastFood.Inicio
 
         private void XgestiónDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ShowWindows(new frmClienteList());
         }
+
+        private void XgenerarNuevoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowWindows(new PedidoAdmin());
+        }
+
+        private void xCmdNuevoPedido_Click(object sender, EventArgs e)
+        {
+            ShowWindows(new PedidoAdmin());
+        }
+
+
     }
 }

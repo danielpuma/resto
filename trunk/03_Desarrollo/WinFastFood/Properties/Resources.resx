@@ -124,6 +124,15 @@
   <data name="RestaurantSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RestaurantSmall.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="8printer24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8printer24.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="8add48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8add48.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="food-256x256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\food-256x256.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="userb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\userb.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,8 +145,8 @@
   <data name="infoabout32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\infoabout32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gotoapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gotoapp.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="hdlocked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hdlocked.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,10 +154,16 @@
   <data name="money32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\money32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gotoapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gotoapp.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="8add24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8add24.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="help32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add32.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="8close16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8close16.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

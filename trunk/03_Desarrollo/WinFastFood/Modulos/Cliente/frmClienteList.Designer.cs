@@ -29,25 +29,12 @@ namespace FastFood.ABM.Cliente
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNombre = new FSOTextBox();
+            this.txtNombre = new Controles.FSOTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigo = new FSOTextBox();
+            this.txtCodigo = new Controles.FSOTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.MyGrillaDatos = new System.Windows.Forms.DataGridView();
-            this.cmdNuevo = new System.Windows.Forms.Button();
-            this.cmdBuscar = new System.Windows.Forms.Button();
-            this.txtApellido = new FSOTextBox();
-            this.txtRazonSocial = new FSOTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cmdAlertas = new System.Windows.Forms.Button();
-            this.cmdTrabajos = new System.Windows.Forms.Button();
-            this.cmdVehiculos = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboTipoDoc = new Controles.FSOCombo();
-            this.dtRange1 = new Controles.dtRange();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +42,18 @@ namespace FastFood.ABM.Cliente
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmdNuevo = new System.Windows.Forms.Button();
+            this.cmdBuscar = new System.Windows.Forms.Button();
+            this.txtApellido = new Controles.FSOTextBox();
+            this.txtRazonSocial = new Controles.FSOTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmdPedido = new System.Windows.Forms.Button();
+            this.cmdNuevoPedido = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboTipoDoc = new Controles.FSOCombo();
+            this.dtRange1 = new Controles.dtRange();
             ((System.ComponentModel.ISupportInitialize)(this.MyGrillaDatos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +130,51 @@ namespace FastFood.ABM.Cliente
             this.MyGrillaDatos.TabIndex = 8;
             this.MyGrillaDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            // 
+            // Documento
+            // 
+            this.Documento.HeaderText = "Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            // 
+            // NombreCompleto
+            // 
+            this.NombreCompleto.HeaderText = "Nombre Completo";
+            this.NombreCompleto.Name = "NombreCompleto";
+            this.NombreCompleto.ReadOnly = true;
+            this.NombreCompleto.Width = 250;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.HeaderText = "Razon Social";
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            this.RazonSocial.Width = 200;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Mail
+            // 
+            this.Mail.HeaderText = "Mail";
+            this.Mail.Name = "Mail";
+            this.Mail.ReadOnly = true;
+            // 
+            // FechaNac
+            // 
+            this.FechaNac.HeaderText = "Fecha de Nacimiento";
+            this.FechaNac.Name = "FechaNac";
+            this.FechaNac.ReadOnly = true;
+            // 
             // cmdNuevo
             // 
             this.cmdNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -182,42 +226,31 @@ namespace FastFood.ABM.Cliente
             this.label4.TabIndex = 72;
             this.label4.Text = "Razon Social:";
             // 
-            // cmdAlertas
+            // cmdPedido
             // 
-            this.cmdAlertas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cmdAlertas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdAlertas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdAlertas.Location = new System.Drawing.Point(7, 161);
-            this.cmdAlertas.Name = "cmdAlertas";
-            this.cmdAlertas.Size = new System.Drawing.Size(75, 24);
-            this.cmdAlertas.TabIndex = 9;
-            this.cmdAlertas.Text = "Alertas";
-            this.cmdAlertas.UseVisualStyleBackColor = false;
+            this.cmdPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cmdPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdPedido.Location = new System.Drawing.Point(7, 161);
+            this.cmdPedido.Name = "cmdPedido";
+            this.cmdPedido.Size = new System.Drawing.Size(75, 24);
+            this.cmdPedido.TabIndex = 9;
+            this.cmdPedido.Text = "Pedidos";
+            this.cmdPedido.UseVisualStyleBackColor = false;
+            this.cmdPedido.Click += new System.EventHandler(this.cmdAlertas_Click);
             // 
-            // cmdTrabajos
+            // cmdNuevoPedido
             // 
-            this.cmdTrabajos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cmdTrabajos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdTrabajos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdTrabajos.Location = new System.Drawing.Point(88, 161);
-            this.cmdTrabajos.Name = "cmdTrabajos";
-            this.cmdTrabajos.Size = new System.Drawing.Size(75, 24);
-            this.cmdTrabajos.TabIndex = 10;
-            this.cmdTrabajos.Text = "Trabajos";
-            this.cmdTrabajos.UseVisualStyleBackColor = false;
-
-            // 
-            // cmdVehiculos
-            // 
-            this.cmdVehiculos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.cmdVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdVehiculos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdVehiculos.Location = new System.Drawing.Point(169, 161);
-            this.cmdVehiculos.Name = "cmdVehiculos";
-            this.cmdVehiculos.Size = new System.Drawing.Size(90, 24);
-            this.cmdVehiculos.TabIndex = 11;
-            this.cmdVehiculos.Text = "Vehiculos";
-            this.cmdVehiculos.UseVisualStyleBackColor = false;
+            this.cmdNuevoPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.cmdNuevoPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdNuevoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdNuevoPedido.Location = new System.Drawing.Point(88, 161);
+            this.cmdNuevoPedido.Name = "cmdNuevoPedido";
+            this.cmdNuevoPedido.Size = new System.Drawing.Size(108, 24);
+            this.cmdNuevoPedido.TabIndex = 10;
+            this.cmdNuevoPedido.Text = "Nuevo &Pedido";
+            this.cmdNuevoPedido.UseVisualStyleBackColor = false;
+            this.cmdNuevoPedido.Click += new System.EventHandler(this.cmdNuevoPedido_Click);
             // 
             // label5
             // 
@@ -279,51 +312,6 @@ namespace FastFood.ABM.Cliente
             this.dtRange1.Size = new System.Drawing.Size(297, 20);
             this.dtRange1.TabIndex = 5;
             // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Documento";
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            // 
-            // NombreCompleto
-            // 
-            this.NombreCompleto.HeaderText = "Nombre Completo";
-            this.NombreCompleto.Name = "NombreCompleto";
-            this.NombreCompleto.ReadOnly = true;
-            this.NombreCompleto.Width = 250;
-            // 
-            // RazonSocial
-            // 
-            this.RazonSocial.HeaderText = "Razon Social";
-            this.RazonSocial.Name = "RazonSocial";
-            this.RazonSocial.ReadOnly = true;
-            this.RazonSocial.Width = 200;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Mail
-            // 
-            this.Mail.HeaderText = "Mail";
-            this.Mail.Name = "Mail";
-            this.Mail.ReadOnly = true;
-            // 
-            // FechaNac
-            // 
-            this.FechaNac.HeaderText = "Fecha de Nacimiento";
-            this.FechaNac.Name = "FechaNac";
-            this.FechaNac.ReadOnly = true;
-            // 
             // frmClienteList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,9 +320,8 @@ namespace FastFood.ABM.Cliente
             this.Controls.Add(this.dtRange1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.cmdVehiculos);
-            this.Controls.Add(this.cmdTrabajos);
-            this.Controls.Add(this.cmdAlertas);
+            this.Controls.Add(this.cmdNuevoPedido);
+            this.Controls.Add(this.cmdPedido);
             this.Controls.Add(this.txtRazonSocial);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtApellido);
@@ -374,9 +361,8 @@ namespace FastFood.ABM.Cliente
         private FSOTextBox txtApellido;
         private FSOTextBox txtRazonSocial;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button cmdAlertas;
-        private System.Windows.Forms.Button cmdTrabajos;
-        private System.Windows.Forms.Button cmdVehiculos;
+        private System.Windows.Forms.Button cmdPedido;
+        private System.Windows.Forms.Button cmdNuevoPedido;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;
