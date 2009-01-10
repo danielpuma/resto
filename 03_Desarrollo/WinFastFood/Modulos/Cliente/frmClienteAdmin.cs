@@ -90,7 +90,8 @@ namespace FastFood.ABM.Cliente
             try
             {
                 GuardarDatos();
-                MessageBox.Show("Datos Guardados");
+                this.Close();
+
             }
             catch (Exception Ex)
             {

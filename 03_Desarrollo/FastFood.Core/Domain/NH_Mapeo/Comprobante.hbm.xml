@@ -1,0 +1,10 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <joined-subclass name="FastFood.Core.Comprobante, FastFood.Core" table="Comprobante" extends="FSO.NH.ClasesBase.Core.Parametro,  FSO.NH">
+    <key>
+      <column name="IdComprobante" />
+    </key>
+    <many-to-one name="Numerador" class="FastFood.Core.Numerador, FastFood.Core" fetch="select">
+      <column name="IdNumerador" not-null="true" />
+    </many-to-one>
+  </joined-subclass>
+</hibernate-mapping>

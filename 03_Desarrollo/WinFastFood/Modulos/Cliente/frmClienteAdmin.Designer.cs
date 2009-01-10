@@ -48,8 +48,6 @@ namespace FastFood.ABM.Cliente
             this.txtDireccion = new Controles.FSOTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cmdConsultarVehiculo = new System.Windows.Forms.Button();
-            this.cmdCrearVehiculo = new System.Windows.Forms.Button();
             this.TxtNroDoc = new Shorty.Windows.Forms.NumericTextBox();
             this.dtFechaNacimiento = new Controles.DateTimeInputBox();
             this.SuspendLayout();
@@ -67,7 +65,7 @@ namespace FastFood.ABM.Cliente
             this.CmdDelete.TabStop = false;
             this.CmdDelete.Text = "Eliminar";
             this.CmdDelete.UseVisualStyleBackColor = false;
-            this.CmdDelete.Click += new System.EventHandler(this.cmdGuardar_Click);
+            this.CmdDelete.Click += new System.EventHandler(this.CmdDelete_Click);
             // 
             // txtRazonSocial
             // 
@@ -249,34 +247,6 @@ namespace FastFood.ABM.Cliente
             this.label9.TabIndex = 32;
             this.label9.Text = "Fecha Nacimiento:";
             // 
-            // cmdConsultarVehiculo
-            // 
-            this.cmdConsultarVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.cmdConsultarVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdConsultarVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdConsultarVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.cmdConsultarVehiculo.Location = new System.Drawing.Point(181, 204);
-            this.cmdConsultarVehiculo.Name = "cmdConsultarVehiculo";
-            this.cmdConsultarVehiculo.Size = new System.Drawing.Size(127, 23);
-            this.cmdConsultarVehiculo.TabIndex = 33;
-            this.cmdConsultarVehiculo.TabStop = false;
-            this.cmdConsultarVehiculo.Text = "Consultar Vehiculo";
-            this.cmdConsultarVehiculo.UseVisualStyleBackColor = false;
-            // 
-            // cmdCrearVehiculo
-            // 
-            this.cmdCrearVehiculo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.cmdCrearVehiculo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmdCrearVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCrearVehiculo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.cmdCrearVehiculo.Location = new System.Drawing.Point(314, 204);
-            this.cmdCrearVehiculo.Name = "cmdCrearVehiculo";
-            this.cmdCrearVehiculo.Size = new System.Drawing.Size(125, 23);
-            this.cmdCrearVehiculo.TabIndex = 34;
-            this.cmdCrearVehiculo.TabStop = false;
-            this.cmdCrearVehiculo.Text = "Crear Vehiculo";
-            this.cmdCrearVehiculo.UseVisualStyleBackColor = false;
-            // 
             // TxtNroDoc
             // 
             this.TxtNroDoc.AcceptsReturn = true;
@@ -316,8 +286,6 @@ namespace FastFood.ABM.Cliente
             this.CancelButton = this.cmdCancel;
             this.ClientSize = new System.Drawing.Size(686, 239);
             this.Controls.Add(this.TxtNroDoc);
-            this.Controls.Add(this.cmdCrearVehiculo);
-            this.Controls.Add(this.cmdConsultarVehiculo);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtFechaNacimiento);
             this.Controls.Add(this.txtDireccion);
@@ -370,8 +338,6 @@ namespace FastFood.ABM.Cliente
         private System.Windows.Forms.Label label8;
         private Controles.DateTimeInputBox dtFechaNacimiento;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button cmdConsultarVehiculo;
-        private System.Windows.Forms.Button cmdCrearVehiculo;
         private Shorty.Windows.Forms.NumericTextBox TxtNroDoc;
     }
 }

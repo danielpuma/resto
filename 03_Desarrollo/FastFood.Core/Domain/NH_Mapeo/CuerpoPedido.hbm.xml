@@ -1,0 +1,8 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <joined-subclass name="FastFood.Core.CuerpoPedido, FastFood.Core" table="CuerpoPedido" extends="FastFood.Core.CuerpoMovimientoBase, FastFood.Core">
+    <key>
+      <column name="IdCuerpoPedido" />
+    </key>
+    <property name="IdPedido" type="System.Int32" column="IdPedido" not-null="true" />
+  </joined-subclass>
+</hibernate-mapping>

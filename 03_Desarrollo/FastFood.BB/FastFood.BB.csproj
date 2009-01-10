@@ -44,10 +44,12 @@
     <Compile Include="BaseExtension\BBParametro_FastFood.cs" />
     <Compile Include="CoreExtension\BBArticulo.cs" />
     <Compile Include="CoreExtension\BBCliente.cs" />
+    <Compile Include="CoreExtension\BBCuerpoPedido.cs" />
     <Compile Include="CoreExtension\BBListaDePrecio.cs" />
     <Compile Include="CoreExtension\BBGrupoArticulo.cs" />
     <Compile Include="CoreExtension\BBMesa.cs" />
     <Compile Include="CoreExtension\BBNumerador.cs" />
+    <Compile Include="CoreExtension\BBPedido.cs" />
     <Compile Include="CoreExtension\BBPrecioArticulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupporClass\LocalCache.cs" />

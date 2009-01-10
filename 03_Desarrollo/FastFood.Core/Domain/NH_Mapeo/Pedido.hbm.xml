@@ -1,0 +1,20 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <joined-subclass name="FastFood.Core.Pedido, FastFood.Core" table="Pedido" extends="FastFood.Core.MovimientoBase, FastFood.Core">
+    <key>
+      <column name="IdPedido" />
+    </key>
+    <property name="Pendiente" type="System.Boolean" column="Pendiente" not-null="true" />
+    <property name="PagaCon" type="System.Decimal" column="PagaCon" not-null="true" />
+    <property name="Vuelto" type="System.Decimal" column="Vuelto" not-null="true" />
+    <property name="DescuentoRecargo" type="System.Decimal" column="DescuentoRecargo" not-null="true" />
+    <bag name="CuerpoPedido" inverse="false" lazy="true" cascade="delete">
+      <key>
+        <column name="IdPedido" not-null="true" />
+      </key>
+      <one-to-many class="FastFood.Core.CuerpoPedido, FastFood.Core" />
+    </bag>
+    <many-to-one name="Mesa" class="FastFood.Core.Mesa, FastFood.Core" fetch="select">
+      <column name="IdMesa" not-null="true" />
+    </many-to-one>
+  </joined-subclass>
+</hibernate-mapping>

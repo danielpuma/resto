@@ -1,0 +1,21 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FastFood.Core.MovimientoBase, FastFood.Core" table="MovimientoBase">
+    <id name="ID" type="System.Int32" column="IdMovimiento" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property name="NumeroInterno" type="System.Int32" column="NumeroInterno" not-null="true" />
+    <property name="Activo" type="System.Boolean" column="Activo" not-null="true" />
+    <property name="FechaCarga" type="System.DateTime" column="FechaCarga" not-null="true" />
+    <property name="FechaContable" type="System.DateTime" column="FechaContable" not-null="true" />
+    <property name="TotalFacturado" type="System.Decimal" column="TotalFacturado" not-null="true" />
+    <property name="FechaAnulacion" type="System.DateTime" column="FechaAnulacion" not-null="false" />
+    <property name="IdUsuarioAnulacion" type="System.Int32" column="IdUsuarioAnulacion" not-null="false" />
+    <property name="IdUsuario" type="System.Int32" column="IdUsuario" not-null="true" />
+    <many-to-one name="Cliente" class="FastFood.Core.Cliente, FastFood.Core" fetch="select">
+      <column name="IdCliente" not-null="true" />
+    </many-to-one>
+    <many-to-one name="Comprobante" class="FastFood.Core.Comprobante, FastFood.Core" fetch="select">
+      <column name="IdComprobante" not-null="true" />
+    </many-to-one>
+  </class>
+</hibernate-mapping>

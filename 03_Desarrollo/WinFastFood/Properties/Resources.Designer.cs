@@ -60,6 +60,34 @@ namespace WinFastFood.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _8add24 {
+            get {
+                object obj = ResourceManager.GetObject("8add24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _8add48 {
+            get {
+                object obj = ResourceManager.GetObject("8add48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _8close16 {
+            get {
+                object obj = ResourceManager.GetObject("8close16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap _8printer24 {
+            get {
+                object obj = ResourceManager.GetObject("8printer24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap add32 {
             get {
                 object obj = ResourceManager.GetObject("add32", resourceCulture);
@@ -70,6 +98,13 @@ namespace WinFastFood.Properties {
         internal static System.Drawing.Bitmap adduser {
             get {
                 object obj = ResourceManager.GetObject("adduser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap food_256x256 {
+            get {
+                object obj = ResourceManager.GetObject("food-256x256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
