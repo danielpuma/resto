@@ -144,6 +144,13 @@ namespace WinFastFood.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap package {
+            get {
+                object obj = ResourceManager.GetObject("package", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap RestaurantSmall {
             get {
                 object obj = ResourceManager.GetObject("RestaurantSmall", resourceCulture);

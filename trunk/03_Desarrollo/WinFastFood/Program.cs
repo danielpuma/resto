@@ -19,7 +19,7 @@ namespace FastFood
         {
             try
             {
-                validator = new ValidadorCodigoSeguridad();
+                validator = new ValidadorCodigoSeguridad("WIN32PxG");
                 validator.RegisterExecutionTime();
                 
                 Application.EnableVisualStyles();

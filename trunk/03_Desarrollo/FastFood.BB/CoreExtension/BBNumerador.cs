@@ -34,6 +34,6 @@ namespace FastFood.BB.CoreExtension
     }
     public enum TipoNumerador
     { 
-       Trabajo=1, Presupuesto
+       Pedido=1
     }
 }

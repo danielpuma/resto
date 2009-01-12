@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label4.Text" xml:space="preserve">
-    <value>Para utilizar esta copia de softwre deberá enviar el codigo de seguridad mostrado en esta pantalla a Fernando Sosa (fjsosa@gmail.com) o a Javier San Martín (javosm79@hotmail.com), a continuación nosotros le enviaremos el código de activación requerido para activar su aplicación</value>
+    <value>Para utilizar esta copia de softwre deberá enviar el codigo de seguridad mostrado en esta pantalla a Fernando Sosa (fjsosa@gmail.com) o a Miguel Girala (mgirala@hotmail.com), a continuación nosotros le enviaremos el código de activación requerido para activar su aplicación</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

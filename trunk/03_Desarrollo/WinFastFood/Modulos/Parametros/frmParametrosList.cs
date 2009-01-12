@@ -10,6 +10,7 @@ using FSO.NH.ClasesBase.Core;
 using System.Drawing.Printing;
 using ToolBox;
 using FastFood.BB.BaseExtension;
+using FSO.NH.CodigoDeSeguridad;
 
 namespace FastFood.ABM.Parametros
 {
@@ -59,17 +60,27 @@ namespace FastFood.ABM.Parametros
                     this.Text = "Grupos de Artículos";
                     ParamAdmin = new BBParametro_FastFood("GrupoArticulo");
                     break;
+                case "Comprobante":
+                    label2.Text = "Administración de Comprobantes";
+                    this.Text = "Comprobantes";
+                    ParamAdmin = new BBParametro_FastFood("Comprobante");
+                    break;
             }
             LstParams = ParamAdmin.GetAll();
             BindearGrilla();
         }
         private void BindearGrilla()
         {
+
+            Cursor.Current = Cursors.WaitCursor;
             GrillaDatos.AutoGenerateColumns = false;
             GrillaDatos.DataSource = LstParams;
             GrillaDatos.Columns[0].DataPropertyName = "ID";
             GrillaDatos.Columns[1].DataPropertyName = "Codigo";
             GrillaDatos.Columns[2].DataPropertyName = "Nombre";
+            verificarLimitesDemo(); 
+            Cursor.Current = Cursors.Default;
+			
         }
         private void BuscarDatos()
         {
@@ -115,6 +126,31 @@ namespace FastFood.ABM.Parametros
         {
             get { return "FastFood - " + SubTipo.ToString(); }
         }
+
+        private void verificarLimitesDemo()
+        {
+            int max = 0;
+            switch (SubTipo)
+            {
+                case "Mesa":
+                    max = 5; break;
+                case "GrupoArticulo":
+                    max = 2; break;
+                case "ListaPrecio":
+                    max = 2; break;
+            }
+            ValidadorCodigoSeguridad v = new ValidadorCodigoSeguridad("WIN32PxG");
+            if (max > 0 && v.VerificarModoDemo() && MyDataGrid.Rows.Count >= max)
+            {
+                MessageBox.Show("Se ha alcanzado el límite de " + this.Text  + " del modo demo ("+ max.ToString()+")");
+                cmdNuevo.Enabled = false;
+            }
+            else
+            {
+                cmdNuevo.Enabled = true;
+            }
+        }
+
 
         #endregion
     }

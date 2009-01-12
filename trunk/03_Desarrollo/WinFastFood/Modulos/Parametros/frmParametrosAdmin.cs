@@ -65,6 +65,18 @@ namespace FastFood.ABM.Parametros
                     permiso = "Mesa";
                     this.Text = "Mesas";
                     break;
+
+                case "Comprobante":
+                    permiso = "Comprobante";
+                    this.Text = "Comprobantes";
+                    BBNumerador TDC = new BBNumerador();
+                    List<Numerador> LstTDoc = TDC.GetAll();
+                    cboNumerador.DataSource = LstTDoc;
+                    cboNumerador.DisplayMember = "ID";
+                    cboNumerador.ValueMember = "ID";
+                    lblComprobante.Visible = true;
+                    cboNumerador.Visible = true;
+                    break;
             }
             ControlDeSeguridad(permiso, cmdGuardar,CmdDelete); 
             Cursor.Current = Cursors.Default;
@@ -110,6 +122,14 @@ namespace FastFood.ABM.Parametros
             {
                 chkPredeterminada.DataBindings.Add("Checked", MyParam, "Predeterminado");              
             }
+            if (SubTipo == "Comprobante")
+            {
+                int idNum = 1;
+                if (((Comprobante)MyParam).Numerador != null)
+                    idNum = ((Comprobante)MyParam).Numerador.ID;
+                cboNumerador.SelectedValue = idNum;
+            }
+
         }
 
         private void cmdGuardar_Click(object sender, EventArgs e)
@@ -118,10 +138,13 @@ namespace FastFood.ABM.Parametros
             Cursor.Current = Cursors.WaitCursor;
             try
             {
-
-
+                if (SubTipo == "Comprobante")
+                {
+                    
+                    int idNum = (int)cboNumerador.SelectedValue ;
+                    ((Comprobante)MyParam).Numerador = new BBNumerador().GetById(idNum, false);
+                }
                 MyParamAdmin.Guardar(MyParam);
-
                 this.Close();
             }
             catch (Exception Ex)

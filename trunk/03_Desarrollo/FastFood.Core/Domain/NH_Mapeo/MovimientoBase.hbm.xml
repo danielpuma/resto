@@ -9,8 +9,13 @@
     <property name="FechaContable" type="System.DateTime" column="FechaContable" not-null="true" />
     <property name="TotalFacturado" type="System.Decimal" column="TotalFacturado" not-null="true" />
     <property name="FechaAnulacion" type="System.DateTime" column="FechaAnulacion" not-null="false" />
-    <property name="IdUsuarioAnulacion" type="System.Int32" column="IdUsuarioAnulacion" not-null="false" />
-    <property name="IdUsuario" type="System.Int32" column="IdUsuario" not-null="true" />
+   
+    <many-to-one name="Usuario" class="FSO.NH.Seguridad.Core.Usuario,  FSO.NH" fetch="select">
+      <column name="IdUsuario" not-null="true" />
+    </many-to-one>
+    <many-to-one name="UsuarioAnulacion" class="FSO.NH.Seguridad.Core.Usuario,  FSO.NH" fetch="select">
+      <column name="IdUsuarioAnulacion" not-null="false" />
+    </many-to-one>
     <many-to-one name="Cliente" class="FastFood.Core.Cliente, FastFood.Core" fetch="select">
       <column name="IdCliente" not-null="true" />
     </many-to-one>

@@ -10,6 +10,7 @@ using FastFood.BB.CoreExtension;
 using FSO.NH.Seguridad.BB;
 using FSO.NH.Auditoria;
 using FastFood.Core;
+using FSO.NH.Seguridad.Core;
 
 namespace WinFastFood.Modulos.Pedido
 {
@@ -17,15 +18,24 @@ namespace WinFastFood.Modulos.Pedido
     {
         public FastFood.Core.Pedido MyObject;
         public BBPedido MyBB;
-        
+        private ListaDePrecio LDPPredeterminada;
         public PedidoAdmin()
         {
             Cursor.Current = Cursors.WaitCursor;
             InitializeComponent();
             InicilizarLockUp();
-            ControlDeSeguridad("Pedido", cmdGuardar, cmdGuardar);
+            ControlDeSeguridad("Pedido", cmdGuardar, null);
+            ControlDeSeguridadLocal();
             Cursor.Current = Cursors.Default;
         }
+        private void ControlDeSeguridadLocal()
+        {
+            BBUsuario BBU = new BBUsuario();
+            fsoListaPrecio.Enabled = BBU.TienePermiso(Win32Session.UsuarioActual, "CambiaLDP");
+            txtPU.Enabled = BBU.TienePermiso(Win32Session.UsuarioActual, "CambiaPU");
+            dtFecha.Enabled = BBU.TienePermiso(Win32Session.UsuarioActual, "CambiaFechaPedido");
+        }
+
         public PedidoAdmin(Int32 IdCliente)
         {
             Cursor.Current = Cursors.WaitCursor;
@@ -47,21 +57,24 @@ namespace WinFastFood.Modulos.Pedido
             MyBB = new BBPedido();
             BBListaDePrecio BBL = new BBListaDePrecio();
             fsoListaPrecio.ObjetoActual = BBL.GetPredeterminada();
+            LDPPredeterminada = (ListaDePrecio)fsoListaPrecio.ObjetoActual;
             txtCant.DecimalValue = 1;
         }
 
         private void PedidoAdmin_Load(object sender, EventArgs e)
         {
-
            if(MyObject==null)
                MyObject = MyBB.getNuevo();
             BindearDatos();
         }
 
-            private void BindearDatos()
-            {
- 	            
+        private void BindearDatos()
+        {
+            if (MyObject.ID!=0)
+            { 
+
             }
+        }
 
 
 
@@ -72,7 +85,8 @@ namespace WinFastFood.Modulos.Pedido
 
         private void ManejarControles(bool bCerrado)
         {
-            txtPagaCon.Enabled = bCerrado;
+            txtDescRec.Enabled = !bCerrado;
+            txtPagaCon.Enabled = !bCerrado;
             pblBody.Enabled = !bCerrado;
             chkImprimir.Enabled = bCerrado;
             chkImprimir.Checked = bCerrado;
@@ -83,7 +97,24 @@ namespace WinFastFood.Modulos.Pedido
 
         private void AgregarArticuloActual()
         {
-            try{
+            try
+            {
+
+                Cursor.Current = Cursors.WaitCursor;
+                if (fsoArticulo.ObjetoActual == null)
+                    throw new Exception("Debe seleccionar un artículo para incluir en el pedido");
+
+                BBUsuario BBU = new BBUsuario();
+                if (!BBU.TienePermiso(Win32Session.UsuarioActual, "AddNeg") && Convert.ToDecimal(txtTotalLinea.Text)<0)
+                {
+                    throw new Exception("Disculpe, Ud. no puede cargar artículos en negativo");
+                }
+
+                if (!BBU.TienePermiso(Win32Session.UsuarioActual, "AddCero") && Convert.ToDecimal(txtTotalLinea.Text) <= 0)
+                {
+                    throw new Exception("Disculpe, Ud. no puede cargar artículos en negativo ni en cero");
+                }
+
                 DataGridViewRow dr = new DataGridViewRow();
                 object[] Valores = new object[11];
                 Valores[0] = 0;
@@ -95,15 +126,20 @@ namespace WinFastFood.Modulos.Pedido
                 Valores[6] = txtPU.DecimalValue;
                 Valores[7] = txtCant.Text;
                 Valores[8] = txtTotalLinea.Text;
-                Valores[9] =  global::WinFastFood.Properties.Resources._8printer24;
+                Valores[9] = global::WinFastFood.Properties.Resources._8printer24;
                 Valores[10] = "1";
                 dgCuerpo.Rows.Add(Valores);
                 PrepararNuevoArticulo();
                 CalcularTotalesPedido();
+                Cursor.Current = Cursors.Default;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally {
+                Cursor.Current = Cursors.Default;
             }
         }
         
@@ -111,6 +147,8 @@ namespace WinFastFood.Modulos.Pedido
         {
             fsoArticulo.ObjetoActual = null;
             txtCant.DecimalValue = 1;
+            fsoListaPrecio.ObjetoActual = LDPPredeterminada;
+
         }
 
         private void CalcularTotalesPedido()
@@ -152,6 +190,7 @@ namespace WinFastFood.Modulos.Pedido
                  ActualizarPrecioUnitario();
                  dgCuerpo.Rows.RemoveAt(e.RowIndex);
              }
+             
         }
         private void txtCant_Leave(object sender, EventArgs e)
         {
@@ -186,10 +225,14 @@ namespace WinFastFood.Modulos.Pedido
 
         private void txtCant_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && !txtPU.Enabled)
             {
                 AgregarArticuloActual();
             }
+            else {
+                txtPU.Focus();
+            }
+
         }
 
         private void txtDescRec_Leave(object sender, EventArgs e)
@@ -213,14 +256,6 @@ namespace WinFastFood.Modulos.Pedido
 
         private void PedidoAdmin_KeyDown(object sender, KeyEventArgs e)
         {
-            if (this.ActiveControl.Name == "txtCant")
-            {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    AgregarArticuloActual();
-                }
-            }
-
             if (this.ActiveControl.Name == "fsoArticulo")
             {
                 if (e.KeyCode == Keys.End)
@@ -234,14 +269,15 @@ namespace WinFastFood.Modulos.Pedido
         {
                 this.Close();
         }
-
+        private bool Preguntar = true;
         private void PedidoAdmin_FormClosing(object sender, FormClosingEventArgs e)
         {
 
-                if (MessageBox.Show("Está seguro?", "Confirme Acción", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (Preguntar && MessageBox.Show("Está seguro?", "Confirme Acción", MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     e.Cancel = true;
                 }
+                MyBB.EvictObject(MyObject);
         }
 
         private void dgCuerpo_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -259,6 +295,91 @@ namespace WinFastFood.Modulos.Pedido
                     dr.Value = global::WinFastFood.Properties.Resources._8printer24;
                 }
             }
+        }
+
+        private void cmdGuardar_Click(object sender, EventArgs e)
+        {
+            Guardar();
+        }
+        public void Guardar()
+        {
+
+            try
+            {
+
+                Cursor.Current = Cursors.WaitCursor;
+                GetDatosFromScreen();
+                MyBB.Guardar(MyObject);
+                Preguntar = false;
+                this.Close();
+                Cursor.Current = Cursors.Default;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally {
+                Cursor.Current = Cursors.Default;
+            }
+			
+        }
+        private void GetDatosFromScreen()
+        {
+            MyObject.Cliente = (Cliente)fsoCliente.ObjetoActual;
+            MyObject.Activo = true;
+            MyObject.Usuario = (Usuario)fsoMozo.ObjetoActual;
+            MyObject.Mesa = (Mesa)fsoMesa.ObjetoActual;
+            MyObject.NumeroInterno = 0;
+            MyObject.PagaCon = Convert.ToDecimal(txtPagaCon.Text);
+            MyObject.Pendiente = !chkCerrado.Checked;
+            MyObject.TotalFacturado = Convert.ToDecimal(txtTotalFacturado.Text);
+            MyObject.Vuelto = Convert.ToDecimal(TxtVuelto.Text);
+            MyObject.DescuentoRecargo = Convert.ToDecimal(txtDescRec.Text);
+            MyObject.FechaAnulacion = null;
+            MyObject.FechaCarga = DateTime.Now;
+            MyObject.FechaContable = dtFecha.Fecha;
+            MyObject.UsuarioAnulacion = null;
+
+            
+            GetCuerpoFromScreen();
+
+            
+        }
+        private void GetCuerpoFromScreen()
+        {
+            if (MyObject.CuerpoPedido != null)
+                MyObject.CuerpoPedido.Clear();
+            else
+                MyObject.CuerpoPedido = new List<CuerpoPedido>();
+            CuerpoPedido cp;
+            BBArticulo BBA = new BBArticulo();
+            BBListaDePrecio BBL = new BBListaDePrecio();
+            foreach (DataGridViewRow dr in dgCuerpo.Rows)
+            {
+                cp = new CuerpoPedido();
+                cp.Articulo = BBA.GetById((int)dr.Cells[1].Value,false);
+                cp.Cantidad = Convert.ToDecimal(dr.Cells[7].Value);
+                cp.Pedido= MyObject; 
+                cp.ListaDePrecio = BBL.GetById((int)dr.Cells[2].Value, false);
+                cp.PrecioUnitario = Convert.ToDecimal(dr.Cells[6].Value);
+                cp.TotalLinea = Convert.ToDecimal(dr.Cells[8].Value);
+                MyObject.CuerpoPedido.Add(cp);
+            }
+        }
+
+        private void txtPU_Leave(object sender, EventArgs e)
+        {
+            CalularTotalLinea();
+        }
+
+        private void txtPU_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AgregarArticuloActual();
+            }
+
         }
 
 

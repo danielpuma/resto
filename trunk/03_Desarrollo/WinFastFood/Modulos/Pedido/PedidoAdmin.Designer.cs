@@ -34,7 +34,7 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoMesa = new Controles.FSOCombo();
             this.fsoMozo = new Controles.FSOCombo();
             this.chkCerrado = new System.Windows.Forms.CheckBox();
-            this.dateTimeInputBox1 = new Controles.DateTimeInputBox();
+            this.dtFecha = new Controles.DateTimeInputBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmdGuardar = new System.Windows.Forms.Button();
             this.chkImprimir = new System.Windows.Forms.CheckBox();
@@ -146,16 +146,16 @@ namespace WinFastFood.Modulos.Pedido
             this.chkCerrado.UseVisualStyleBackColor = true;
             this.chkCerrado.CheckedChanged += new System.EventHandler(this.chkCerrado_CheckedChanged);
             // 
-            // dateTimeInputBox1
+            // dtFecha
             // 
-            this.dateTimeInputBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimeInputBox1.Fecha = new System.DateTime(2009, 1, 10, 0, 0, 0, 0);
-            this.dateTimeInputBox1.FechaNuleable = new System.DateTime(2009, 1, 10, 0, 0, 0, 0);
-            this.dateTimeInputBox1.Location = new System.Drawing.Point(711, 16);
-            this.dateTimeInputBox1.Name = "dateTimeInputBox1";
-            this.dateTimeInputBox1.Size = new System.Drawing.Size(92, 20);
-            this.dateTimeInputBox1.TabIndex = 4;
-            this.dateTimeInputBox1.TabStop = false;
+            this.dtFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtFecha.Fecha = new System.DateTime(2009, 1, 10, 0, 0, 0, 0);
+            this.dtFecha.FechaNuleable = new System.DateTime(2009, 1, 10, 0, 0, 0, 0);
+            this.dtFecha.Location = new System.Drawing.Point(711, 16);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(92, 20);
+            this.dtFecha.TabIndex = 4;
+            this.dtFecha.TabStop = false;
             // 
             // label1
             // 
@@ -177,6 +177,7 @@ namespace WinFastFood.Modulos.Pedido
             this.cmdGuardar.TabIndex = 4;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.UseVisualStyleBackColor = true;
+            this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
             // 
             // chkImprimir
             // 
@@ -266,7 +267,6 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoListaPrecio.AnchoTxtCod = 100;
             this.fsoListaPrecio.CodigoActual = "";
             this.fsoListaPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.fsoListaPrecio.Enabled = false;
             this.fsoListaPrecio.FiltrosCampos = "";
             this.fsoListaPrecio.FiltrosValores = "";
             this.fsoListaPrecio.IdSelected = -1;
@@ -378,7 +378,7 @@ namespace WinFastFood.Modulos.Pedido
             this.pnlHead.Controls.Add(this.fsoCliente);
             this.pnlHead.Controls.Add(this.fsoMesa);
             this.pnlHead.Controls.Add(this.label1);
-            this.pnlHead.Controls.Add(this.dateTimeInputBox1);
+            this.pnlHead.Controls.Add(this.dtFecha);
             this.pnlHead.Location = new System.Drawing.Point(1, 0);
             this.pnlHead.Name = "pnlHead";
             this.pnlHead.Size = new System.Drawing.Size(810, 75);
@@ -546,7 +546,7 @@ namespace WinFastFood.Modulos.Pedido
             this.txtTotalLinea.Location = new System.Drawing.Point(679, 3);
             this.txtTotalLinea.Name = "txtTotalLinea";
             this.txtTotalLinea.Size = new System.Drawing.Size(55, 20);
-            this.txtTotalLinea.TabIndex = 4;
+            this.txtTotalLinea.TabIndex = 3;
             this.txtTotalLinea.Text = "0.00";
             this.txtTotalLinea.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -564,9 +564,11 @@ namespace WinFastFood.Modulos.Pedido
             this.txtPU.Location = new System.Drawing.Point(576, 3);
             this.txtPU.Name = "txtPU";
             this.txtPU.Size = new System.Drawing.Size(55, 20);
-            this.txtPU.TabIndex = 3;
+            this.txtPU.TabIndex = 2;
             this.txtPU.Text = "0.00";
             this.txtPU.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPU.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPU_KeyDown);
+            this.txtPU.Leave += new System.EventHandler(this.txtPU_Leave);
             // 
             // txtCant
             // 
@@ -595,7 +597,7 @@ namespace WinFastFood.Modulos.Pedido
             this.cmdAddLinea.Location = new System.Drawing.Point(774, 3);
             this.cmdAddLinea.Name = "cmdAddLinea";
             this.cmdAddLinea.Size = new System.Drawing.Size(24, 19);
-            this.cmdAddLinea.TabIndex = 29;
+            this.cmdAddLinea.TabIndex = 4;
             this.cmdAddLinea.UseVisualStyleBackColor = true;
             this.cmdAddLinea.Click += new System.EventHandler(this.cmdAddLinea_Click);
             // 
@@ -637,11 +639,9 @@ namespace WinFastFood.Modulos.Pedido
             // 
             // PedidoAdmin
             // 
-            this.AcceptButton = this.cmdGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.CancelButton = this.cmdCancel;
             this.ClientSize = new System.Drawing.Size(811, 470);
             this.Controls.Add(this.dgCuerpo);
             this.Controls.Add(this.pnlFoot);
@@ -671,7 +671,7 @@ namespace WinFastFood.Modulos.Pedido
         private Controles.FSOCombo fsoMesa;
         private Controles.FSOCombo fsoMozo;
         private System.Windows.Forms.CheckBox chkCerrado;
-        private Controles.DateTimeInputBox dateTimeInputBox1;
+        private Controles.DateTimeInputBox dtFecha;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button cmdGuardar;
         private System.Windows.Forms.CheckBox chkImprimir;

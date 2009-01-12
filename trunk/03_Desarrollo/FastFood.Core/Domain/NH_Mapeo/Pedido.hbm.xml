@@ -7,7 +7,7 @@
     <property name="PagaCon" type="System.Decimal" column="PagaCon" not-null="true" />
     <property name="Vuelto" type="System.Decimal" column="Vuelto" not-null="true" />
     <property name="DescuentoRecargo" type="System.Decimal" column="DescuentoRecargo" not-null="true" />
-    <bag name="CuerpoPedido" inverse="false" lazy="true" cascade="delete">
+    <bag name="CuerpoPedido" inverse="false" lazy="true" cascade="all">
       <key>
         <column name="IdPedido" not-null="true" />
       </key>

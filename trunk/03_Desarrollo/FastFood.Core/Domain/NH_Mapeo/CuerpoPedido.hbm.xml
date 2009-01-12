@@ -3,6 +3,10 @@
     <key>
       <column name="IdCuerpoPedido" />
     </key>
-    <property name="IdPedido" type="System.Int32" column="IdPedido" not-null="true" />
+
+    <many-to-one name="Pedido" class="FastFood.Core.Pedido, FastFood.Core" fetch="select" >
+      <column name="IdPedido" not-null="true" />
+    </many-to-one>
+    
   </joined-subclass>
 </hibernate-mapping>

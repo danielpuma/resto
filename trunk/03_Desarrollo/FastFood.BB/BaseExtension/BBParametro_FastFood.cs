@@ -23,6 +23,7 @@ namespace FastFood.BB.BaseExtension
                 case "ListaPrecio": MyParam = new ListaDePrecio(); break;
                 case "GrupoArticulo": MyParam = new GrupoArticulo(); break;
                 case "Mesa": MyParam = new Mesa(); break;
+                case "Comprobante": MyParam = new Comprobante(); break;
                 default: return base.GetNuevo(); 
                
             }
@@ -59,9 +60,42 @@ namespace FastFood.BB.BaseExtension
                         return (Parametro)F.GetById(id, shouldLock);
                     }
                     break;
+                case "Comprobante":
+                    {
+                        FSO.NH.bb.FNegocio<Comprobante> F = new FSO.NH.bb.FNegocio<Comprobante>();
+                        return (Parametro)F.GetById(id, shouldLock);
+                    }
+                    break;
+
                 default: return base.GetById(id, shouldLock); 
                
             }                           
+        }
+        public override void BorrarDatos(int pId)
+        {
+            switch (SubTipo)
+            {
+  
+                case "TipoDeDoc":
+                    new BBTipoDeDocumento().BorrarDatos(pId);
+                    break;
+
+                case "ListaPrecio":
+                    new BBListaDePrecio().BorrarDatos(pId); 
+                    break;
+
+                case "GrupoArticulo":
+                    new BBGrupoArticulo().BorrarDatos(pId); 
+                    break;
+                case "Mesa":
+                    new BBMesa().BorrarDatos(pId); 
+                    break;
+                case "Comprobante":
+                    new BBComprobante().BorrarDatos(pId); 
+                    break;
+                default: base.BorrarDatos(pId); break;
+            }
+
         }
         public override void Guardar(Parametro dominio)
         {
@@ -90,6 +124,11 @@ namespace FastFood.BB.BaseExtension
                     BBDEx.MarcarParaReexportar(dominio);
                     BBMesa BBMe = new BBMesa();
                     BBMe.Guardar((Mesa)dominio);
+                    break;
+                case "Comprobante":
+                    BBDEx.MarcarParaReexportar(dominio);
+                    BBComprobante BBC = new BBComprobante();
+                    BBC.Guardar((Comprobante)dominio);
                     break;
                 default: base.Guardar(dominio);  break;
             }

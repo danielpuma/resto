@@ -37,11 +37,14 @@ namespace WinFastFood.Inicio
             this.XgruposDeArtículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XmesasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.artìculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprobantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XfastFoodToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XgenerarNuevoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XgestiónDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XreportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XconsultaDePedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDePreciosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rankingDeVentasPorArticuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.XseguridadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XusuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.XrolesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,17 +103,19 @@ namespace WinFastFood.Inicio
             this.XlistasDePrecioToolStripMenuItem,
             this.XgruposDeArtículosToolStripMenuItem,
             this.XmesasToolStripMenuItem1,
-            this.artìculosToolStripMenuItem});
+            this.artìculosToolStripMenuItem,
+            this.comprobantesToolStripMenuItem});
             this.XconfiguraciónToolStripMenuItem1.Name = "XconfiguraciónToolStripMenuItem1";
             this.XconfiguraciónToolStripMenuItem1.Size = new System.Drawing.Size(96, 20);
-            this.XconfiguraciónToolStripMenuItem1.Text = "Configuración";
+            this.XconfiguraciónToolStripMenuItem1.Text = "&Configuración";
             // 
             // XtiposDeDocumentoToolStripMenuItem1
             // 
             this.XtiposDeDocumentoToolStripMenuItem1.Image = global::WinFastFood.Properties.Resources.gotoapp;
             this.XtiposDeDocumentoToolStripMenuItem1.Name = "XtiposDeDocumentoToolStripMenuItem1";
             this.XtiposDeDocumentoToolStripMenuItem1.Size = new System.Drawing.Size(200, 22);
-            this.XtiposDeDocumentoToolStripMenuItem1.Text = "Tipos de Documento";
+            this.XtiposDeDocumentoToolStripMenuItem1.Tag = "TipoDoc";
+            this.XtiposDeDocumentoToolStripMenuItem1.Text = "&Tipos de Documento";
             this.XtiposDeDocumentoToolStripMenuItem1.Click += new System.EventHandler(this.tiposDeDocumentoToolStripMenuItem_Click);
             // 
             // XlistasDePrecioToolStripMenuItem
@@ -118,7 +123,8 @@ namespace WinFastFood.Inicio
             this.XlistasDePrecioToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.money32;
             this.XlistasDePrecioToolStripMenuItem.Name = "XlistasDePrecioToolStripMenuItem";
             this.XlistasDePrecioToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.XlistasDePrecioToolStripMenuItem.Text = "Listas de Precio";
+            this.XlistasDePrecioToolStripMenuItem.Tag = "ListaPrecio";
+            this.XlistasDePrecioToolStripMenuItem.Text = "&Listas de Precio";
             this.XlistasDePrecioToolStripMenuItem.Click += new System.EventHandler(this.XlistasDePrecioToolStripMenuItem_Click);
             // 
             // XgruposDeArtículosToolStripMenuItem
@@ -126,7 +132,8 @@ namespace WinFastFood.Inicio
             this.XgruposDeArtículosToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.gotoapp;
             this.XgruposDeArtículosToolStripMenuItem.Name = "XgruposDeArtículosToolStripMenuItem";
             this.XgruposDeArtículosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.XgruposDeArtículosToolStripMenuItem.Text = "Grupos de Artículos";
+            this.XgruposDeArtículosToolStripMenuItem.Tag = "GrupoArticulo";
+            this.XgruposDeArtículosToolStripMenuItem.Text = "&Grupos de Artículos";
             this.XgruposDeArtículosToolStripMenuItem.Click += new System.EventHandler(this.XgruposDeArtículosToolStripMenuItem_Click);
             // 
             // XmesasToolStripMenuItem1
@@ -134,7 +141,8 @@ namespace WinFastFood.Inicio
             this.XmesasToolStripMenuItem1.Image = global::WinFastFood.Properties.Resources.gotoapp;
             this.XmesasToolStripMenuItem1.Name = "XmesasToolStripMenuItem1";
             this.XmesasToolStripMenuItem1.Size = new System.Drawing.Size(200, 22);
-            this.XmesasToolStripMenuItem1.Text = "Mesas";
+            this.XmesasToolStripMenuItem1.Tag = "Mesa";
+            this.XmesasToolStripMenuItem1.Text = "&Mesas";
             this.XmesasToolStripMenuItem1.Click += new System.EventHandler(this.XmesasToolStripMenuItem1_Click);
             // 
             // artìculosToolStripMenuItem
@@ -142,8 +150,18 @@ namespace WinFastFood.Inicio
             this.artìculosToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.wizard;
             this.artìculosToolStripMenuItem.Name = "artìculosToolStripMenuItem";
             this.artìculosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.artìculosToolStripMenuItem.Text = "Artículos";
+            this.artìculosToolStripMenuItem.Tag = "Articulo";
+            this.artìculosToolStripMenuItem.Text = "&Artículos";
             this.artìculosToolStripMenuItem.Click += new System.EventHandler(this.artìculosToolStripMenuItem_Click);
+            // 
+            // comprobantesToolStripMenuItem
+            // 
+            this.comprobantesToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.textfile32;
+            this.comprobantesToolStripMenuItem.Name = "comprobantesToolStripMenuItem";
+            this.comprobantesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.comprobantesToolStripMenuItem.Tag = "Comprobante";
+            this.comprobantesToolStripMenuItem.Text = "&Comprobantes";
+            this.comprobantesToolStripMenuItem.Click += new System.EventHandler(this.comprobantesToolStripMenuItem_Click);
             // 
             // XfastFoodToolStripMenuItem1
             // 
@@ -153,7 +171,7 @@ namespace WinFastFood.Inicio
             this.XreportesToolStripMenuItem});
             this.XfastFoodToolStripMenuItem1.Name = "XfastFoodToolStripMenuItem1";
             this.XfastFoodToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
-            this.XfastFoodToolStripMenuItem1.Text = "FastFood";
+            this.XfastFoodToolStripMenuItem1.Text = "&FastFood";
             // 
             // XgenerarNuevoPedidoToolStripMenuItem
             // 
@@ -161,7 +179,8 @@ namespace WinFastFood.Inicio
             this.XgenerarNuevoPedidoToolStripMenuItem.Name = "XgenerarNuevoPedidoToolStripMenuItem";
             this.XgenerarNuevoPedidoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.XgenerarNuevoPedidoToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.XgenerarNuevoPedidoToolStripMenuItem.Text = "Generar Nuevo Pedido";
+            this.XgenerarNuevoPedidoToolStripMenuItem.Tag = "PedidoAdmin";
+            this.XgenerarNuevoPedidoToolStripMenuItem.Text = "Generar Nuevo &Pedido";
             this.XgenerarNuevoPedidoToolStripMenuItem.Click += new System.EventHandler(this.XgenerarNuevoPedidoToolStripMenuItem_Click);
             // 
             // XgestiónDeClientesToolStripMenuItem
@@ -170,25 +189,44 @@ namespace WinFastFood.Inicio
             this.XgestiónDeClientesToolStripMenuItem.Name = "XgestiónDeClientesToolStripMenuItem";
             this.XgestiónDeClientesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.XgestiónDeClientesToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.XgestiónDeClientesToolStripMenuItem.Text = "Gestión de Clientes";
+            this.XgestiónDeClientesToolStripMenuItem.Tag = "Cliente";
+            this.XgestiónDeClientesToolStripMenuItem.Text = "Gestión de &Clientes";
             this.XgestiónDeClientesToolStripMenuItem.Click += new System.EventHandler(this.XgestiónDeClientesToolStripMenuItem_Click);
             // 
             // XreportesToolStripMenuItem
             // 
             this.XreportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.XconsultaDePedidosToolStripMenuItem});
+            this.XconsultaDePedidosToolStripMenuItem,
+            this.listadoDePreciosToolStripMenuItem,
+            this.rankingDeVentasPorArticuloToolStripMenuItem});
             this.XreportesToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.textfile32;
             this.XreportesToolStripMenuItem.Name = "XreportesToolStripMenuItem";
             this.XreportesToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
-            this.XreportesToolStripMenuItem.Text = "Reportes";
+            this.XreportesToolStripMenuItem.Text = "&Reportes";
             // 
             // XconsultaDePedidosToolStripMenuItem
             // 
             this.XconsultaDePedidosToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.textfile32;
             this.XconsultaDePedidosToolStripMenuItem.Name = "XconsultaDePedidosToolStripMenuItem";
             this.XconsultaDePedidosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.XconsultaDePedidosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.XconsultaDePedidosToolStripMenuItem.Text = "Consulta de Pedidos";
+            this.XconsultaDePedidosToolStripMenuItem.Size = new System.Drawing.Size(302, 22);
+            this.XconsultaDePedidosToolStripMenuItem.Text = "&Consulta de Pedidos";
+            // 
+            // listadoDePreciosToolStripMenuItem
+            // 
+            this.listadoDePreciosToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.money32;
+            this.listadoDePreciosToolStripMenuItem.Name = "listadoDePreciosToolStripMenuItem";
+            this.listadoDePreciosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.listadoDePreciosToolStripMenuItem.Size = new System.Drawing.Size(302, 22);
+            this.listadoDePreciosToolStripMenuItem.Text = "&Listado de Precios";
+            // 
+            // rankingDeVentasPorArticuloToolStripMenuItem
+            // 
+            this.rankingDeVentasPorArticuloToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.infoabout32;
+            this.rankingDeVentasPorArticuloToolStripMenuItem.Name = "rankingDeVentasPorArticuloToolStripMenuItem";
+            this.rankingDeVentasPorArticuloToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.K)));
+            this.rankingDeVentasPorArticuloToolStripMenuItem.Size = new System.Drawing.Size(302, 22);
+            this.rankingDeVentasPorArticuloToolStripMenuItem.Text = "&Ranking de Ventas por Articulo";
             // 
             // XseguridadToolStripMenuItem1
             // 
@@ -198,14 +236,15 @@ namespace WinFastFood.Inicio
             this.XpermisosToolStripMenuItem1});
             this.XseguridadToolStripMenuItem1.Name = "XseguridadToolStripMenuItem1";
             this.XseguridadToolStripMenuItem1.Size = new System.Drawing.Size(76, 20);
-            this.XseguridadToolStripMenuItem1.Text = "Seguridad";
+            this.XseguridadToolStripMenuItem1.Text = "&Seguridad";
             // 
             // XusuariosToolStripMenuItem1
             // 
             this.XusuariosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("XusuariosToolStripMenuItem1.Image")));
             this.XusuariosToolStripMenuItem1.Name = "XusuariosToolStripMenuItem1";
             this.XusuariosToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
-            this.XusuariosToolStripMenuItem1.Text = "Usuarios";
+            this.XusuariosToolStripMenuItem1.Tag = "User";
+            this.XusuariosToolStripMenuItem1.Text = "&Usuarios";
             this.XusuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // XrolesToolStripMenuItem1
@@ -213,7 +252,8 @@ namespace WinFastFood.Inicio
             this.XrolesToolStripMenuItem1.Image = global::WinFastFood.Properties.Resources.userb;
             this.XrolesToolStripMenuItem1.Name = "XrolesToolStripMenuItem1";
             this.XrolesToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
-            this.XrolesToolStripMenuItem1.Text = "Roles";
+            this.XrolesToolStripMenuItem1.Tag = "User";
+            this.XrolesToolStripMenuItem1.Text = "&Roles";
             this.XrolesToolStripMenuItem1.Click += new System.EventHandler(this.rolesToolStripMenuItem_Click);
             // 
             // XpermisosToolStripMenuItem1
@@ -221,14 +261,17 @@ namespace WinFastFood.Inicio
             this.XpermisosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("XpermisosToolStripMenuItem1.Image")));
             this.XpermisosToolStripMenuItem1.Name = "XpermisosToolStripMenuItem1";
             this.XpermisosToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
-            this.XpermisosToolStripMenuItem1.Text = "Permisos";
+            this.XpermisosToolStripMenuItem1.Tag = "User";
+            this.XpermisosToolStripMenuItem1.Text = "&Permisos";
             this.XpermisosToolStripMenuItem1.Click += new System.EventHandler(this.permisosToolStripMenuItem_Click);
             // 
             // XcerrarSesiónToolStripMenuItem1
             // 
             this.XcerrarSesiónToolStripMenuItem1.Name = "XcerrarSesiónToolStripMenuItem1";
+            this.XcerrarSesiónToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
             this.XcerrarSesiónToolStripMenuItem1.Size = new System.Drawing.Size(95, 20);
-            this.XcerrarSesiónToolStripMenuItem1.Text = "Cerrar Sesión";
+            this.XcerrarSesiónToolStripMenuItem1.Text = "Cerrar &Sesión";
+            this.XcerrarSesiónToolStripMenuItem1.ToolTipText = "Ctrol + Q";
             this.XcerrarSesiónToolStripMenuItem1.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // XtoolStripMenuItem2
@@ -246,7 +289,9 @@ namespace WinFastFood.Inicio
             this.activarSoftwareToolStripMenuItem.Image = global::WinFastFood.Properties.Resources.hdlocked;
             this.activarSoftwareToolStripMenuItem.Name = "activarSoftwareToolStripMenuItem";
             this.activarSoftwareToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.activarSoftwareToolStripMenuItem.Tag = "";
             this.activarSoftwareToolStripMenuItem.Text = "Activar Software";
+            this.activarSoftwareToolStripMenuItem.Click += new System.EventHandler(this.activarSoftwareToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -325,6 +370,7 @@ namespace WinFastFood.Inicio
             this.xCmdNuevoPedido.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.xCmdNuevoPedido.Name = "xCmdNuevoPedido";
             this.xCmdNuevoPedido.Size = new System.Drawing.Size(29, 29);
+            this.xCmdNuevoPedido.Tag = "PedidoAdmin";
             this.xCmdNuevoPedido.Text = "Nuevo Pedido";
             this.xCmdNuevoPedido.Click += new System.EventHandler(this.xCmdNuevoPedido_Click);
             // 
@@ -434,11 +480,15 @@ namespace WinFastFood.Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::WinFastFood.Properties.Resources.food_256x256;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(632, 453);
             this.Controls.Add(this.XtabPages);
             this.Controls.Add(this.XstatusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
@@ -504,6 +554,9 @@ namespace WinFastFood.Inicio
         private System.Windows.Forms.ToolStripMenuItem artìculosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manualesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comprobantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDePreciosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rankingDeVentasPorArticuloToolStripMenuItem;
     }
 }
 
