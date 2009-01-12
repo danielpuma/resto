@@ -41,6 +41,8 @@ namespace FastFood.ABM.Parametros
             this.CmdExtra = new System.Windows.Forms.Button();
             this.chkPredeterminada = new System.Windows.Forms.CheckBox();
             this.cboExtra = new Controles.FSOCombo();
+            this.cboNumerador = new System.Windows.Forms.ComboBox();
+            this.lblComprobante = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,6 +172,26 @@ namespace FastFood.ABM.Parametros
             this.cboExtra.Texto = "Extra";
             this.cboExtra.Visible = false;
             // 
+            // cboNumerador
+            // 
+            this.cboNumerador.FormattingEnabled = true;
+            this.cboNumerador.Location = new System.Drawing.Point(134, 65);
+            this.cboNumerador.Name = "cboNumerador";
+            this.cboNumerador.Size = new System.Drawing.Size(224, 21);
+            this.cboNumerador.TabIndex = 21;
+            this.cboNumerador.Visible = false;
+            // 
+            // lblComprobante
+            // 
+            this.lblComprobante.AutoSize = true;
+            this.lblComprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComprobante.Location = new System.Drawing.Point(12, 65);
+            this.lblComprobante.Name = "lblComprobante";
+            this.lblComprobante.Size = new System.Drawing.Size(68, 13);
+            this.lblComprobante.TabIndex = 22;
+            this.lblComprobante.Text = "Numerador";
+            this.lblComprobante.Visible = false;
+            // 
             // frmParametrosAdmin
             // 
             this.AcceptButton = this.cmdGuardar;
@@ -177,6 +199,8 @@ namespace FastFood.ABM.Parametros
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancel;
             this.ClientSize = new System.Drawing.Size(581, 145);
+            this.Controls.Add(this.lblComprobante);
+            this.Controls.Add(this.cboNumerador);
             this.Controls.Add(this.cboExtra);
             this.Controls.Add(this.chkPredeterminada);
             this.Controls.Add(this.CmdExtra);
@@ -212,5 +236,7 @@ namespace FastFood.ABM.Parametros
         private System.Windows.Forms.Button CmdExtra;
         private System.Windows.Forms.CheckBox chkPredeterminada;
         private FSOCombo cboExtra;
+        private System.Windows.Forms.Label lblComprobante;
+        private System.Windows.Forms.ComboBox cboNumerador;
     }
 }

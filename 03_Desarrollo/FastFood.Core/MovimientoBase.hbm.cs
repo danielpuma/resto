@@ -8,16 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using FSO.NH.Core;
-using FSO.NH.Seguridad.Core;
 namespace FastFood.Core {
     
     
     [System.SerializableAttribute()]
-    public class AbstractMovimientoBase : DomainObject
-    {
+    public class AbstractMovimientoBase {
         
-
+        private int idMovimiento;
         
         private int numeroInterno;
         
@@ -31,27 +28,21 @@ namespace FastFood.Core {
         
         private System.DateTime? fechaAnulacion;
         
-      
+        private System.Int32? idUsuarioAnulacion;
+        
         private FastFood.Core.Cliente cliente;
         
         private FastFood.Core.Comprobante comprobante;
-
-        private Usuario _UsuarioAnulacion;
-
-        public virtual Usuario UsuarioAnulacion
-        {
-            get { return _UsuarioAnulacion; }
-            set { _UsuarioAnulacion = value; }
+        
+        public virtual int IdMovimiento {
+            get {
+                return this.idMovimiento;
+            }
+            set {
+                this.idMovimiento = value;
+            }
         }
-
-        private Usuario _Usuario;
-
-        public virtual Usuario Usuario
-        {
-            get { return _Usuario; }
-            set { _Usuario = value; }
-        }
-
+        
         public virtual int NumeroInterno {
             get {
                 return this.numeroInterno;
@@ -107,7 +98,16 @@ namespace FastFood.Core {
             }
         }
         
-
+        [System.Xml.Serialization.SoapElementAttribute(IsNullable=true)]
+        public virtual System.Int32? IdUsuarioAnulacion {
+            get {
+                return this.idUsuarioAnulacion;
+            }
+            set {
+                this.idUsuarioAnulacion = value;
+            }
+        }
+        
         public virtual FastFood.Core.Cliente Cliente {
             get {
                 return this.cliente;

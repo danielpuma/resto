@@ -9,6 +9,7 @@ using FastFood.ABM.GenericParameter;
 using ToolBox;
 using FastFood.BB.CoreExtension;
 using Controles;
+using FSO.NH.CodigoDeSeguridad;
 
 namespace FastFood.ABM.Articulo
 {
@@ -78,6 +79,20 @@ namespace FastFood.ABM.Articulo
         protected void LoadFormDriver()
         {
             BuscarDatos();
+            
+        }
+
+        private void verificarLimitesDemo()
+        {
+            ValidadorCodigoSeguridad v = new ValidadorCodigoSeguridad("WIN32PxG");
+            if (v.VerificarModoDemo() && MyGrillaDatos.Rows.Count >= 10)
+            {
+                MessageBox.Show("Se ha alcanzado el límite de Artículos del modo demo (10)");
+                cmdNuevo.Enabled = false;
+            }
+            else {
+                cmdNuevo.Enabled = true;
+            }
         }
 
 
@@ -93,6 +108,7 @@ namespace FastFood.ABM.Articulo
             Cursor.Current = Cursors.WaitCursor;
             LosDatos = BB.GetFiltered(txtCodigo.Text , txtNombre.Text, GetIdSelected(cboGrupoArticulo));
             BindearGrilla();
+            verificarLimitesDemo();
             Cursor.Current = Cursors.Default;
 
         }

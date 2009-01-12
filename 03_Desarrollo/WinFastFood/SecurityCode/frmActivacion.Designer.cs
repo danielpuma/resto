@@ -31,9 +31,9 @@ namespace FastFood.SecurityCode
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActivacion));
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCode = new FSOTextBox();
+            this.txtCode = new Controles.FSOTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCodigoActivacion = new FSOTextBox();
+            this.txtCodigoActivacion = new Controles.FSOTextBox();
             this.cmdActivar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -90,6 +90,7 @@ namespace FastFood.SecurityCode
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::WinFastFood.Properties.Resources.package;
             this.pictureBox1.Location = new System.Drawing.Point(15, 138);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(62, 64);

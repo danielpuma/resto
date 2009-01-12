@@ -12,6 +12,7 @@ using Controles;
 using FSO.NH.ClasesBase.BB;
 using WinFastFood.Inicio;
 using WinFastFood.Modulos.Pedido;
+using FSO.NH.CodigoDeSeguridad;
 
 namespace FastFood.ABM.Cliente
 {
@@ -157,8 +158,22 @@ namespace FastFood.ABM.Cliente
         private void frmClienteList_Load(object sender, EventArgs e)
         {
             LoadFormDriver();
+            verificarLimitesDemo();
         }
 
+        private void verificarLimitesDemo()
+        {
+            ValidadorCodigoSeguridad v = new ValidadorCodigoSeguridad("WIN32PxG");
+            if (v.VerificarModoDemo() && MyGrillaDatos.Rows.Count >= 1)
+            {
+                MessageBox.Show("Se ha alcanzado el límite de Clientes del modo demo (1)");
+                cmdNuevo.Enabled = false;
+            }
+            else
+            {
+                cmdNuevo.Enabled = true;
+            }
+        }
 
 
         private Int32 getSelectedCliente()

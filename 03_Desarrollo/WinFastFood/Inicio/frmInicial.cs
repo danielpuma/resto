@@ -17,6 +17,7 @@ using FastFood.ABM.Parametros;
 using FastFood.ABM.Articulo;
 using FastFood.ABM.Cliente;
 using WinFastFood.Modulos.Pedido;
+using FastFood.SecurityCode;
 
 namespace WinFastFood.Inicio
 {
@@ -28,6 +29,9 @@ namespace WinFastFood.Inicio
         private void frmInicial_Load(object sender, EventArgs e)
         {
             InicializarSeguridad();
+            ValidadorCodigoSeguridad v = new ValidadorCodigoSeguridad("WIN32PxG");
+            if (v.VerificarModoDemo())
+                this.Text = this.Text + " [ VERSION DEMO ]";
         }
 
         #region SEGURIDAD
@@ -37,7 +41,20 @@ namespace WinFastFood.Inicio
             {
                 StateUserName.Text = "Usr: " + Win32Session.UsuarioActual.Apellido.ToUpper() + ", " + Win32Session.UsuarioActual.Nombre.ToUpper();
                 StateDB.Text = "BD: " + Win32Session.DbServer.ToUpper();
-                //HabilitarMenu();
+                HabilitarMenu(XtiposDeDocumentoToolStripMenuItem1);
+                HabilitarMenu(XlistasDePrecioToolStripMenuItem);
+                HabilitarMenu(XgruposDeArtículosToolStripMenuItem);
+                HabilitarMenu(XmesasToolStripMenuItem1);
+                HabilitarMenu(artìculosToolStripMenuItem);
+                HabilitarMenu(comprobantesToolStripMenuItem);
+                HabilitarMenu(XgenerarNuevoPedidoToolStripMenuItem);
+                HabilitarMenu(XgestiónDeClientesToolStripMenuItem);
+                HabilitarMenu(XusuariosToolStripMenuItem1);
+                HabilitarMenu(XrolesToolStripMenuItem1);
+                HabilitarMenu(XpermisosToolStripMenuItem1);
+                HabilitarMenu(xCmdNuevoPedido);
+                
+
             }
             catch (Exception ex)
             {
@@ -48,12 +65,27 @@ namespace WinFastFood.Inicio
 
         private void HabilitarMenu(ToolStripMenuItem mnu)
         {
-            string Permiso = mnu.Tag + "List";
+            string Permiso;
+            if (!mnu.Tag.ToString().EndsWith("Admin"))
+            {
+                Permiso = mnu.Tag + "List";
+            }
+            else {
+                Permiso = mnu.Tag.ToString();
+            }
             mnu.Enabled = VerificarPermiso(Permiso);
         }
         private void HabilitarMenu(ToolStripButton mnu)
         {
-            string Permiso = mnu.Tag + "List";
+            string Permiso;
+            if (!mnu.Tag.ToString().EndsWith("Admin"))
+            {
+                Permiso = mnu.Tag + "List";
+            }
+            else
+            {
+                Permiso = mnu.Tag.ToString();
+            }
             mnu.Enabled = VerificarPermiso(Permiso);
         }
         private bool VerificarPermiso(string PermisoSolicitado)
@@ -78,7 +110,7 @@ namespace WinFastFood.Inicio
         {
             InitializeComponent();
             MyIngreso = pIngreso;
-            ValidadorCodigoSeguridad validador = new ValidadorCodigoSeguridad();
+            ValidadorCodigoSeguridad validador = new ValidadorCodigoSeguridad("WIN32PxG");
             if (validador.VerificarModoDemo())
             {
                 activarSoftwareToolStripMenuItem.Enabled = true;
@@ -306,6 +338,18 @@ namespace WinFastFood.Inicio
         private void xCmdNuevoPedido_Click(object sender, EventArgs e)
         {
             ShowWindows(new PedidoAdmin());
+        }
+
+        private void comprobantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowWindows(new frmParametrosList("Comprobante"));
+        }
+
+        private void activarSoftwareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmActivacion f = new frmActivacion();
+            f.ShowDialog(this);
+
         }
 
 

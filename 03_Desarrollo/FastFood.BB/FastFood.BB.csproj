@@ -44,6 +44,7 @@
     <Compile Include="BaseExtension\BBParametro_FastFood.cs" />
     <Compile Include="CoreExtension\BBArticulo.cs" />
     <Compile Include="CoreExtension\BBCliente.cs" />
+    <Compile Include="CoreExtension\BBComprobante.cs" />
     <Compile Include="CoreExtension\BBCuerpoPedido.cs" />
     <Compile Include="CoreExtension\BBListaDePrecio.cs" />
     <Compile Include="CoreExtension\BBGrupoArticulo.cs" />

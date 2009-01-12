@@ -12,22 +12,32 @@ namespace FastFood.Core {
     
     
     [System.SerializableAttribute()]
-    public class AbstractCuerpoPedido : CuerpoMovimientoBase {
-
-        private Pedido _Pedido;
-
-        public virtual Pedido Pedido
-        {
+    public class AbstractNumerador {
+        
+        private int idNumerador;
+        
+        private int proximoNumero;
+        
+        public virtual int IdNumerador {
             get {
-                return this._Pedido;
+                return this.idNumerador;
             }
             set {
-                this._Pedido = value;
+                this.idNumerador = value;
+            }
+        }
+        
+        public virtual int ProximoNumero {
+            get {
+                return this.proximoNumero;
+            }
+            set {
+                this.proximoNumero = value;
             }
         }
     }
     
     [System.SerializableAttribute()]
-    public partial class CuerpoPedido : AbstractCuerpoPedido {
+    public partial class Numerador : AbstractNumerador {
     }
 }

@@ -17,7 +17,7 @@ namespace FastFood.SecurityCode
         public frmActivacion()
         {
             InitializeComponent();
-            Validator= new ValidadorCodigoSeguridad();
+            Validator = new ValidadorCodigoSeguridad("WIN32PxG");
         }
 
         private void frmActivacion_FormClosing(object sender, FormClosingEventArgs e)
