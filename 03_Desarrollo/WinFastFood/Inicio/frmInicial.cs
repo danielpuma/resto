@@ -32,6 +32,7 @@ namespace WinFastFood.Inicio
             ValidadorCodigoSeguridad v = new ValidadorCodigoSeguridad("WIN32PxG");
             if (v.VerificarModoDemo())
                 this.Text = this.Text + " [ VERSION DEMO ]";
+            ShowWindows(new frmPedidoList());
         }
 
         #region SEGURIDAD
@@ -350,6 +351,16 @@ namespace WinFastFood.Inicio
             frmActivacion f = new frmActivacion();
             f.ShowDialog(this);
 
+        }
+
+        private void XconsultaDePedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowWindows(new frmPedidoList());
+        }
+
+        private void toolStripListaPedidos_Click(object sender, EventArgs e)
+        {
+            ShowWindows(new frmPedidoList());
         }
 
 

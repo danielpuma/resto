@@ -181,10 +181,7 @@ namespace FastFood.ABM.Cliente
             return  Convert.ToInt32(MyGrillaDatos.SelectedRows[0].Cells[0].Value);
         }
 
-        private void cmdAlertas_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void cmdNuevoPedido_Click(object sender, EventArgs e)
         {

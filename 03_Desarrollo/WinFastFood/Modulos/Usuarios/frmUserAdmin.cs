@@ -51,8 +51,6 @@ namespace ABM.Usuarios.FastFood
                 cboTipoDocumento.DataSource = LstTDoc;
                 cboTipoDocumento.DisplayMember = "Codigo";
                 cboTipoDocumento.ValueMember = "ID";
-// preguntar al monje PII perez:
-// como seleccionar un combo vacio y como no permitir modificar los combos con datos que no esten en la lista
             }
             private void BindearData()
             {

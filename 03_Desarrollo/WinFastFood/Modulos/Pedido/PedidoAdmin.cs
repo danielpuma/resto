@@ -17,7 +17,7 @@ namespace WinFastFood.Modulos.Pedido
     public partial class PedidoAdmin : frmBase
     {
         public FastFood.Core.Pedido MyObject;
-        public BBPedido MyBB;
+        private BBPedido MyBB;
         private ListaDePrecio LDPPredeterminada;
         public PedidoAdmin()
         {
@@ -377,6 +377,7 @@ namespace WinFastFood.Modulos.Pedido
         {
             if (e.KeyCode == Keys.Enter)
             {
+                CalularTotalLinea();
                 AgregarArticuloActual();
             }
 
