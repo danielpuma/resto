@@ -293,6 +293,7 @@
     <None Include="Resources\8add48.gif" />
     <None Include="Resources\8printer24.gif" />
     <None Include="Resources\8close16.gif" />
+    <None Include="Resources\package.gif" />
     <Content Include="windowb.ico" />
     <None Include="Resources\textfile32.png" />
     <None Include="Resources\money32.png" />
