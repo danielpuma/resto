@@ -5,6 +5,8 @@ using FSO.NH.UserInterfaz;
 using FSO.NHDATA.DataInterfaces;
 using FSO.NH.bb;
 using FastFood.Core;
+using NHibernate.Criterion;
+using FSO_NH.log4Net;
 
 namespace FastFood.BB.CoreExtension
 {
@@ -53,6 +55,120 @@ namespace FastFood.BB.CoreExtension
             p.FechaContable = DateTime.Now;
             p.Pendiente = true;
             return p;
+        }
+
+        public List<Pedido> GetFiltered(FSO.NH.Seguridad.Core.Usuario usuario, Mesa mesa, Cliente cliente, DateTime? Desde, DateTime? Hasta)
+        {
+            return GetFiltered(usuario, mesa, cliente, Desde, Hasta, null, null, null, null);
+        }
+
+        public List<Pedido> GetFiltered(FSO.NH.Seguridad.Core.Usuario usuario, Mesa mesa, Cliente cliente, DateTime? Desde, DateTime? Hasta, bool? bActivos, bool? bAnulados, bool? bPendientes, bool? bCerrados)
+        {
+            List<ICriterion> filtrosActivos = new List<ICriterion>();
+
+            if (cliente != null)
+            {
+                ICriterion f1 = Expression.Eq("Cliente.ID", cliente.ID);
+                filtrosActivos.Add(f1);
+            }
+            if (mesa != null)
+            {
+                ICriterion f2 = Expression.Eq("Mesa.ID", mesa.ID);
+                filtrosActivos.Add(f2);
+            }
+            if (usuario != null)
+            {
+                ICriterion f3 = Expression.Eq("Usuario.ID", usuario.ID);
+                filtrosActivos.Add(f3);
+            }
+            ICriterion fEstado = Expression.Gt("ID", -1);//Nunca es Verdadero
+            ICriterion fa = Expression.Eq("ID", -1); //Nunca es Verdadero
+            ICriterion fb = Expression.Eq("ID", -1); //Nunca es Verdadero
+            if (bActivos != null)
+            {
+                fa = Expression.Eq("Activo", bActivos.Value);               
+            }
+            if (bAnulados != null)
+            {
+                fb = Expression.Eq("Activo",!bAnulados.Value );               
+            }                        
+            if (fa.ToString() == fb.ToString())
+            {
+                filtrosActivos.Add(fa); //Cualquiera de los dos es correcto ya que son iguales
+            }
+            else
+            {
+                fEstado = Expression.Or(fa, fb);
+                filtrosActivos.Add(fEstado);
+            }
+            
+
+
+            ICriterion fCerrado = Expression.Gt("ID", -1);//Nunca es Verdadero
+            ICriterion fc = Expression.Eq("ID",-1); //Nunca es Verdadero
+            ICriterion fd = Expression.Eq("ID", -1); //Nunca es Verdadero
+            if (bPendientes != null)
+            {
+                fc = Expression.Eq("Pendiente", bPendientes.Value);
+            }
+            if (bCerrados != null)
+            {
+                fd = Expression.Eq("Pendiente", !bCerrados.Value);
+            }
+            if (fc.ToString() == fd.ToString())
+            {
+                filtrosActivos.Add(fc); //Cualquiera de los dos es correcto ya que son iguales
+            }
+            else
+            {
+                fCerrado = Expression.Or(fc, fd);
+                filtrosActivos.Add(fCerrado);
+            }
+            
+
+
+            filtrosActivos.Add(GetRangoDeFechas("FechaContable", Desde, Hasta));
+            try
+            {
+                return SortCollection(this.GetAll((filtrosActivos)), "FechaContable", FSO.NHDATA.SortDirection.Descending);
+            }
+            catch (Exception ex)
+            {
+                FSOLog4Net.LogDebug("Error Al Buscar Pedido: " + ex.Message);
+                return SortCollection(this.GetAll(), "FechaContable", FSO.NHDATA.SortDirection.Descending);
+            }
+        }
+
+        public void AnularPedido(int Id)
+        {
+            Pedido P = GetById(Id, false);
+            if (!P.Activo)
+                throw new Exception("El Pedido ya se encuentra anulado");
+            P.Activo = false;
+            Guardar(P); //La mesa la libera la funcion guardar!
+        }
+
+        public void EliminarPedido(int Id)
+        {
+            try
+            {
+                Pedido P = GetById(Id, false);
+                if (P.Pendiente)
+                {
+                    //Si Anulo un pendiente, recupero la mesa
+                    BBMesa BBM = new BBMesa();
+                    P.Mesa.Ocupada = false;
+                    BBM.Guardar(P.Mesa);
+                    BBM.Flush();
+                }
+                Delete(P);
+                Flush();
+            }
+            catch (Exception Ex)
+            {
+                
+                throw Ex;
+            }
         }
     }
 }

@@ -136,6 +136,12 @@
     <Compile Include="Modulos\Parametros\frmParametrosList.Designer.cs">
       <DependentUpon>frmParametrosList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Pedido\frmPedidoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Pedido\frmPedidoList.Designer.cs">
+      <DependentUpon>frmPedidoList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Pedido\PedidoAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,10 @@
     <EmbeddedResource Include="Modulos\Parametros\frmParametrosList.resx">
       <DependentUpon>frmParametrosList.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Pedido\frmPedidoList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPedidoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Pedido\PedidoAdmin.resx">
       <SubType>Designer</SubType>

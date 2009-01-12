@@ -76,6 +76,7 @@ namespace WinFastFood.Inicio
             this.cmdExportExcel = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.cmdNewPedido = new System.Windows.Forms.ToolStripButton();
+            this.toolStripListaPedidos = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.XstatusStrip.SuspendLayout();
@@ -211,6 +212,7 @@ namespace WinFastFood.Inicio
             this.XconsultaDePedidosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.XconsultaDePedidosToolStripMenuItem.Size = new System.Drawing.Size(302, 22);
             this.XconsultaDePedidosToolStripMenuItem.Text = "&Consulta de Pedidos";
+            this.XconsultaDePedidosToolStripMenuItem.Click += new System.EventHandler(this.XconsultaDePedidosToolStripMenuItem_Click);
             // 
             // listadoDePreciosToolStripMenuItem
             // 
@@ -316,7 +318,8 @@ namespace WinFastFood.Inicio
             this.xCmdImprimir,
             this.xCMDExportarExcel,
             this.xSep2,
-            this.xCmdNuevoPedido});
+            this.xCmdNuevoPedido,
+            this.toolStripListaPedidos});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(632, 32);
@@ -476,6 +479,17 @@ namespace WinFastFood.Inicio
             this.cmdNewPedido.Size = new System.Drawing.Size(23, 22);
             this.cmdNewPedido.Text = "Nuevo Pedido";
             // 
+            // toolStripListaPedidos
+            // 
+            this.toolStripListaPedidos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripListaPedidos.Image = global::WinFastFood.Properties.Resources.textfile32;
+            this.toolStripListaPedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripListaPedidos.Name = "toolStripListaPedidos";
+            this.toolStripListaPedidos.Size = new System.Drawing.Size(29, 29);
+            this.toolStripListaPedidos.Tag = "Pedido";
+            this.toolStripListaPedidos.Text = "Listar Pedidos";
+            this.toolStripListaPedidos.Click += new System.EventHandler(this.toolStripListaPedidos_Click);
+            // 
             // frmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -557,6 +571,7 @@ namespace WinFastFood.Inicio
         private System.Windows.Forms.ToolStripMenuItem comprobantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDePreciosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rankingDeVentasPorArticuloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton toolStripListaPedidos;
     }
 }
 

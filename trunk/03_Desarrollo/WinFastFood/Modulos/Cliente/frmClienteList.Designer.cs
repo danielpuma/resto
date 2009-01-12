@@ -126,7 +126,7 @@ namespace FastFood.ABM.Cliente
             this.MyGrillaDatos.Name = "MyGrillaDatos";
             this.MyGrillaDatos.ReadOnly = true;
             this.MyGrillaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MyGrillaDatos.Size = new System.Drawing.Size(811, 325);
+            this.MyGrillaDatos.Size = new System.Drawing.Size(929, 325);
             this.MyGrillaDatos.TabIndex = 8;
             this.MyGrillaDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -180,7 +180,7 @@ namespace FastFood.ABM.Cliente
             this.cmdNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevo.Location = new System.Drawing.Point(747, 158);
+            this.cmdNuevo.Location = new System.Drawing.Point(882, 158);
             this.cmdNuevo.Name = "cmdNuevo";
             this.cmdNuevo.Size = new System.Drawing.Size(36, 31);
             this.cmdNuevo.TabIndex = 7;
@@ -191,7 +191,7 @@ namespace FastFood.ABM.Cliente
             // 
             this.cmdBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBuscar.Location = new System.Drawing.Point(706, 158);
+            this.cmdBuscar.Location = new System.Drawing.Point(841, 158);
             this.cmdBuscar.Name = "cmdBuscar";
             this.cmdBuscar.Size = new System.Drawing.Size(35, 31);
             this.cmdBuscar.TabIndex = 6;
@@ -236,8 +236,7 @@ namespace FastFood.ABM.Cliente
             this.cmdPedido.Size = new System.Drawing.Size(75, 24);
             this.cmdPedido.TabIndex = 9;
             this.cmdPedido.Text = "Pedidos";
-            this.cmdPedido.UseVisualStyleBackColor = false;
-            this.cmdPedido.Click += new System.EventHandler(this.cmdAlertas_Click);
+            this.cmdPedido.UseVisualStyleBackColor = false;            
             // 
             // cmdNuevoPedido
             // 
@@ -271,7 +270,7 @@ namespace FastFood.ABM.Cliente
             this.panel1.ForeColor = System.Drawing.Color.Navy;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(812, 47);
+            this.panel1.Size = new System.Drawing.Size(930, 47);
             this.panel1.TabIndex = 79;
             // 
             // label6
@@ -316,7 +315,8 @@ namespace FastFood.ABM.Cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 532);
+            this.BackColor = System.Drawing.Color.Silver;
+            this.ClientSize = new System.Drawing.Size(930, 532);
             this.Controls.Add(this.dtRange1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);

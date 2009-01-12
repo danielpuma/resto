@@ -85,5 +85,21 @@ namespace FastFood.Core {
     
     [System.SerializableAttribute()]
     public partial class Pedido : AbstractPedido {
+        public virtual string ClienteNombre
+        {
+            get { return Cliente.NombreCompleto; }
+        }
+        public virtual string MesaDescripcion
+        {
+            get { return Mesa.Nombre; }
+        }
+        public virtual string UsuarioDescripcion
+        {
+            get { return Usuario.UserName; }
+        }
+        public virtual string EstadoDescripcion
+        {
+            get { return  Activo?"Activo":"Anulado" ; }
+        }
     }
 }
