@@ -61,6 +61,7 @@ namespace WinFastFood.Inicio
             this.xCMDExportarExcel = new System.Windows.Forms.ToolStripButton();
             this.xSep2 = new System.Windows.Forms.ToolStripSeparator();
             this.xCmdNuevoPedido = new System.Windows.Forms.ToolStripButton();
+            this.toolStripListaPedidos = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.XstatusStrip = new System.Windows.Forms.StatusStrip();
@@ -76,7 +77,7 @@ namespace WinFastFood.Inicio
             this.cmdExportExcel = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.cmdNewPedido = new System.Windows.Forms.ToolStripButton();
-            this.toolStripListaPedidos = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.XstatusStrip.SuspendLayout();
@@ -319,7 +320,8 @@ namespace WinFastFood.Inicio
             this.xCMDExportarExcel,
             this.xSep2,
             this.xCmdNuevoPedido,
-            this.toolStripListaPedidos});
+            this.toolStripListaPedidos,
+            this.toolStripButton1});
             this.toolStrip.Location = new System.Drawing.Point(0, 24);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(632, 32);
@@ -376,6 +378,17 @@ namespace WinFastFood.Inicio
             this.xCmdNuevoPedido.Tag = "PedidoAdmin";
             this.xCmdNuevoPedido.Text = "Nuevo Pedido";
             this.xCmdNuevoPedido.Click += new System.EventHandler(this.xCmdNuevoPedido_Click);
+            // 
+            // toolStripListaPedidos
+            // 
+            this.toolStripListaPedidos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripListaPedidos.Image = global::WinFastFood.Properties.Resources.textfile32;
+            this.toolStripListaPedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripListaPedidos.Name = "toolStripListaPedidos";
+            this.toolStripListaPedidos.Size = new System.Drawing.Size(29, 29);
+            this.toolStripListaPedidos.Tag = "Pedido";
+            this.toolStripListaPedidos.Text = "Listar Pedidos";
+            this.toolStripListaPedidos.Click += new System.EventHandler(this.toolStripListaPedidos_Click);
             // 
             // toolStripSeparator1
             // 
@@ -479,16 +492,15 @@ namespace WinFastFood.Inicio
             this.cmdNewPedido.Size = new System.Drawing.Size(23, 22);
             this.cmdNewPedido.Text = "Nuevo Pedido";
             // 
-            // toolStripListaPedidos
+            // toolStripButton1
             // 
-            this.toolStripListaPedidos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripListaPedidos.Image = global::WinFastFood.Properties.Resources.textfile32;
-            this.toolStripListaPedidos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripListaPedidos.Name = "toolStripListaPedidos";
-            this.toolStripListaPedidos.Size = new System.Drawing.Size(29, 29);
-            this.toolStripListaPedidos.Tag = "Pedido";
-            this.toolStripListaPedidos.Text = "Listar Pedidos";
-            this.toolStripListaPedidos.Click += new System.EventHandler(this.toolStripListaPedidos_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 29);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // frmInicial
             // 
@@ -572,6 +584,7 @@ namespace WinFastFood.Inicio
         private System.Windows.Forms.ToolStripMenuItem listadoDePreciosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rankingDeVentasPorArticuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripListaPedidos;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

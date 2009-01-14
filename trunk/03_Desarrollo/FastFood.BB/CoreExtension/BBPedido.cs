@@ -22,6 +22,13 @@ namespace FastFood.BB.CoreExtension
                 throw new Exception("Se requiere seleccionar una mesa");
             if (dominio.Usuario == null)
                 throw new Exception("El usuario es obligatorio");
+            if(!dominio.Mesa.SolicitarCantidadOcupantes)
+                dominio.Ocupantes=0;
+            else
+                if (dominio.Ocupantes <= 0)
+                {
+                    throw new Exception("Debe indicar la cantidad de ocupantes de la mesa");
+                }
         }
         public override void OnPreSaveData(Pedido dominio)
         {
@@ -169,6 +176,22 @@ namespace FastFood.BB.CoreExtension
                 
                 throw Ex;
             }
+        }
+
+        public Pedido GetPedidoPendientePorMesa(Int32 IdMesa)
+        {            
+            List<ICriterion> filtrosActivos = new List<ICriterion>();
+            ICriterion f1 = Expression.Eq("Mesa.ID", IdMesa);
+            filtrosActivos.Add(f1);
+            ICriterion f2 =  Expression.Eq("Pendiente", true);
+            filtrosActivos.Add(f2);
+            ICriterion f3 = Expression.Eq("Activo", true);
+            filtrosActivos.Add(f3);
+            List<Pedido> lista = this.GetAll(filtrosActivos);
+            if (lista != null && lista.Count > 0)
+                return lista[0];
+            else
+                return null;
         }
     }
 }

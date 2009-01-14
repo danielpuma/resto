@@ -340,7 +340,7 @@ namespace WinFastFood.Modulos.Pedido
             MyObject.FechaCarga = DateTime.Now;
             MyObject.FechaContable = dtFecha.Fecha;
             MyObject.UsuarioAnulacion = null;
-
+            MyObject.Ocupantes = Convert.ToInt32(txtOcupantes.DecimalValue);
             
             GetCuerpoFromScreen();
 
@@ -379,6 +379,20 @@ namespace WinFastFood.Modulos.Pedido
             {
                 CalularTotalLinea();
                 AgregarArticuloActual();
+            }
+
+        }
+
+        private void fsoMesa_ObjetoSeleccionado(object ObjetoSeleccionado)
+        {
+            if (ObjetoSeleccionado != null)
+            {
+                lblOcupantes.Visible = ((Mesa)ObjetoSeleccionado).SolicitarCantidadOcupantes;
+                txtOcupantes.Visible = ((Mesa)ObjetoSeleccionado).SolicitarCantidadOcupantes;
+            }
+            else {
+                lblOcupantes.Visible = false;
+                txtOcupantes.Visible = false;
             }
 
         }

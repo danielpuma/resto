@@ -51,6 +51,8 @@ namespace WinFastFood.Modulos.Pedido
             this.txtPagaCon = new Controles.NumericTextBox.DecimalTextBox();
             this.txtDescRec = new Controles.NumericTextBox.DecimalTextBox();
             this.pnlHead = new System.Windows.Forms.Panel();
+            this.lblOcupantes = new System.Windows.Forms.Label();
+            this.txtOcupantes = new Controles.NumericTextBox.DecimalTextBox();
             this.dgCuerpo = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColIdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,6 +114,7 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoMesa.Size = new System.Drawing.Size(544, 21);
             this.fsoMesa.TabIndex = 1;
             this.fsoMesa.Texto = "Mesa";
+            this.fsoMesa.ObjetoSeleccionado += new Controles.SeleccionDeObjeto(this.fsoMesa_ObjetoSeleccionado);
             // 
             // fsoMozo
             // 
@@ -211,7 +214,7 @@ namespace WinFastFood.Modulos.Pedido
             this.lblAnulación.BackColor = System.Drawing.Color.Red;
             this.lblAnulación.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnulación.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblAnulación.Location = new System.Drawing.Point(659, 39);
+            this.lblAnulación.Location = new System.Drawing.Point(349, 94);
             this.lblAnulación.Name = "lblAnulación";
             this.lblAnulación.Size = new System.Drawing.Size(141, 20);
             this.lblAnulación.TabIndex = 9;
@@ -273,7 +276,7 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoListaPrecio.Location = new System.Drawing.Point(3, 96);
             this.fsoListaPrecio.Name = "fsoListaPrecio";
             this.fsoListaPrecio.ObjetoActual = null;
-            this.fsoListaPrecio.Size = new System.Drawing.Size(431, 21);
+            this.fsoListaPrecio.Size = new System.Drawing.Size(340, 21);
             this.fsoListaPrecio.TabIndex = 5;
             this.fsoListaPrecio.TabStop = false;
             this.fsoListaPrecio.Texto = "LDP";
@@ -287,6 +290,7 @@ namespace WinFastFood.Modulos.Pedido
             this.pnlFoot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlFoot.Controls.Add(this.TxtVuelto);
             this.pnlFoot.Controls.Add(this.cmdCancel);
+            this.pnlFoot.Controls.Add(this.lblAnulación);
             this.pnlFoot.Controls.Add(this.txtTotalFacturado);
             this.pnlFoot.Controls.Add(this.cmdGuardar);
             this.pnlFoot.Controls.Add(this.txtPagaCon);
@@ -374,7 +378,8 @@ namespace WinFastFood.Modulos.Pedido
             this.pnlHead.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlHead.BackColor = System.Drawing.Color.LightGray;
-            this.pnlHead.Controls.Add(this.lblAnulación);
+            this.pnlHead.Controls.Add(this.lblOcupantes);
+            this.pnlHead.Controls.Add(this.txtOcupantes);
             this.pnlHead.Controls.Add(this.fsoCliente);
             this.pnlHead.Controls.Add(this.fsoMesa);
             this.pnlHead.Controls.Add(this.label1);
@@ -383,6 +388,35 @@ namespace WinFastFood.Modulos.Pedido
             this.pnlHead.Name = "pnlHead";
             this.pnlHead.Size = new System.Drawing.Size(810, 75);
             this.pnlHead.TabIndex = 2;
+            // 
+            // lblOcupantes
+            // 
+            this.lblOcupantes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblOcupantes.AutoSize = true;
+            this.lblOcupantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOcupantes.Location = new System.Drawing.Point(633, 47);
+            this.lblOcupantes.Name = "lblOcupantes";
+            this.lblOcupantes.Size = new System.Drawing.Size(72, 13);
+            this.lblOcupantes.TabIndex = 11;
+            this.lblOcupantes.Text = "Ocupantes:";
+            this.lblOcupantes.Visible = false;
+            // 
+            // txtOcupantes
+            // 
+            this.txtOcupantes.AllowSpace = false;
+            this.txtOcupantes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOcupantes.DecimalValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtOcupantes.Location = new System.Drawing.Point(711, 44);
+            this.txtOcupantes.Name = "txtOcupantes";
+            this.txtOcupantes.Size = new System.Drawing.Size(92, 20);
+            this.txtOcupantes.TabIndex = 10;
+            this.txtOcupantes.Text = "0";
+            this.txtOcupantes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOcupantes.Visible = false;
             // 
             // dgCuerpo
             // 
@@ -710,5 +744,7 @@ namespace WinFastFood.Modulos.Pedido
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTotalLinea;
         private System.Windows.Forms.DataGridViewImageColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheck;
+        private System.Windows.Forms.Label lblOcupantes;
+        private Controles.NumericTextBox.DecimalTextBox txtOcupantes;
     }
 }

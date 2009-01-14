@@ -27,7 +27,13 @@ namespace FastFood.Core {
         private System.Collections.IList cuerpoPedido;
         
         private FastFood.Core.Mesa mesa;
-        
+        private int ocupantes;
+
+        public virtual int Ocupantes
+        {
+            get { return ocupantes; }
+            set { ocupantes = value; }
+        }
         public virtual bool Pendiente {
             get {
                 return this.pendiente;

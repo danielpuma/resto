@@ -102,6 +102,48 @@ namespace WinFastFood.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Baldosa {
+            get {
+                object obj = ResourceManager.GetObject("Baldosa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap BaldosaConMesaLibre {
+            get {
+                object obj = ResourceManager.GetObject("BaldosaConMesaLibre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap BaldosaConMesaOcupada {
+            get {
+                object obj = ResourceManager.GetObject("BaldosaConMesaOcupada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap BaldosaSeleccion {
+            get {
+                object obj = ResourceManager.GetObject("BaldosaSeleccion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap BaldosaSeleccionMesaLibre {
+            get {
+                object obj = ResourceManager.GetObject("BaldosaSeleccionMesaLibre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap BaldosaSeleccionMesaOcupada {
+            get {
+                object obj = ResourceManager.GetObject("BaldosaSeleccionMesaOcupada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap food_256x256 {
             get {
                 object obj = ResourceManager.GetObject("food-256x256", resourceCulture);

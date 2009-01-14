@@ -23,6 +23,27 @@ namespace FastFood.Core
             get { return ocupada; }
             set { ocupada = value; }
         }
+        private bool _SolicitarCantidadOcupantes;
+
+        public virtual bool SolicitarCantidadOcupantes
+        {
+            get { return _SolicitarCantidadOcupantes; }
+            set { _SolicitarCantidadOcupantes = value; }
+        }
+        private int fila;
+
+        public virtual int Fila
+        {
+            get { return fila; }
+            set { fila = value; }
+        }
+        private int columna;
+
+        public virtual int Columna
+        {
+            get { return columna; }
+            set { columna = value; }
+        }
     }
 
     [System.SerializableAttribute()]
@@ -30,3 +51,4 @@ namespace FastFood.Core
     {
     }
 }
+

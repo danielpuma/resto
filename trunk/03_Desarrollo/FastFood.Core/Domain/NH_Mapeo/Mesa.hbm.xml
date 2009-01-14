@@ -4,5 +4,9 @@
       <column name="IdMesa" />
     </key>
     <property name="Ocupada" type="System.Boolean" column="Ocupada" not-null="true" />
+    <property name="SolicitarCantidadOcupantes" type="System.Boolean" column="SolicitarCantidadOcupantes" not-null="true" />
+    <property name="Fila" type="System.Int32" column="Fila" not-null="true" />
+    <property name="Columna" type="System.Int32" column="Columna" not-null="true" />
+    
   </joined-subclass>
 </hibernate-mapping>

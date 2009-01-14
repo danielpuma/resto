@@ -363,6 +363,11 @@ namespace WinFastFood.Inicio
             ShowWindows(new frmPedidoList());
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ShowWindows(new frmMap());
+        }
+
 
     }
 }

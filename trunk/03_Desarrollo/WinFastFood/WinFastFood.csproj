@@ -70,6 +70,12 @@
     <Compile Include="Inicio\frmInicial.Designer.cs">
       <DependentUpon>frmInicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inicio\frmMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio\frmMap.Designer.cs">
+      <DependentUpon>frmMap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio\frmSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,10 @@
     <EmbeddedResource Include="Inicio\frmInicial.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\frmMap.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio\frmSplash.resx">
       <DependentUpon>frmSplash.cs</DependentUpon>
@@ -304,6 +314,12 @@
     <None Include="Resources\8printer24.gif" />
     <None Include="Resources\8close16.gif" />
     <None Include="Resources\package.gif" />
+    <None Include="Resources\Baldosa.jpg" />
+    <None Include="Resources\BaldosaSeleccion.jpg" />
+    <None Include="Resources\BaldosaConMesaLibre1.jpg" />
+    <None Include="Resources\BaldosaConMesaOcupada1.jpg" />
+    <None Include="Resources\BaldosaSeleccionMesaLibre1.jpg" />
+    <None Include="Resources\BaldosaSeleccionMesaOcupada1.jpg" />
     <Content Include="windowb.ico" />
     <None Include="Resources\textfile32.png" />
     <None Include="Resources\money32.png" />

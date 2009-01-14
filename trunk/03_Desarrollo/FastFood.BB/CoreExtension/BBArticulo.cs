@@ -56,7 +56,6 @@ namespace FastFood.BB.CoreExtension
             {
                 throw new Exception("El Nombre del Artículo es obligatorio");
             }
-            
         }
     }
 }

@@ -43,6 +43,7 @@ namespace FastFood.ABM.Parametros
             this.cboExtra = new Controles.FSOCombo();
             this.cboNumerador = new System.Windows.Forms.ComboBox();
             this.lblComprobante = new System.Windows.Forms.Label();
+            this.chkOcupantes = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,6 +193,18 @@ namespace FastFood.ABM.Parametros
             this.lblComprobante.Text = "Numerador";
             this.lblComprobante.Visible = false;
             // 
+            // chkOcupantes
+            // 
+            this.chkOcupantes.AutoSize = true;
+            this.chkOcupantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkOcupantes.Location = new System.Drawing.Point(134, 67);
+            this.chkOcupantes.Name = "chkOcupantes";
+            this.chkOcupantes.Size = new System.Drawing.Size(209, 17);
+            this.chkOcupantes.TabIndex = 23;
+            this.chkOcupantes.Text = "Solicitar Cantidad de Ocupantes";
+            this.chkOcupantes.UseVisualStyleBackColor = true;
+            this.chkOcupantes.Visible = false;
+            // 
             // frmParametrosAdmin
             // 
             this.AcceptButton = this.cmdGuardar;
@@ -199,6 +212,7 @@ namespace FastFood.ABM.Parametros
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancel;
             this.ClientSize = new System.Drawing.Size(581, 145);
+            this.Controls.Add(this.chkOcupantes);
             this.Controls.Add(this.lblComprobante);
             this.Controls.Add(this.cboNumerador);
             this.Controls.Add(this.cboExtra);
@@ -238,5 +252,6 @@ namespace FastFood.ABM.Parametros
         private FSOCombo cboExtra;
         private System.Windows.Forms.Label lblComprobante;
         private System.Windows.Forms.ComboBox cboNumerador;
+        private System.Windows.Forms.CheckBox chkOcupantes;
     }
 }
