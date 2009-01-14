@@ -22,7 +22,7 @@ namespace FastFood.BB.BaseExtension
             {
                 case "ListaPrecio": MyParam = new ListaDePrecio(); break;
                 case "GrupoArticulo": MyParam = new GrupoArticulo(); break;
-                case "Mesa": MyParam = new Mesa(); break;
+                case "Mesa": MyParam = new BBMesa().GetNuevo(); break;
                 case "Comprobante": MyParam = new Comprobante(); break;
                 default: return base.GetNuevo(); 
                

@@ -64,6 +64,7 @@ namespace FastFood.ABM.Parametros
                 case "Mesa":
                     permiso = "Mesa";
                     this.Text = "Mesas";
+                    chkOcupantes.Visible = true;
                     break;
 
                 case "Comprobante":
@@ -129,6 +130,11 @@ namespace FastFood.ABM.Parametros
                     idNum = ((Comprobante)MyParam).Numerador.ID;
                 cboNumerador.SelectedValue = idNum;
             }
+            if (SubTipo == "Mesa")
+            {
+                chkOcupantes.DataBindings.Add("Checked", MyParam, "SolicitarCantidadOcupantes");              
+            }
+            
 
         }
 
