@@ -30,11 +30,7 @@ namespace WinFastFood.Modulos.Pedido
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PedidoAdmin));
-            this.fsoCliente = new Controles.FSOCombo();
-            this.fsoMesa = new Controles.FSOCombo();
-            this.fsoMozo = new Controles.FSOCombo();
             this.chkCerrado = new System.Windows.Forms.CheckBox();
-            this.dtFecha = new Controles.DateTimeInputBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmdGuardar = new System.Windows.Forms.Button();
             this.chkImprimir = new System.Windows.Forms.CheckBox();
@@ -44,15 +40,20 @@ namespace WinFastFood.Modulos.Pedido
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.fsoListaPrecio = new Controles.FSOCombo();
             this.pnlFoot = new System.Windows.Forms.Panel();
             this.TxtVuelto = new System.Windows.Forms.Label();
             this.txtTotalFacturado = new System.Windows.Forms.Label();
             this.txtPagaCon = new Controles.NumericTextBox.DecimalTextBox();
+            this.fsoMozo = new Controles.FSOCombo();
+            this.fsoListaPrecio = new Controles.FSOCombo();
             this.txtDescRec = new Controles.NumericTextBox.DecimalTextBox();
             this.pnlHead = new System.Windows.Forms.Panel();
+            this.lblNro = new System.Windows.Forms.Label();
             this.lblOcupantes = new System.Windows.Forms.Label();
             this.txtOcupantes = new Controles.NumericTextBox.DecimalTextBox();
+            this.fsoCliente = new Controles.FSOCombo();
+            this.fsoMesa = new Controles.FSOCombo();
+            this.dtFecha = new Controles.DateTimeInputBox();
             this.dgCuerpo = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColIdArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +66,6 @@ namespace WinFastFood.Modulos.Pedido
             this.ColTotalLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.colCheck = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fsoArticulo = new Controles.FSOCombo();
             this.pblBody = new System.Windows.Forms.Panel();
             this.txtTotalLinea = new Controles.NumericTextBox.DecimalTextBox();
             this.txtPU = new Controles.NumericTextBox.DecimalTextBox();
@@ -74,66 +74,14 @@ namespace WinFastFood.Modulos.Pedido
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.fsoArticulo = new Controles.FSOCombo();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lblPedNro = new System.Windows.Forms.Label();
             this.pnlFoot.SuspendLayout();
             this.pnlHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCuerpo)).BeginInit();
             this.pblBody.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // fsoCliente
-            // 
-            this.fsoCliente.AnchoBoton = 20;
-            this.fsoCliente.AnchoLabel = 50;
-            this.fsoCliente.AnchoTxtCod = 100;
-            this.fsoCliente.CodigoActual = "";
-            this.fsoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.fsoCliente.FiltrosCampos = "";
-            this.fsoCliente.FiltrosValores = "";
-            this.fsoCliente.IdSelected = -1;
-            this.fsoCliente.Location = new System.Drawing.Point(13, 16);
-            this.fsoCliente.Name = "fsoCliente";
-            this.fsoCliente.ObjetoActual = null;
-            this.fsoCliente.Size = new System.Drawing.Size(544, 21);
-            this.fsoCliente.TabIndex = 0;
-            this.fsoCliente.Texto = "Cliente";
-            // 
-            // fsoMesa
-            // 
-            this.fsoMesa.AnchoBoton = 20;
-            this.fsoMesa.AnchoLabel = 50;
-            this.fsoMesa.AnchoTxtCod = 100;
-            this.fsoMesa.CodigoActual = "";
-            this.fsoMesa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.fsoMesa.FiltrosCampos = "";
-            this.fsoMesa.FiltrosValores = "";
-            this.fsoMesa.IdSelected = -1;
-            this.fsoMesa.Location = new System.Drawing.Point(13, 43);
-            this.fsoMesa.Name = "fsoMesa";
-            this.fsoMesa.ObjetoActual = null;
-            this.fsoMesa.Size = new System.Drawing.Size(544, 21);
-            this.fsoMesa.TabIndex = 1;
-            this.fsoMesa.Texto = "Mesa";
-            this.fsoMesa.ObjetoSeleccionado += new Controles.SeleccionDeObjeto(this.fsoMesa_ObjetoSeleccionado);
-            // 
-            // fsoMozo
-            // 
-            this.fsoMozo.AnchoBoton = 20;
-            this.fsoMozo.AnchoLabel = 50;
-            this.fsoMozo.AnchoTxtCod = 100;
-            this.fsoMozo.CodigoActual = "";
-            this.fsoMozo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.fsoMozo.Enabled = false;
-            this.fsoMozo.FiltrosCampos = "";
-            this.fsoMozo.FiltrosValores = "";
-            this.fsoMozo.IdSelected = -1;
-            this.fsoMozo.Location = new System.Drawing.Point(3, 69);
-            this.fsoMozo.Name = "fsoMozo";
-            this.fsoMozo.ObjetoActual = null;
-            this.fsoMozo.Size = new System.Drawing.Size(362, 21);
-            this.fsoMozo.TabIndex = 2;
-            this.fsoMozo.TabStop = false;
-            this.fsoMozo.Texto = "Mozo";
             // 
             // chkCerrado
             // 
@@ -149,23 +97,12 @@ namespace WinFastFood.Modulos.Pedido
             this.chkCerrado.UseVisualStyleBackColor = true;
             this.chkCerrado.CheckedChanged += new System.EventHandler(this.chkCerrado_CheckedChanged);
             // 
-            // dtFecha
-            // 
-            this.dtFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtFecha.Fecha = new System.DateTime(2009, 1, 10, 0, 0, 0, 0);
-            this.dtFecha.FechaNuleable = new System.DateTime(2009, 1, 10, 0, 0, 0, 0);
-            this.dtFecha.Location = new System.Drawing.Point(711, 16);
-            this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(92, 20);
-            this.dtFecha.TabIndex = 4;
-            this.dtFecha.TabStop = false;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(659, 16);
+            this.label1.Location = new System.Drawing.Point(658, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 5;
@@ -174,9 +111,9 @@ namespace WinFastFood.Modulos.Pedido
             // cmdGuardar
             // 
             this.cmdGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdGuardar.Location = new System.Drawing.Point(499, 94);
+            this.cmdGuardar.Location = new System.Drawing.Point(608, 95);
             this.cmdGuardar.Name = "cmdGuardar";
-            this.cmdGuardar.Size = new System.Drawing.Size(138, 23);
+            this.cmdGuardar.Size = new System.Drawing.Size(95, 23);
             this.cmdGuardar.TabIndex = 4;
             this.cmdGuardar.Text = "Guardar";
             this.cmdGuardar.UseVisualStyleBackColor = true;
@@ -199,9 +136,9 @@ namespace WinFastFood.Modulos.Pedido
             // 
             this.cmdCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cmdCancel.Location = new System.Drawing.Point(662, 94);
+            this.cmdCancel.Location = new System.Drawing.Point(709, 94);
             this.cmdCancel.Name = "cmdCancel";
-            this.cmdCancel.Size = new System.Drawing.Size(138, 23);
+            this.cmdCancel.Size = new System.Drawing.Size(91, 23);
             this.cmdCancel.TabIndex = 5;
             this.cmdCancel.Text = "Cancelar";
             this.cmdCancel.UseVisualStyleBackColor = true;
@@ -209,14 +146,14 @@ namespace WinFastFood.Modulos.Pedido
             // 
             // lblAnulación
             // 
-            this.lblAnulación.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblAnulación.AutoSize = true;
+            this.lblAnulación.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAnulación.BackColor = System.Drawing.Color.Red;
             this.lblAnulación.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnulación.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblAnulación.Location = new System.Drawing.Point(349, 94);
+            this.lblAnulación.Location = new System.Drawing.Point(11, 3);
             this.lblAnulación.Name = "lblAnulación";
-            this.lblAnulación.Size = new System.Drawing.Size(141, 20);
+            this.lblAnulación.Size = new System.Drawing.Size(790, 23);
             this.lblAnulación.TabIndex = 9;
             this.lblAnulación.Text = "Datos Anulación";
             this.lblAnulación.Visible = false;
@@ -263,25 +200,6 @@ namespace WinFastFood.Modulos.Pedido
             this.label5.TabIndex = 17;
             this.label5.Text = "Vuelto:";
             // 
-            // fsoListaPrecio
-            // 
-            this.fsoListaPrecio.AnchoBoton = 20;
-            this.fsoListaPrecio.AnchoLabel = 50;
-            this.fsoListaPrecio.AnchoTxtCod = 100;
-            this.fsoListaPrecio.CodigoActual = "";
-            this.fsoListaPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.fsoListaPrecio.FiltrosCampos = "";
-            this.fsoListaPrecio.FiltrosValores = "";
-            this.fsoListaPrecio.IdSelected = -1;
-            this.fsoListaPrecio.Location = new System.Drawing.Point(3, 96);
-            this.fsoListaPrecio.Name = "fsoListaPrecio";
-            this.fsoListaPrecio.ObjetoActual = null;
-            this.fsoListaPrecio.Size = new System.Drawing.Size(340, 21);
-            this.fsoListaPrecio.TabIndex = 5;
-            this.fsoListaPrecio.TabStop = false;
-            this.fsoListaPrecio.Texto = "LDP";
-            this.fsoListaPrecio.ObjetoSeleccionado += new Controles.SeleccionDeObjeto(this.fsoListaPrecio_ObjetoSeleccionado);
-            // 
             // pnlFoot
             // 
             this.pnlFoot.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
@@ -290,7 +208,6 @@ namespace WinFastFood.Modulos.Pedido
             this.pnlFoot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlFoot.Controls.Add(this.TxtVuelto);
             this.pnlFoot.Controls.Add(this.cmdCancel);
-            this.pnlFoot.Controls.Add(this.lblAnulación);
             this.pnlFoot.Controls.Add(this.txtTotalFacturado);
             this.pnlFoot.Controls.Add(this.cmdGuardar);
             this.pnlFoot.Controls.Add(this.txtPagaCon);
@@ -354,6 +271,44 @@ namespace WinFastFood.Modulos.Pedido
             this.txtPagaCon.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPagaCon.Leave += new System.EventHandler(this.txtPagaCon_Leave);
             // 
+            // fsoMozo
+            // 
+            this.fsoMozo.AnchoBoton = 20;
+            this.fsoMozo.AnchoLabel = 50;
+            this.fsoMozo.AnchoTxtCod = 100;
+            this.fsoMozo.CodigoActual = "";
+            this.fsoMozo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.fsoMozo.Enabled = false;
+            this.fsoMozo.FiltrosCampos = "";
+            this.fsoMozo.FiltrosValores = "";
+            this.fsoMozo.IdSelected = -1;
+            this.fsoMozo.Location = new System.Drawing.Point(3, 69);
+            this.fsoMozo.Name = "fsoMozo";
+            this.fsoMozo.ObjetoActual = null;
+            this.fsoMozo.Size = new System.Drawing.Size(362, 21);
+            this.fsoMozo.TabIndex = 2;
+            this.fsoMozo.TabStop = false;
+            this.fsoMozo.Texto = "Mozo";
+            // 
+            // fsoListaPrecio
+            // 
+            this.fsoListaPrecio.AnchoBoton = 20;
+            this.fsoListaPrecio.AnchoLabel = 50;
+            this.fsoListaPrecio.AnchoTxtCod = 100;
+            this.fsoListaPrecio.CodigoActual = "";
+            this.fsoListaPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.fsoListaPrecio.FiltrosCampos = "";
+            this.fsoListaPrecio.FiltrosValores = "";
+            this.fsoListaPrecio.IdSelected = -1;
+            this.fsoListaPrecio.Location = new System.Drawing.Point(3, 96);
+            this.fsoListaPrecio.Name = "fsoListaPrecio";
+            this.fsoListaPrecio.ObjetoActual = null;
+            this.fsoListaPrecio.Size = new System.Drawing.Size(340, 21);
+            this.fsoListaPrecio.TabIndex = 5;
+            this.fsoListaPrecio.TabStop = false;
+            this.fsoListaPrecio.Texto = "LDP";
+            this.fsoListaPrecio.ObjetoSeleccionado += new Controles.SeleccionDeObjeto(this.fsoListaPrecio_ObjetoSeleccionado);
+            // 
             // txtDescRec
             // 
             this.txtDescRec.AllowSpace = false;
@@ -378,6 +333,8 @@ namespace WinFastFood.Modulos.Pedido
             this.pnlHead.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlHead.BackColor = System.Drawing.Color.LightGray;
+            this.pnlHead.Controls.Add(this.lblPedNro);
+            this.pnlHead.Controls.Add(this.lblNro);
             this.pnlHead.Controls.Add(this.lblOcupantes);
             this.pnlHead.Controls.Add(this.txtOcupantes);
             this.pnlHead.Controls.Add(this.fsoCliente);
@@ -389,12 +346,23 @@ namespace WinFastFood.Modulos.Pedido
             this.pnlHead.Size = new System.Drawing.Size(810, 75);
             this.pnlHead.TabIndex = 2;
             // 
+            // lblNro
+            // 
+            this.lblNro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNro.AutoSize = true;
+            this.lblNro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNro.Location = new System.Drawing.Point(634, 19);
+            this.lblNro.Name = "lblNro";
+            this.lblNro.Size = new System.Drawing.Size(70, 13);
+            this.lblNro.TabIndex = 13;
+            this.lblNro.Text = "Comp. Nro:";
+            // 
             // lblOcupantes
             // 
             this.lblOcupantes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblOcupantes.AutoSize = true;
             this.lblOcupantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOcupantes.Location = new System.Drawing.Point(633, 47);
+            this.lblOcupantes.Location = new System.Drawing.Point(477, 44);
             this.lblOcupantes.Name = "lblOcupantes";
             this.lblOcupantes.Size = new System.Drawing.Size(72, 13);
             this.lblOcupantes.TabIndex = 11;
@@ -410,13 +378,59 @@ namespace WinFastFood.Modulos.Pedido
             0,
             0,
             0});
-            this.txtOcupantes.Location = new System.Drawing.Point(711, 44);
+            this.txtOcupantes.Location = new System.Drawing.Point(560, 41);
             this.txtOcupantes.Name = "txtOcupantes";
             this.txtOcupantes.Size = new System.Drawing.Size(92, 20);
             this.txtOcupantes.TabIndex = 10;
             this.txtOcupantes.Text = "0";
             this.txtOcupantes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOcupantes.Visible = false;
+            // 
+            // fsoCliente
+            // 
+            this.fsoCliente.AnchoBoton = 20;
+            this.fsoCliente.AnchoLabel = 50;
+            this.fsoCliente.AnchoTxtCod = 100;
+            this.fsoCliente.CodigoActual = "";
+            this.fsoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.fsoCliente.FiltrosCampos = "";
+            this.fsoCliente.FiltrosValores = "";
+            this.fsoCliente.IdSelected = -1;
+            this.fsoCliente.Location = new System.Drawing.Point(13, 16);
+            this.fsoCliente.Name = "fsoCliente";
+            this.fsoCliente.ObjetoActual = null;
+            this.fsoCliente.Size = new System.Drawing.Size(506, 21);
+            this.fsoCliente.TabIndex = 0;
+            this.fsoCliente.Texto = "Cliente";
+            // 
+            // fsoMesa
+            // 
+            this.fsoMesa.AnchoBoton = 20;
+            this.fsoMesa.AnchoLabel = 50;
+            this.fsoMesa.AnchoTxtCod = 100;
+            this.fsoMesa.CodigoActual = "";
+            this.fsoMesa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.fsoMesa.FiltrosCampos = "";
+            this.fsoMesa.FiltrosValores = "";
+            this.fsoMesa.IdSelected = -1;
+            this.fsoMesa.Location = new System.Drawing.Point(13, 43);
+            this.fsoMesa.Name = "fsoMesa";
+            this.fsoMesa.ObjetoActual = null;
+            this.fsoMesa.Size = new System.Drawing.Size(436, 21);
+            this.fsoMesa.TabIndex = 1;
+            this.fsoMesa.Texto = "Mesa";
+            this.fsoMesa.ObjetoSeleccionado += new Controles.SeleccionDeObjeto(this.fsoMesa_ObjetoSeleccionado);
+            // 
+            // dtFecha
+            // 
+            this.dtFecha.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtFecha.Fecha = new System.DateTime(2009, 1, 10, 0, 0, 0, 0);
+            this.dtFecha.FechaNuleable = new System.DateTime(2009, 1, 10, 0, 0, 0, 0);
+            this.dtFecha.Location = new System.Drawing.Point(710, 41);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(92, 20);
+            this.dtFecha.TabIndex = 4;
+            this.dtFecha.TabStop = false;
             // 
             // dgCuerpo
             // 
@@ -529,30 +543,12 @@ namespace WinFastFood.Modulos.Pedido
             this.colCheck.Name = "colCheck";
             this.colCheck.Visible = false;
             // 
-            // fsoArticulo
-            // 
-            this.fsoArticulo.AnchoBoton = 20;
-            this.fsoArticulo.AnchoLabel = 25;
-            this.fsoArticulo.AnchoTxtCod = 100;
-            this.fsoArticulo.CodigoActual = "";
-            this.fsoArticulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.fsoArticulo.FiltrosCampos = "";
-            this.fsoArticulo.FiltrosValores = "";
-            this.fsoArticulo.IdSelected = -1;
-            this.fsoArticulo.Location = new System.Drawing.Point(10, 4);
-            this.fsoArticulo.Name = "fsoArticulo";
-            this.fsoArticulo.ObjetoActual = null;
-            this.fsoArticulo.Size = new System.Drawing.Size(409, 21);
-            this.fsoArticulo.TabIndex = 0;
-            this.fsoArticulo.Texto = "Articulo:";
-            this.fsoArticulo.ObjetoSeleccionado += new Controles.SeleccionDeObjeto(this.fsoArticulo_ObjetoSeleccionado);
-            this.fsoArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fsoArticulo_KeyDown);
-            // 
             // pblBody
             // 
             this.pblBody.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.pblBody.BackColor = System.Drawing.Color.LightGray;
+            this.pblBody.Controls.Add(this.lblAnulación);
             this.pblBody.Controls.Add(this.txtTotalLinea);
             this.pblBody.Controls.Add(this.txtPU);
             this.pblBody.Controls.Add(this.txtCant);
@@ -665,11 +661,40 @@ namespace WinFastFood.Modulos.Pedido
             this.label6.TabIndex = 24;
             this.label6.Text = "Cant:";
             // 
+            // fsoArticulo
+            // 
+            this.fsoArticulo.AnchoBoton = 20;
+            this.fsoArticulo.AnchoLabel = 25;
+            this.fsoArticulo.AnchoTxtCod = 100;
+            this.fsoArticulo.CodigoActual = "";
+            this.fsoArticulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.fsoArticulo.FiltrosCampos = "";
+            this.fsoArticulo.FiltrosValores = "";
+            this.fsoArticulo.IdSelected = -1;
+            this.fsoArticulo.Location = new System.Drawing.Point(10, 4);
+            this.fsoArticulo.Name = "fsoArticulo";
+            this.fsoArticulo.ObjetoActual = null;
+            this.fsoArticulo.Size = new System.Drawing.Size(409, 21);
+            this.fsoArticulo.TabIndex = 0;
+            this.fsoArticulo.Texto = "Articulo:";
+            this.fsoArticulo.ObjetoSeleccionado += new Controles.SeleccionDeObjeto(this.fsoArticulo_ObjetoSeleccionado);
+            this.fsoArticulo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fsoArticulo_KeyDown);
+            // 
             // dataGridViewImageColumn1
             // 
             this.dataGridViewImageColumn1.HeaderText = "Imprime";
             this.dataGridViewImageColumn1.Image = global::WinFastFood.Properties.Resources._8close16;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // lblPedNro
+            // 
+            this.lblPedNro.AutoSize = true;
+            this.lblPedNro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPedNro.Location = new System.Drawing.Point(710, 19);
+            this.lblPedNro.Name = "lblPedNro";
+            this.lblPedNro.Size = new System.Drawing.Size(77, 13);
+            this.lblPedNro.TabIndex = 14;
+            this.lblPedNro.Text = "0000000000";
             // 
             // PedidoAdmin
             // 
@@ -746,5 +771,7 @@ namespace WinFastFood.Modulos.Pedido
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheck;
         private System.Windows.Forms.Label lblOcupantes;
         private Controles.NumericTextBox.DecimalTextBox txtOcupantes;
+        private System.Windows.Forms.Label lblNro;
+        private System.Windows.Forms.Label lblPedNro;
     }
 }

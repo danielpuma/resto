@@ -62,6 +62,7 @@ namespace WinFastFood.Inicio
             this.xSep2 = new System.Windows.Forms.ToolStripSeparator();
             this.xCmdNuevoPedido = new System.Windows.Forms.ToolStripButton();
             this.toolStripListaPedidos = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.XstatusStrip = new System.Windows.Forms.StatusStrip();
@@ -77,7 +78,6 @@ namespace WinFastFood.Inicio
             this.cmdExportExcel = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.cmdNewPedido = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.XstatusStrip.SuspendLayout();
@@ -390,6 +390,17 @@ namespace WinFastFood.Inicio
             this.toolStripListaPedidos.Text = "Listar Pedidos";
             this.toolStripListaPedidos.Click += new System.EventHandler(this.toolStripListaPedidos_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::WinFastFood.Properties.Resources.gowebsite32;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 29);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.ToolTipText = "Mapa del Piso";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
@@ -491,16 +502,6 @@ namespace WinFastFood.Inicio
             this.cmdNewPedido.Name = "cmdNewPedido";
             this.cmdNewPedido.Size = new System.Drawing.Size(23, 22);
             this.cmdNewPedido.Text = "Nuevo Pedido";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 29);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // frmInicial
             // 

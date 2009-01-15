@@ -121,9 +121,9 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>95, 17</value>
+    <value>101, 30</value>
   </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>95, 17</value>
-  </metadata>
+  <data name="dgMap.ToolTip" xml:space="preserve">
+    <value>Haga doble click en una mesa para consultar o crear un pedido, si se detiene sobre una celda con una mesa ocupada el sistema le brindara información sobre la misma, con click derecho accede al menú de opciones</value>
+  </data>
 </root>

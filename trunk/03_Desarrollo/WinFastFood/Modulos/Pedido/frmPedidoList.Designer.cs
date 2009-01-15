@@ -30,6 +30,15 @@ namespace WinFastFood.Modulos.Pedido
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgDatos = new System.Windows.Forms.DataGridView();
+            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNroInt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colfecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColMozo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColTot = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPdte = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.cmdAnular = new System.Windows.Forms.Button();
             this.cmdNuevo = new System.Windows.Forms.Button();
@@ -42,15 +51,6 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoCliente = new Controles.FSOCombo();
             this.fsoMesa = new Controles.FSOCombo();
             this.fsoMozo = new Controles.FSOCombo();
-            this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColNroInt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colfecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColMozo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColTot = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPdte = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ColMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,65 @@ namespace WinFastFood.Modulos.Pedido
             this.dgDatos.Size = new System.Drawing.Size(834, 377);
             this.dgDatos.TabIndex = 7;
             this.dgDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDatos_CellDoubleClick);
+            // 
+            // ColID
+            // 
+            this.ColID.HeaderText = "ID";
+            this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
+            this.ColID.Visible = false;
+            // 
+            // ColNroInt
+            // 
+            this.ColNroInt.HeaderText = "Nro. Interno";
+            this.ColNroInt.Name = "ColNroInt";
+            this.ColNroInt.ReadOnly = true;
+            // 
+            // colfecha
+            // 
+            this.colfecha.HeaderText = "Fecha";
+            this.colfecha.Name = "colfecha";
+            this.colfecha.ReadOnly = true;
+            // 
+            // ColCliente
+            // 
+            this.ColCliente.HeaderText = "Cliente";
+            this.ColCliente.Name = "ColCliente";
+            this.ColCliente.ReadOnly = true;
+            this.ColCliente.Width = 200;
+            // 
+            // ColMozo
+            // 
+            this.ColMozo.HeaderText = "Mozo";
+            this.ColMozo.Name = "ColMozo";
+            this.ColMozo.ReadOnly = true;
+            // 
+            // ColTot
+            // 
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = "0";
+            this.ColTot.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ColTot.HeaderText = "Total";
+            this.ColTot.Name = "ColTot";
+            this.ColTot.ReadOnly = true;
+            // 
+            // ColPdte
+            // 
+            this.ColPdte.HeaderText = "Pendiente";
+            this.ColPdte.Name = "ColPdte";
+            this.ColPdte.ReadOnly = true;
+            // 
+            // ColMesa
+            // 
+            this.ColMesa.HeaderText = "Mesa";
+            this.ColMesa.Name = "ColMesa";
+            this.ColMesa.ReadOnly = true;
+            // 
+            // ColEstado
+            // 
+            this.ColEstado.HeaderText = "Estado";
+            this.ColEstado.Name = "ColEstado";
+            this.ColEstado.ReadOnly = true;
             // 
             // cmdEliminar
             // 
@@ -117,6 +176,7 @@ namespace WinFastFood.Modulos.Pedido
             this.cmdNuevo.Size = new System.Drawing.Size(36, 31);
             this.cmdNuevo.TabIndex = 12;
             this.cmdNuevo.UseVisualStyleBackColor = true;
+            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
             // 
             // cmdBuscar
             // 
@@ -246,65 +306,6 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoMozo.TabStop = false;
             this.fsoMozo.Texto = "Mozo";
             // 
-            // ColID
-            // 
-            this.ColID.HeaderText = "ID";
-            this.ColID.Name = "ColID";
-            this.ColID.ReadOnly = true;
-            this.ColID.Visible = false;
-            // 
-            // ColNroInt
-            // 
-            this.ColNroInt.HeaderText = "Nro. Interno";
-            this.ColNroInt.Name = "ColNroInt";
-            this.ColNroInt.ReadOnly = true;
-            // 
-            // colfecha
-            // 
-            this.colfecha.HeaderText = "Fecha";
-            this.colfecha.Name = "colfecha";
-            this.colfecha.ReadOnly = true;
-            // 
-            // ColCliente
-            // 
-            this.ColCliente.HeaderText = "Cliente";
-            this.ColCliente.Name = "ColCliente";
-            this.ColCliente.ReadOnly = true;
-            this.ColCliente.Width = 200;
-            // 
-            // ColMozo
-            // 
-            this.ColMozo.HeaderText = "Mozo";
-            this.ColMozo.Name = "ColMozo";
-            this.ColMozo.ReadOnly = true;
-            // 
-            // ColTot
-            // 
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.ColTot.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ColTot.HeaderText = "Total";
-            this.ColTot.Name = "ColTot";
-            this.ColTot.ReadOnly = true;
-            // 
-            // ColPdte
-            // 
-            this.ColPdte.HeaderText = "Pendiente";
-            this.ColPdte.Name = "ColPdte";
-            this.ColPdte.ReadOnly = true;
-            // 
-            // ColMesa
-            // 
-            this.ColMesa.HeaderText = "Mesa";
-            this.ColMesa.Name = "ColMesa";
-            this.ColMesa.ReadOnly = true;
-            // 
-            // ColEstado
-            // 
-            this.ColEstado.HeaderText = "Estado";
-            this.ColEstado.Name = "ColEstado";
-            this.ColEstado.ReadOnly = true;
-            // 
             // frmPedidoList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,6 +327,7 @@ namespace WinFastFood.Modulos.Pedido
             this.Controls.Add(this.fsoMozo);
             this.Name = "frmPedidoList";
             this.Text = "Listado de Pedidos";
+            this.Load += new System.EventHandler(this.frmPedidoList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
