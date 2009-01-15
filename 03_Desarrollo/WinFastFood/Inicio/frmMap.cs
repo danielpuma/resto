@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using FastFood.BB.CoreExtension;
 using FastFood.Core;
+using WinFastFood.Modulos.Pedido;
 
 namespace WinFastFood.Inicio
 {
@@ -66,18 +67,8 @@ namespace WinFastFood.Inicio
             CambiarImagenDeCelda = false;
             dgMap.Enabled = false;
             pnlAddMesa.Visible = true;
-            int y = Cursor.Position.Y;
-            int x = Cursor.Position.X;
-            if ((pnlAddMesa.Width + x) > Screen.PrimaryScreen.WorkingArea.Width)
-            {
-                x = x- pnlAddMesa.Width;
-            }
-            if ((pnlAddMesa.Height + y+100) > Screen.PrimaryScreen.WorkingArea.Height)
-            {
-                y = y - pnlAddMesa.Height-100;
-            }
-            pnlAddMesa.Top = y;
-            pnlAddMesa.Left = x;
+            pnlAddMesa.Top = dgMap.Top;
+            pnlAddMesa.Left = dgMap.Left;
             fsoMesa.Focus();
         }
 
@@ -172,6 +163,14 @@ namespace WinFastFood.Inicio
 
         private void frmMap_Load(object sender, EventArgs e)
         {
+            InicializarGrilla();
+        }
+
+        private void InicializarGrilla()
+        {
+            MesasMapeadas = new int[50, 50];
+            dgMap.Rows.Clear();
+            dgMap.Columns.Clear();
             for (int i = 0; i <= 49; i++)
             {
                 System.Windows.Forms.DataGridViewImageColumn C;
@@ -180,12 +179,12 @@ namespace WinFastFood.Inicio
                 C.Name = "Column1";
                 C.ReadOnly = true;
                 C.Image = global::WinFastFood.Properties.Resources.Baldosa;
-
+                
                 dgMap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { C });
                 fsoMesa.SetComboBinding(new BBMesa(), "", "");
             }
 
-
+            
             for (int i = 1; i <= 50; i++)
             {
                 dgMap.Rows.Add();
@@ -203,6 +202,47 @@ namespace WinFastFood.Inicio
                     DibujarMesa(mesa,false);
                 }            
             }
+        }
+
+
+
+        private void cmdRefresh_Click(object sender, EventArgs e)
+        {
+            InicializarGrilla();
+        }
+
+        private void dgMap_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int _Fila = dgMap.SelectedCells[0].RowIndex;
+            int _Columna = dgMap.SelectedCells[0].ColumnIndex;
+            if (MesasMapeadas[_Fila, _Columna] > 0)
+            {
+                int IdMesa = MesasMapeadas[_Fila, _Columna];
+                BBPedido BP = new BBPedido();
+                Pedido p = BP.GetPedidoPendientePorMesa(IdMesa);
+                PedidoAdmin frmPed = new PedidoAdmin();
+                if(p!=null)
+                    frmPed.MyObject=p;
+                frmPed.ShowDialog(this);
+                InicializarGrilla();
+                
+            }
+        }
+
+        private void consultarPedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int _Fila = dgMap.SelectedCells[0].RowIndex;
+            int _Columna = dgMap.SelectedCells[0].ColumnIndex;
+            if (MesasMapeadas[_Fila, _Columna] > 0)
+            {
+                int IdMesa = MesasMapeadas[_Fila, _Columna];
+                frmPedidoList f = new frmPedidoList();
+                f.WindowState = FormWindowState.Maximized;
+                f.MdiParent = this.ParentForm;
+                f.IdMesa = IdMesa;
+                f.Show();
+            }
+
         }
 
     }

@@ -18,19 +18,11 @@ namespace WinFastFood.Modulos.Pedido
     {
         List<FastFood.Core.Pedido> LosDatos;
         BBPedido BB;
+        public int IdMesa;
         protected string mTituloImpresion;
         public frmPedidoList()
-        {            
-            Cursor.Current = Cursors.WaitCursor;
+        {
             InitializeComponent();
-            BB = new BBPedido();
-            mTituloImpresion = "Listado de Pedidos";
-            VerificarSeguridad();
-            BindearFiltros();
-            dtRange1.Desde = null;            
-            dtRange1.Hasta = null;
-            BuscarDatos();
-            Cursor.Current = Cursors.Default;
         }
         #region PrinteableForm Members
 
@@ -99,7 +91,8 @@ namespace WinFastFood.Modulos.Pedido
         private void ShowABMForm(Int32 ID)
         {
             PedidoAdmin MyFrmAdmin = new PedidoAdmin();
-            MyFrmAdmin.MyObject = new BBPedido().GetById(ID,false);
+            if(ID>0)
+                MyFrmAdmin.MyObject = new BBPedido().GetById(ID,false);
             MyFrmAdmin.ShowDialog(this);
             BuscarDatos();
         }
@@ -114,7 +107,7 @@ namespace WinFastFood.Modulos.Pedido
                     if (dgDatos.SelectedRows.Count > 0)
                     {
                         Int32 Id = Convert.ToInt32(dgDatos.SelectedRows[0].Cells[0].Value);
-                        BB.AnularPedido(Id);
+                        BB.AnularPedido(Id, Win32Session.UsuarioActual);
                         BuscarDatos();
                     }
                 }
@@ -146,6 +139,30 @@ namespace WinFastFood.Modulos.Pedido
                 MessageBox.Show("Error:" + ex.Message);
             }
 			
+        }
+
+        private void cmdNuevo_Click(object sender, EventArgs e)
+        {
+            ShowABMForm(0);
+        }
+
+        private void frmPedidoList_Load(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            
+            BB = new BBPedido();
+            mTituloImpresion = "Listado de Pedidos";
+            VerificarSeguridad();
+            BindearFiltros();
+            dtRange1.Desde = null;
+            dtRange1.Hasta = null;
+            if (IdMesa > 0)
+            {
+                fsoMesa.IdSelected = IdMesa;
+            }
+            BuscarDatos();
+            Cursor.Current = Cursors.Default;
+
         }
 
     }

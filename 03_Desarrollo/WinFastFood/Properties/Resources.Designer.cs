@@ -158,6 +158,13 @@ namespace WinFastFood.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap gowebsite32 {
+            get {
+                object obj = ResourceManager.GetObject("gowebsite32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap hdlocked {
             get {
                 object obj = ResourceManager.GetObject("hdlocked", resourceCulture);
