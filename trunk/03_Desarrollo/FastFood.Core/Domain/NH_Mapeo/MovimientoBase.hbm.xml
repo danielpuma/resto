@@ -10,16 +10,16 @@
     <property name="TotalFacturado" type="System.Decimal" column="TotalFacturado" not-null="true" />
     <property name="FechaAnulacion" type="System.DateTime" column="FechaAnulacion" not-null="false" />
    
-    <many-to-one name="Usuario" class="FSO.NH.Seguridad.Core.Usuario,  FSO.NH" fetch="select">
+    <many-to-one name="Usuario" class="FSO.NH.Seguridad.Core.Usuario,  FSO.NH" fetch="join">
       <column name="IdUsuario" not-null="true" />
     </many-to-one>
     <many-to-one name="UsuarioAnulacion" class="FSO.NH.Seguridad.Core.Usuario,  FSO.NH" fetch="select">
       <column name="IdUsuarioAnulacion" not-null="false" />
     </many-to-one>
-    <many-to-one name="Cliente" class="FastFood.Core.Cliente, FastFood.Core" fetch="select">
+    <many-to-one name="Cliente" class="FastFood.Core.Cliente, FastFood.Core" fetch="join">
       <column name="IdCliente" not-null="true" />
     </many-to-one>
-    <many-to-one name="Comprobante" class="FastFood.Core.Comprobante, FastFood.Core" fetch="select">
+    <many-to-one name="Comprobante" class="FastFood.Core.Comprobante, FastFood.Core" fetch="join">
       <column name="IdComprobante" not-null="true" />
     </many-to-one>
   </class>
