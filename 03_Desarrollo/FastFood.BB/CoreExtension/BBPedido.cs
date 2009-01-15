@@ -7,6 +7,8 @@ using FSO.NH.bb;
 using FastFood.Core;
 using NHibernate.Criterion;
 using FSO_NH.log4Net;
+using FSO.NH.Seguridad.BB;
+using FSO.NH.Seguridad.Core;
 
 namespace FastFood.BB.CoreExtension
 {
@@ -146,12 +148,16 @@ namespace FastFood.BB.CoreExtension
             }
         }
 
-        public void AnularPedido(int Id)
+        public void AnularPedido(int Id, Usuario UsuarioAnulacion)
         {
             Pedido P = GetById(Id, false);
             if (!P.Activo)
                 throw new Exception("El Pedido ya se encuentra anulado");
-            P.Activo = false;
+            P.Activo = false;            
+            if (UsuarioAnulacion == null)
+                throw new Exception("Debe indicar el usuario responsable de la anulación");
+            P.UsuarioAnulacion = UsuarioAnulacion;
+            P.FechaAnulacion = DateTime.Now;
             Guardar(P); //La mesa la libera la funcion guardar!
         }
 
