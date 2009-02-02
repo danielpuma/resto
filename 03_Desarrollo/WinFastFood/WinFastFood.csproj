@@ -29,6 +29,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Controles, Version=2.0.3299.437, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Shared\Controles\Controles.dll</HintPath>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -286,10 +290,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\PSV2008\trunk\Desarrollo\PSV\Controles\Controles\Controles.csproj">
-      <Project>{95342C30-D349-4C81-BB12-A1D1202A5884}</Project>
-      <Name>Controles</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FastFood.BB\FastFood.BB.csproj">
       <Project>{BADB6870-139C-4844-A041-898371DEBD74}</Project>
       <Name>FastFood.BB</Name>

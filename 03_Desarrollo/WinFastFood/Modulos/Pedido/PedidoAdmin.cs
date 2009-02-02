@@ -133,6 +133,17 @@ namespace WinFastFood.Modulos.Pedido
         private void chkCerrado_CheckedChanged(object sender, EventArgs e)
         {
             ManejarControles(chkCerrado.Checked);
+            if (chkCerrado.Checked && MyObject.ID > 0)
+            {
+              if (MessageBox.Show("Esta operación, guardará los cambios realizados y cerrará el pedido, ¿Está seguro?", "Confirme Acción", MessageBoxButtons.OKCancel) == DialogResult.OK)
+              {
+                Guardar();
+              }
+              else {
+                chkCerrado.Checked = false;
+                ManejarControles(false);
+              }
+            }
         }
 
         private void ManejarControles(bool bCerrado)
