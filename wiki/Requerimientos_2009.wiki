@@ -1,11 +1,11 @@
-#summary One-sentence summary of this page.
+#summary Requerimientos definido el dia 7 de Febrero de 2009
 
 = Introduction =
 
-Add your content here.
+Adriana Lima, Miguel Girala, Fernando Sosa
 
 
-= Details =
+= Detailles =
 
 1 – INSTALACION Y COSTOS DEL SISTEMA
 
@@ -144,8 +144,6 @@ PANTALON	 	 	50
  	 	36	10
  	 	38	6
  	 	40	4
-
-
 
 
 
