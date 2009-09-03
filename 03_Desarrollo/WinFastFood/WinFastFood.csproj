@@ -158,6 +158,12 @@
     <Compile Include="Modulos\Pedido\PedidoAdmin.Designer.cs">
       <DependentUpon>PedidoAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Pedido\rptPedido.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPedido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Modulos\RolesYPermisos\frmPermisosPorRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,10 @@
     <EmbeddedResource Include="Modulos\Pedido\PedidoAdmin.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PedidoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Pedido\rptPedido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPedido.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\RolesYPermisos\frmPermisosPorRol.resx">
       <DependentUpon>frmPermisosPorRol.cs</DependentUpon>
