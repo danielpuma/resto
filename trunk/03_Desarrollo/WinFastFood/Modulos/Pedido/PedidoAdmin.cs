@@ -150,7 +150,7 @@ namespace WinFastFood.Modulos.Pedido
         {
             pblBody.Enabled = !bCerrado;
             pnlHead.Enabled = !bCerrado;
-            if (MyObject.ID > 0)
+            if (MyObject.ID > 0 && !MyObject.Pendiente)
             {
                 pnlFoot.Enabled = !bCerrado;
                 dgCuerpo.ReadOnly = bCerrado;
