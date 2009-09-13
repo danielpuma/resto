@@ -39,7 +39,9 @@
   <ItemGroup>
     <Compile Include="Domain\Articulo.hbm.cs" />
     <Compile Include="Domain\Cliente.hbm.cs" />
+    <Compile Include="Domain\ComposicionArticulo.cs" />
     <Compile Include="Domain\Comprobante.hbm.cs" />
+    <Compile Include="Domain\Consultas\Ranking.cs" />
     <Compile Include="Domain\CuerpoMovimientoBase.hbm.cs" />
     <Compile Include="Domain\CuerpoPedido.hbm.cs" />
     <Compile Include="Domain\ListaDePrecio.hbm.cs" />
@@ -74,6 +76,13 @@
     <EmbeddedResource Include="Domain\NH_Mapeo\CuerpoPedido.hbm.xml" />
     <EmbeddedResource Include="Domain\NH_Mapeo\MovimientoBase.hbm.xml" />
     <EmbeddedResource Include="Domain\NH_Mapeo\Pedido.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\NH_Mapeo\ComposicionArticulo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\Consultas\Consultas.hbm.xml" />
+    <EmbeddedResource Include="Domain\Consultas\Ranking.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
