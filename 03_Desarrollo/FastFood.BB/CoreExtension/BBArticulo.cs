@@ -7,6 +7,9 @@ using FSO.NHDATA.DataInterfaces;
 using FSO.NH.UserInterfaz;
 using NHibernate.Criterion;
 using FSO_NH.log4Net;
+using System.Collections;
+using NHibernate;
+using FastFood.Core.Domain.Consultas;
 
 namespace FastFood.BB.CoreExtension
 {
@@ -45,9 +48,17 @@ namespace FastFood.BB.CoreExtension
         {
             return new Articulo();
         }
-
+        public override void OnPostSaveData(Articulo dominio)
+        {
+            if (!dominio.EsCompuesto)
+            {
+                BBComposicionArticulo BBCA = new BBComposicionArticulo();
+                BBCA.BorrarPorArticulo(dominio);
+            }
+        }
         public override void ValidarDatos(Articulo dominio)
         {
+            
             if (dominio.Codigo.Trim() == "")
             {
                 throw new Exception("El Código del Artículo es obligatorio");
@@ -57,5 +68,24 @@ namespace FastFood.BB.CoreExtension
                 throw new Exception("El Nombre del Artículo es obligatorio");
             }
         }
+
+        public IList<Ranking> GetRanking(DateTime Desde, DateTime Hasta, int IdMesa, int IdUsuario)
+        {
+            try
+            {
+                IQuery query = Session.GetNamedQuery("spRankingPorArticulo");
+                query.SetDateTime("FechaDesde", new DateTime(Desde.Year,Desde.Month,Desde.Day, 0,0,0));
+                query.SetDateTime("FechaHasta", new DateTime(Hasta.Year, Hasta.Month, Hasta.Day, 23, 59, 59));
+                query.SetInt32("IdMesa", IdMesa);
+                query.SetInt32("IdUsuario", IdUsuario);
+                return query.List<Ranking>();
+            }
+            catch (Exception ex)
+            {
+                
+                throw;
+            }
+        }
     }
+
 }
