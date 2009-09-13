@@ -46,6 +46,11 @@ namespace FastFood.ABM.Articulo
             this.IdPrecioTarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColListaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chkStock = new System.Windows.Forms.CheckBox();
+            this.chkCompuesto = new System.Windows.Forms.CheckBox();
+            this.lnkVerComp = new System.Windows.Forms.LinkLabel();
+            this.txtPDP = new Controles.NumericTextBox.DecimalTextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgPrecios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +96,7 @@ namespace FastFood.ABM.Articulo
             this.CmdDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.CmdDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CmdDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.CmdDelete.Location = new System.Drawing.Point(12, 401);
+            this.CmdDelete.Location = new System.Drawing.Point(12, 460);
             this.CmdDelete.Name = "CmdDelete";
             this.CmdDelete.Size = new System.Drawing.Size(75, 23);
             this.CmdDelete.TabIndex = 14;
@@ -106,7 +111,7 @@ namespace FastFood.ABM.Articulo
             this.cmdCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cmdCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdCancel.Location = new System.Drawing.Point(617, 401);
+            this.cmdCancel.Location = new System.Drawing.Point(617, 460);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(75, 23);
             this.cmdCancel.TabIndex = 13;
@@ -119,7 +124,7 @@ namespace FastFood.ABM.Articulo
             this.cmdGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.cmdGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdGuardar.Location = new System.Drawing.Point(536, 401);
+            this.cmdGuardar.Location = new System.Drawing.Point(536, 460);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(75, 23);
             this.cmdGuardar.TabIndex = 12;
@@ -149,11 +154,9 @@ namespace FastFood.ABM.Articulo
             // chkPermiteStockNeg
             // 
             this.chkPermiteStockNeg.AutoSize = true;
-            this.chkPermiteStockNeg.Checked = true;
-            this.chkPermiteStockNeg.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkPermiteStockNeg.Enabled = false;
             this.chkPermiteStockNeg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkPermiteStockNeg.Location = new System.Drawing.Point(388, 12);
+            this.chkPermiteStockNeg.Location = new System.Drawing.Point(12, 396);
             this.chkPermiteStockNeg.Name = "chkPermiteStockNeg";
             this.chkPermiteStockNeg.Size = new System.Drawing.Size(178, 17);
             this.chkPermiteStockNeg.TabIndex = 8;
@@ -185,9 +188,9 @@ namespace FastFood.ABM.Articulo
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(285, 97);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 13);
+            this.label5.Size = new System.Drawing.Size(117, 13);
             this.label5.TabIndex = 68;
-            this.label5.Text = "Precios de la Tarea:";
+            this.label5.Text = "Precios del Articulo";
             // 
             // dgPrecios
             // 
@@ -227,13 +230,82 @@ namespace FastFood.ABM.Articulo
             this.colNeto.HeaderText = "Neto";
             this.colNeto.Name = "colNeto";
             // 
+            // chkStock
+            // 
+            this.chkStock.AutoSize = true;
+            this.chkStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStock.Location = new System.Drawing.Point(12, 373);
+            this.chkStock.Name = "chkStock";
+            this.chkStock.Size = new System.Drawing.Size(104, 17);
+            this.chkStock.TabIndex = 69;
+            this.chkStock.Text = "Maneja Stock";
+            this.chkStock.UseVisualStyleBackColor = true;
+            this.chkStock.CheckedChanged += new System.EventHandler(this.chkStock_CheckedChanged);
+            // 
+            // chkCompuesto
+            // 
+            this.chkCompuesto.AutoSize = true;
+            this.chkCompuesto.Enabled = false;
+            this.chkCompuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkCompuesto.Location = new System.Drawing.Point(12, 419);
+            this.chkCompuesto.Name = "chkCompuesto";
+            this.chkCompuesto.Size = new System.Drawing.Size(106, 17);
+            this.chkCompuesto.TabIndex = 70;
+            this.chkCompuesto.Text = "Es Compuesto";
+            this.chkCompuesto.UseVisualStyleBackColor = true;
+            this.chkCompuesto.CheckedChanged += new System.EventHandler(this.chkCompuesto_CheckedChanged);
+            // 
+            // lnkVerComp
+            // 
+            this.lnkVerComp.AutoSize = true;
+            this.lnkVerComp.Enabled = false;
+            this.lnkVerComp.Location = new System.Drawing.Point(135, 419);
+            this.lnkVerComp.Name = "lnkVerComp";
+            this.lnkVerComp.Size = new System.Drawing.Size(91, 13);
+            this.lnkVerComp.TabIndex = 71;
+            this.lnkVerComp.TabStop = true;
+            this.lnkVerComp.Text = "Ver Componentes";
+            this.lnkVerComp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkVerComp_LinkClicked);
+            // 
+            // txtPDP
+            // 
+            this.txtPDP.AllowSpace = false;
+            this.txtPDP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPDP.DecimalValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtPDP.Enabled = false;
+            this.txtPDP.Location = new System.Drawing.Point(454, 371);
+            this.txtPDP.Name = "txtPDP";
+            this.txtPDP.Size = new System.Drawing.Size(100, 20);
+            this.txtPDP.TabIndex = 72;
+            this.txtPDP.Text = "0";
+            this.txtPDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(334, 374);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 13);
+            this.label2.TabIndex = 73;
+            this.label2.Text = "Punto de Pedido";
+            // 
             // frmArticuloAdmin
             // 
             this.AcceptButton = this.cmdGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancel;
-            this.ClientSize = new System.Drawing.Size(695, 435);
+            this.ClientSize = new System.Drawing.Size(695, 495);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtPDP);
+            this.Controls.Add(this.lnkVerComp);
+            this.Controls.Add(this.chkCompuesto);
+            this.Controls.Add(this.chkStock);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgPrecios);
             this.Controls.Add(this.txtNombre);
@@ -278,5 +350,10 @@ namespace FastFood.ABM.Articulo
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPrecioTarea;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColListaPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNeto;
+        private System.Windows.Forms.CheckBox chkStock;
+        private System.Windows.Forms.CheckBox chkCompuesto;
+        private System.Windows.Forms.LinkLabel lnkVerComp;
+        private Controles.NumericTextBox.DecimalTextBox txtPDP;
+        private System.Windows.Forms.Label label2;
     }
 }

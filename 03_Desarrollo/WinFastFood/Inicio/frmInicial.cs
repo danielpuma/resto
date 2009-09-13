@@ -18,6 +18,7 @@ using FastFood.ABM.Articulo;
 using FastFood.ABM.Cliente;
 using WinFastFood.Modulos.Pedido;
 using FastFood.SecurityCode;
+using WinFastFood.Reportes;
 
 namespace WinFastFood.Inicio
 {
@@ -193,7 +194,7 @@ namespace WinFastFood.Inicio
                 myFrm.MdiParent = this;
                 myFrm.Show();
             }
-            catch { }
+            catch (Exception e){ }
         } 
         #endregion
 
@@ -366,6 +367,17 @@ namespace WinFastFood.Inicio
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             ShowWindows(new frmMap());
+        }
+
+        private void listadoDePreciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowWindows(new frmReporteListaPrecio());
+        }
+
+        private void rankingDeVentasPorArticuloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowWindows(new frmRankingArticulo());
+             
         }
 
 

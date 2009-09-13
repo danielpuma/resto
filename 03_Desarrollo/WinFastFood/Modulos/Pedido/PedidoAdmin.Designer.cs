@@ -48,6 +48,7 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoListaPrecio = new Controles.FSOCombo();
             this.txtDescRec = new Controles.NumericTextBox.DecimalTextBox();
             this.pnlHead = new System.Windows.Forms.Panel();
+            this.lblPedNro = new System.Windows.Forms.Label();
             this.lblNro = new System.Windows.Forms.Label();
             this.lblOcupantes = new System.Windows.Forms.Label();
             this.txtOcupantes = new Controles.NumericTextBox.DecimalTextBox();
@@ -64,7 +65,7 @@ namespace WinFastFood.Modulos.Pedido
             this.ColPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTotalLinea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColImprime = new System.Windows.Forms.DataGridViewImageColumn();
             this.colCheck = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pblBody = new System.Windows.Forms.Panel();
             this.txtTotalLinea = new Controles.NumericTextBox.DecimalTextBox();
@@ -76,7 +77,6 @@ namespace WinFastFood.Modulos.Pedido
             this.label6 = new System.Windows.Forms.Label();
             this.fsoArticulo = new Controles.FSOCombo();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.lblPedNro = new System.Windows.Forms.Label();
             this.pnlFoot.SuspendLayout();
             this.pnlHead.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCuerpo)).BeginInit();
@@ -346,6 +346,16 @@ namespace WinFastFood.Modulos.Pedido
             this.pnlHead.Size = new System.Drawing.Size(810, 75);
             this.pnlHead.TabIndex = 2;
             // 
+            // lblPedNro
+            // 
+            this.lblPedNro.AutoSize = true;
+            this.lblPedNro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPedNro.Location = new System.Drawing.Point(710, 19);
+            this.lblPedNro.Name = "lblPedNro";
+            this.lblPedNro.Size = new System.Drawing.Size(77, 13);
+            this.lblPedNro.TabIndex = 14;
+            this.lblPedNro.Text = "0000000000";
+            // 
             // lblNro
             // 
             this.lblNro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -461,7 +471,7 @@ namespace WinFastFood.Modulos.Pedido
             this.ColPU,
             this.colCantidad,
             this.ColTotalLinea,
-            this.Column1,
+            this.ColImprime,
             this.colCheck});
             this.dgCuerpo.Location = new System.Drawing.Point(1, 120);
             this.dgCuerpo.Name = "dgCuerpo";
@@ -531,11 +541,11 @@ namespace WinFastFood.Modulos.Pedido
             this.ColTotalLinea.Name = "ColTotalLinea";
             this.ColTotalLinea.ReadOnly = true;
             // 
-            // Column1
+            // ColImprime
             // 
-            this.Column1.HeaderText = "Imprime";
-            this.Column1.Image = global::WinFastFood.Properties.Resources._8close16;
-            this.Column1.Name = "Column1";
+            this.ColImprime.HeaderText = "Imprime";
+            this.ColImprime.Image = global::WinFastFood.Properties.Resources._8close16;
+            this.ColImprime.Name = "ColImprime";
             // 
             // colCheck
             // 
@@ -686,16 +696,6 @@ namespace WinFastFood.Modulos.Pedido
             this.dataGridViewImageColumn1.Image = global::WinFastFood.Properties.Resources._8close16;
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
-            // lblPedNro
-            // 
-            this.lblPedNro.AutoSize = true;
-            this.lblPedNro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPedNro.Location = new System.Drawing.Point(710, 19);
-            this.lblPedNro.Name = "lblPedNro";
-            this.lblPedNro.Size = new System.Drawing.Size(77, 13);
-            this.lblPedNro.TabIndex = 14;
-            this.lblPedNro.Text = "0000000000";
-            // 
             // PedidoAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -758,6 +758,10 @@ namespace WinFastFood.Modulos.Pedido
         private System.Windows.Forms.Label TxtVuelto;
         private System.Windows.Forms.Label txtTotalFacturado;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.Label lblOcupantes;
+        private Controles.NumericTextBox.DecimalTextBox txtOcupantes;
+        private System.Windows.Forms.Label lblNro;
+        private System.Windows.Forms.Label lblPedNro;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColIdArticulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColIdLDP;
@@ -767,11 +771,7 @@ namespace WinFastFood.Modulos.Pedido
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPU;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTotalLinea;
-        private System.Windows.Forms.DataGridViewImageColumn Column1;
+        private System.Windows.Forms.DataGridViewImageColumn ColImprime;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCheck;
-        private System.Windows.Forms.Label lblOcupantes;
-        private Controles.NumericTextBox.DecimalTextBox txtOcupantes;
-        private System.Windows.Forms.Label lblNro;
-        private System.Windows.Forms.Label lblPedNro;
     }
 }

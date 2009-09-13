@@ -165,5 +165,33 @@ namespace WinFastFood.Modulos.Pedido
 
         }
 
+        private void cmdPreview_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                    if (dgDatos.SelectedRows.Count > 0)
+                    {
+                        Int32 Id = Convert.ToInt32(dgDatos.SelectedRows[0].Cells[0].Value);
+                        bool Pendiente = (bool)dgDatos.SelectedRows[0].Cells[6].Value;
+                        if (!Pendiente)
+                        {
+                            frmPreview f = new frmPreview();
+                            f.IdPedido = Id;
+                            f.Show();
+                        }
+                        else {
+                            MessageBox.Show("Solo puede visualizar impresión de pedidos cerrados.");
+                        }
+                        
+                    }
+               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message);
+            }
+        }
+
     }
 }
