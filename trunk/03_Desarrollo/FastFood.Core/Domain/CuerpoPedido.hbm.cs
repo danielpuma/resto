@@ -25,6 +25,13 @@ namespace FastFood.Core {
                 this._Pedido = value;
             }
         }
+        private bool _Imprime;
+
+        public virtual bool Imprime
+        {
+            get { return _Imprime; }
+            set { _Imprime = value; }
+        }
     }
     
     [System.SerializableAttribute()]

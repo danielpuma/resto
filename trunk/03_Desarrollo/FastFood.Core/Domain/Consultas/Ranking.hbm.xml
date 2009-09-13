@@ -1,0 +1,12 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FastFood.Core.Domain.Consultas.Ranking, FastFood.Core" table ="t" >
+    <id name="ID" type="System.Int32" column="IdArticulo" unsaved-value="0">
+      <generator class="native" />
+    </id>
+    <property column="Codigo" type="String" name="Codigo" not-null="true" 	length="50"  update="false" />
+    <property column="Nombre" type="String" name="Nombre" not-null="true" 	length="255"  update="false" />
+    <property name="TotalCantidad" type="System.Decimal" column="TotalCantidad"   update="false" />
+    <property name="TotalImporte" type="System.Decimal" column="TotalImporte"  update="false" />
+
+  </class>
+</hibernate-mapping>
