@@ -24,6 +24,11 @@ namespace FastFood.Core {
         private int plazoPrestamoDias;
         
         private bool permiteStockNegativo;
+        private bool _EsCompuesto;
+        private bool _ManejaStock;
+
+
+
         
         private string descripcion;
         
@@ -69,6 +74,17 @@ namespace FastFood.Core {
 
     
         #endregion
+
+        public virtual bool ManejaStock
+        {
+            get { return _ManejaStock; }
+            set { _ManejaStock = value; }
+        }
+        public virtual bool EsCompuesto
+        {
+            get { return _EsCompuesto; }
+            set { _EsCompuesto = value; }
+        }
 
         public virtual string GrupoNombre
         {

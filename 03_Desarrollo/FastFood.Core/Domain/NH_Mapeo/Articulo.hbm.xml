@@ -6,6 +6,10 @@
     <property column="Codigo" type="String" name="Codigo" not-null="true" 	length="50" />
     <property column="Nombre" type="String" name="Nombre" not-null="true" 	length="255" />
     <property name="PermiteStockNegativo" type="System.Boolean" column="PermiteStockNegativo" not-null="true" />
+
+    <property name="EsCompuesto" type="System.Boolean" column="EsCompuesto" not-null="true" />
+    <property name="ManejaStock" type="System.Boolean" column="ManejaStock" not-null="true" />
+    
     <property name="Descripcion" type="System.String" column="Descripcion" not-null="false" />
     <property name="PuntoDePedido" type="System.Decimal" column="PuntoDePedido" not-null="false" />
     <many-to-one name="MyGrupoArticulo" class="FastFood.Core.GrupoArticulo, FastFood.Core" fetch="join">
