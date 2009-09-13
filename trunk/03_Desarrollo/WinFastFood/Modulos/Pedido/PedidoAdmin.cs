@@ -11,7 +11,8 @@ using FSO.NH.Seguridad.BB;
 using FSO.NH.Auditoria;
 using FastFood.Core;
 using FSO.NH.Seguridad.Core;
-
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 namespace WinFastFood.Modulos.Pedido
 {
     public partial class PedidoAdmin : frmBase
@@ -26,6 +27,7 @@ namespace WinFastFood.Modulos.Pedido
             InicilizarLockUp();
             ControlDeSeguridad("Pedido", cmdGuardar, null);
             ControlDeSeguridadLocal();
+      
             Cursor.Current = Cursors.Default;
         }
         private void ControlDeSeguridadLocal()
@@ -34,6 +36,16 @@ namespace WinFastFood.Modulos.Pedido
             fsoListaPrecio.Enabled = BBU.TienePermiso(Win32Session.UsuarioActual, "CambiaLDP");
             txtPU.Enabled = BBU.TienePermiso(Win32Session.UsuarioActual, "CambiaPU");
             dtFecha.Enabled = BBU.TienePermiso(Win32Session.UsuarioActual, "CambiaFechaPedido");
+            if (!BBU.TienePermiso(Win32Session.UsuarioActual, "ImpresionOpcional"))
+            {
+                ColImprime.Visible = false;
+            }
+
+
+            if (!BBU.TienePermiso(Win32Session.UsuarioActual, "CambiarPrecio"))
+            {
+                txtPU.Enabled = false;
+            }
         }
 
         public PedidoAdmin(Int32 IdCliente)
@@ -44,8 +56,11 @@ namespace WinFastFood.Modulos.Pedido
             fsoCliente.IdSelected = IdCliente;
             fsoCliente.Enabled = false;
             ControlDeSeguridad("Pedido", cmdGuardar, cmdGuardar);
-            Cursor.Current = Cursors.Default;
+            ControlDeSeguridadLocal();
+           Cursor.Current = Cursors.Default;
+
         }
+
         private void InicilizarLockUp()
         {
             fsoArticulo.SetComboBinding(new BBArticulo(), "", "");
@@ -69,7 +84,7 @@ namespace WinFastFood.Modulos.Pedido
                 MyObject = MyBB.getNuevo();
             BindearDatos(); 
             Cursor.Current = Cursors.Default;
-			
+            dtFecha.Fecha = DateTime.Now;
         }
 
         private void BindearDatos()
@@ -132,18 +147,20 @@ namespace WinFastFood.Modulos.Pedido
 
         private void chkCerrado_CheckedChanged(object sender, EventArgs e)
         {
-            ManejarControles(chkCerrado.Checked);
-            if (chkCerrado.Checked && MyObject.ID > 0)
-            {
-              if (MessageBox.Show("Esta operación, guardará los cambios realizados y cerrará el pedido, ¿Está seguro?", "Confirme Acción", MessageBoxButtons.OKCancel) == DialogResult.OK)
-              {
-                Guardar();
-              }
-              else {
-                chkCerrado.Checked = false;
-                ManejarControles(false);
-              }
-            }
+            chkImprimir.Enabled = chkCerrado.Checked;
+            chkImprimir.Checked = chkCerrado.Checked;
+            //ManejarControles(chkCerrado.Checked);
+            //if (chkCerrado.Checked && MyObject.ID > 0)
+            //{
+            //  if (MessageBox.Show("Esta operación, guardará los cambios realizados y cerrará el pedido, ¿Está seguro?", "Confirme Acción", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            //  {
+            //    Guardar();
+            //  }
+            //  else {
+            //    chkCerrado.Checked = false;
+            //    ManejarControles(false);
+            //  }
+            //}
         }
 
         private void ManejarControles(bool bCerrado)
@@ -376,6 +393,40 @@ namespace WinFastFood.Modulos.Pedido
         private void cmdGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
+            if (!MyObject.Pendiente && chkImprimir.Checked)
+            {                
+                Imprimir();
+            }
+        }
+        private void Imprimir()
+        {
+            try
+            {
+                if (MyObject.ID > 0)
+                {
+
+                    BBPedido BT = new BBPedido();
+                    Cursor.Current = Cursors.WaitCursor;
+                    CrystalDecisions.CrystalReports.Engine.ReportDocument rptComp = new CrystalDecisions.CrystalReports.Engine.ReportDocument(); //(ReportDocument)crv.ReportSource;
+                    rptComp.Load(Environment.CurrentDirectory + "\\Modulos\\Pedido\\rptPedido.rpt");
+                    rptComp.DataSourceConnections[0].SetConnection(BT.GetServerName(), BT.GetDataBaseName(), BT.GetUserName(), BT.GetDBPassWord());
+                    ParameterFieldDefinitions crParameterFieldDefinitions = rptComp.DataDefinition.ParameterFields;
+                    ParameterFieldDefinition crParameter1 = crParameterFieldDefinitions["IdPedido"];
+                    ParameterValues crParameter1Values = crParameter1.CurrentValues;
+                    ParameterDiscreteValue crDiscrete1Value = new ParameterDiscreteValue();
+                    crDiscrete1Value.Value = MyObject.ID;
+                    crParameter1Values.Add(crDiscrete1Value);
+                    crParameter1.ApplyCurrentValues(crParameter1Values);
+
+                    rptComp.PrintToPrinter(1, false, 1, 10000);
+                    Cursor.Current = Cursors.Default;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " - Si se conecta a la base de datos como -localhost- reemplazelo por el nombre real de la base de datos.");
+            }
         }
         public void Guardar()
         {
@@ -386,6 +437,10 @@ namespace WinFastFood.Modulos.Pedido
                 Cursor.Current = Cursors.WaitCursor;
                 GetDatosFromScreen();
                 MyBB.Guardar(MyObject);
+                if (chkImprimir.Checked)
+                { 
+
+                }
                 Preguntar = false;
                 this.Close();
                 Cursor.Current = Cursors.Default;
@@ -440,6 +495,7 @@ namespace WinFastFood.Modulos.Pedido
                 cp.ListaDePrecio = BBL.GetById((int)dr.Cells[2].Value, false);
                 cp.PrecioUnitario = Convert.ToDecimal(dr.Cells[6].Value);
                 cp.TotalLinea = Convert.ToDecimal(dr.Cells[8].Value);
+                cp.Imprime = dr.Cells[10].Value == "1";
                 MyObject.CuerpoPedido.Add(cp);
             }
         }

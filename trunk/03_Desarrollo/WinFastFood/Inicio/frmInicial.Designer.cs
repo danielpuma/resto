@@ -222,6 +222,7 @@ namespace WinFastFood.Inicio
             this.listadoDePreciosToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.listadoDePreciosToolStripMenuItem.Size = new System.Drawing.Size(302, 22);
             this.listadoDePreciosToolStripMenuItem.Text = "&Listado de Precios";
+            this.listadoDePreciosToolStripMenuItem.Click += new System.EventHandler(this.listadoDePreciosToolStripMenuItem_Click);
             // 
             // rankingDeVentasPorArticuloToolStripMenuItem
             // 
@@ -230,6 +231,7 @@ namespace WinFastFood.Inicio
             this.rankingDeVentasPorArticuloToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.K)));
             this.rankingDeVentasPorArticuloToolStripMenuItem.Size = new System.Drawing.Size(302, 22);
             this.rankingDeVentasPorArticuloToolStripMenuItem.Text = "&Ranking de Ventas por Articulo";
+            this.rankingDeVentasPorArticuloToolStripMenuItem.Click += new System.EventHandler(this.rankingDeVentasPorArticuloToolStripMenuItem_Click);
             // 
             // XseguridadToolStripMenuItem1
             // 

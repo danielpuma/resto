@@ -42,7 +42,6 @@ namespace WinFastFood.Modulos.Pedido
             this.cmdEliminar = new System.Windows.Forms.Button();
             this.cmdAnular = new System.Windows.Forms.Button();
             this.cmdNuevo = new System.Windows.Forms.Button();
-            this.cmdBuscar = new System.Windows.Forms.Button();
             this.chkPendientes = new System.Windows.Forms.CheckBox();
             this.chkCerrados = new System.Windows.Forms.CheckBox();
             this.chkActivos = new System.Windows.Forms.CheckBox();
@@ -51,6 +50,8 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoCliente = new Controles.FSOCombo();
             this.fsoMesa = new Controles.FSOCombo();
             this.fsoMozo = new Controles.FSOCombo();
+            this.cmdPreview = new System.Windows.Forms.Button();
+            this.cmdBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,23 +172,13 @@ namespace WinFastFood.Modulos.Pedido
             this.cmdNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdNuevo.Image = global::WinFastFood.Properties.Resources._8add24;
             this.cmdNuevo.Location = new System.Drawing.Point(783, 102);
             this.cmdNuevo.Name = "cmdNuevo";
             this.cmdNuevo.Size = new System.Drawing.Size(36, 31);
             this.cmdNuevo.TabIndex = 12;
             this.cmdNuevo.UseVisualStyleBackColor = true;
             this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
-            // 
-            // cmdBuscar
-            // 
-            this.cmdBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBuscar.Location = new System.Drawing.Point(742, 102);
-            this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(35, 31);
-            this.cmdBuscar.TabIndex = 11;
-            this.cmdBuscar.UseVisualStyleBackColor = true;
-            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
             // chkPendientes
             // 
@@ -306,12 +297,36 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoMozo.TabStop = false;
             this.fsoMozo.Texto = "Mozo";
             // 
+            // cmdPreview
+            // 
+            this.cmdPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdPreview.Image = global::WinFastFood.Properties.Resources._8printer24;
+            this.cmdPreview.Location = new System.Drawing.Point(687, 101);
+            this.cmdPreview.Name = "cmdPreview";
+            this.cmdPreview.Size = new System.Drawing.Size(35, 32);
+            this.cmdPreview.TabIndex = 19;
+            this.cmdPreview.UseVisualStyleBackColor = true;
+            this.cmdPreview.Click += new System.EventHandler(this.cmdPreview_Click);
+            // 
+            // cmdBuscar
+            // 
+            this.cmdBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdBuscar.Image = global::WinFastFood.Properties.Resources.filefind;
+            this.cmdBuscar.Location = new System.Drawing.Point(742, 102);
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Size = new System.Drawing.Size(35, 31);
+            this.cmdBuscar.TabIndex = 11;
+            this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
+            // 
             // frmPedidoList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(831, 520);
+            this.Controls.Add(this.cmdPreview);
             this.Controls.Add(this.chkAnulados);
             this.Controls.Add(this.chkActivos);
             this.Controls.Add(this.chkCerrados);
@@ -358,5 +373,6 @@ namespace WinFastFood.Modulos.Pedido
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColPdte;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMesa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColEstado;
+        private System.Windows.Forms.Button cmdPreview;
     }
 }

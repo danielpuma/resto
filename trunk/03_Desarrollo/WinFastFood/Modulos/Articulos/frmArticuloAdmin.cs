@@ -11,6 +11,7 @@ using FSO.NH.Seguridad.BB;
 using FSO.NH.Auditoria;
 using FastFood.BASE;
 using ToolBox;
+using WinFastFood.Modulos.Articulos;
 
 namespace FastFood.ABM.Articulo
 {
@@ -66,11 +67,14 @@ namespace FastFood.ABM.Articulo
             chkPermiteStockNeg.DataBindings.Clear();
 
 
+            chkStock.DataBindings.Add("Checked", MyObject, "ManejaStock");
+            chkCompuesto.DataBindings.Add("Checked", MyObject, "EsCompuesto");
 
             chkPermiteStockNeg.DataBindings.Add("Checked", MyObject, "PermiteStockNegativo");
             txtCodigo.DataBindings.Add("Text", MyObject, "Codigo");
             txtDescripcion.DataBindings.Add("Text", MyObject, "Descripcion");
             txtNombre.DataBindings.Add("Text", MyObject, "Nombre");
+            txtPDP.DataBindings.Add("DecimalValue", MyObject, "PuntoDePedido");
             if(MyObject.MyGrupoArticulo!=null)
                 cboGrupoArticulo.IdSelected = MyObject.MyGrupoArticulo.ID;
             
@@ -201,6 +205,37 @@ namespace FastFood.ABM.Articulo
             catch
             {
                 dgPrecios.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "0.00";
+            }
+        }
+
+        private void chkCompuesto_CheckedChanged(object sender, EventArgs e)
+        {
+            lnkVerComp.Enabled = chkCompuesto.Checked;
+        }
+
+        private void chkStock_CheckedChanged(object sender, EventArgs e)
+        {
+            chkPermiteStockNeg.Enabled = chkStock.Checked;
+            chkCompuesto.Enabled = chkStock.Checked;
+            txtPDP.Enabled = chkStock.Checked;
+            if (!chkStock.Checked)
+            {
+                chkPermiteStockNeg.Checked= false;
+                chkCompuesto.Checked = false;
+            }
+
+        }
+
+        private void lnkVerComp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (MyObject.ID > 0)
+            {
+                frmComponentes f = new frmComponentes();
+                f.ArticuloPadre = MyObject;
+                f.ShowDialog(this);
+            }
+            else {
+                MessageBox.Show("Disculpe, primero debe guardar el registro actual.");
             }
         }
 

@@ -38,6 +38,7 @@
     <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="DataGridViewExtension, Version=1.1.1.0, Culture=neutral, PublicKeyToken=81fb70b94a00c054, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Archivos de programa\CompletIT\DataGridView Extension\v1.1.1\Bin\DataGridViewExtension.dll</HintPath>
@@ -51,9 +52,16 @@
       <HintPath>..\Shared\FSO_NH2\FSO.NH.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="ToolBox, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -104,6 +112,12 @@
     <Compile Include="Modulos\Articulos\frmArticuloList.Designer.cs">
       <DependentUpon>frmArticuloList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Articulos\frmComponentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Articulos\frmComponentes.Designer.cs">
+      <DependentUpon>frmComponentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Cliente\frmClienteAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +165,12 @@
     </Compile>
     <Compile Include="Modulos\Pedido\frmPedidoList.Designer.cs">
       <DependentUpon>frmPedidoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Pedido\frmPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Pedido\frmPreview.Designer.cs">
+      <DependentUpon>frmPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\Pedido\PedidoAdmin.cs">
       <SubType>Form</SubType>
@@ -214,6 +234,10 @@
       <DependentUpon>frmArticuloList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Articulos\frmComponentes.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmComponentes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Cliente\frmClienteAdmin.resx">
       <DependentUpon>frmClienteAdmin.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -242,14 +266,19 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmPedidoList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Pedido\frmPreview.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Pedido\PedidoAdmin.resx">
       <SubType>Designer</SubType>
       <DependentUpon>PedidoAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modulos\Pedido\rptPedido.rpt">
+    <None Include="Modulos\Pedido\rptPedido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptPedido.cs</LastGenOutput>
-    </EmbeddedResource>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <EmbeddedResource Include="Modulos\RolesYPermisos\frmPermisosPorRol.resx">
       <DependentUpon>frmPermisosPorRol.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -271,6 +300,19 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRankingArticulo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmRankingArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteListaPrecio.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmReporteListaPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Reportes\ListaDePrecios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListaDePrecios.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <EmbeddedResource Include="SecurityCode\frmActivacion.resx">
       <DependentUpon>frmActivacion.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -291,6 +333,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Reportes\frmRankingArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmRankingArticulo.Designer.cs">
+      <DependentUpon>frmRankingArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteListaPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteListaPrecio.Designer.cs">
+      <DependentUpon>frmReporteListaPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ListaDePrecios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListaDePrecios.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SecurityCode\frmActivacion.cs">
       <SubType>Form</SubType>
@@ -331,6 +391,7 @@
     <None Include="Resources\BaldosaSeleccionMesaLibre1.jpg" />
     <None Include="Resources\BaldosaSeleccionMesaOcupada1.jpg" />
     <None Include="Resources\gowebsite32.png" />
+    <None Include="Resources\filefind.ico" />
     <Content Include="windowb.ico" />
     <None Include="Resources\textfile32.png" />
     <None Include="Resources\money32.png" />
