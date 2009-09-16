@@ -50,6 +50,8 @@
     <Compile Include="CoreExtension\BBListaDePrecio.cs" />
     <Compile Include="CoreExtension\BBGrupoArticulo.cs" />
     <Compile Include="CoreExtension\BBMesa.cs" />
+    <Compile Include="CoreExtension\BBMovimientoStock.cs" />
+    <Compile Include="CoreExtension\BBMovimientoStockDetalle.cs" />
     <Compile Include="CoreExtension\BBNumerador.cs" />
     <Compile Include="CoreExtension\BBPedido.cs" />
     <Compile Include="CoreExtension\BBPrecioArticulo.cs" />

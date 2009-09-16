@@ -190,6 +190,12 @@
     <Compile Include="Modulos\RolesYPermisos\frmPermisosPorRol.Designer.cs">
       <DependentUpon>frmPermisosPorRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Stock\frmStockList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Stock\frmStockList.Designer.cs">
+      <DependentUpon>frmStockList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Usuarios\frmRolesDelUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,10 @@
     <EmbeddedResource Include="Modulos\RolesYPermisos\frmPermisosPorRol.resx">
       <DependentUpon>frmPermisosPorRol.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Stock\frmStockList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmStockList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Usuarios\frmRolesDelUsuario.resx">
       <DependentUpon>frmRolesDelUsuario.cs</DependentUpon>

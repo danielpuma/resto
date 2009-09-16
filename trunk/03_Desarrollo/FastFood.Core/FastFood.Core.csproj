@@ -42,12 +42,15 @@
     <Compile Include="Domain\ComposicionArticulo.cs" />
     <Compile Include="Domain\Comprobante.hbm.cs" />
     <Compile Include="Domain\Consultas\Ranking.cs" />
+    <Compile Include="Domain\Consultas\Stock.cs" />
     <Compile Include="Domain\CuerpoMovimientoBase.hbm.cs" />
     <Compile Include="Domain\CuerpoPedido.hbm.cs" />
     <Compile Include="Domain\ListaDePrecio.hbm.cs" />
     <Compile Include="Domain\GrupoArticulo.hbm.cs" />
     <Compile Include="Domain\Mesa.hbm.cs" />
     <Compile Include="Domain\MovimientoBase.hbm.cs" />
+    <Compile Include="Domain\MovimientoStock.cs" />
+    <Compile Include="Domain\MovimientoStockDetalle.cs" />
     <Compile Include="Domain\Numerador.hbm.cs" />
     <Compile Include="Domain\Pedido.hbm.cs" />
     <Compile Include="Domain\PrecioArticulo.hbm.cs" />
@@ -81,8 +84,23 @@
     <EmbeddedResource Include="Domain\NH_Mapeo\ComposicionArticulo.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Domain\Consultas\Consultas.hbm.xml" />
+    <EmbeddedResource Include="Domain\Consultas\ConsultaRanking.hbm.xml" />
     <EmbeddedResource Include="Domain\Consultas\Ranking.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\NH_Mapeo\MovimientoStock.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\NH_Mapeo\MovimientoStockDetalle.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\Consultas\Stock.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\Consultas\ConsultaStock.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Domain\Consultas\ConsultaStockDetalle.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

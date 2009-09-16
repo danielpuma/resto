@@ -32,6 +32,11 @@ namespace FastFood.BB.CoreExtension
                     throw new Exception("Debe indicar la cantidad de ocupantes de la mesa");
                 }
         }
+        public override void OnPostSaveData(Pedido dominio)
+        {
+            BBMovimientoStock BBMS = new BBMovimientoStock();
+            BBMS.ActualizarStock(dominio);
+        }
         public override void OnPreSaveData(Pedido dominio)
         {
             if (dominio.ID == 0)

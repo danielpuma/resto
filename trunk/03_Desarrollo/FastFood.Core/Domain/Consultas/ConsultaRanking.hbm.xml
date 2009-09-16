@@ -1,0 +1,14 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <sql-query name="spRankingPorArticulo">
+    <return  class="FastFood.Core.Domain.Consultas.Ranking, FastFood.Core"  alias="Ranking">
+      <return-property column="IdArticulo" name="ID" />
+      <return-property column="Codigo" name="Codigo" />
+      <return-property column="Nombre" name="Nombre" />
+      <return-property column="TotalCantidad" name="TotalCantidad" />
+      <return-property column="TotalImporte" name="TotalImporte" />
+    </return>
+    exec spRankingPorArticulo :FechaDesde , :FechaHasta, :IdMesa, :IdUsuario
+  </sql-query>
+
+
+</hibernate-mapping> 
