@@ -78,6 +78,7 @@ namespace WinFastFood.Inicio
             this.cmdExportExcel = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.cmdNewPedido = new System.Windows.Forms.ToolStripButton();
+            this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.XstatusStrip.SuspendLayout();
@@ -170,7 +171,8 @@ namespace WinFastFood.Inicio
             this.XfastFoodToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.XgenerarNuevoPedidoToolStripMenuItem,
             this.XgestiónDeClientesToolStripMenuItem,
-            this.XreportesToolStripMenuItem});
+            this.XreportesToolStripMenuItem,
+            this.stockToolStripMenuItem});
             this.XfastFoodToolStripMenuItem1.Name = "XfastFoodToolStripMenuItem1";
             this.XfastFoodToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.XfastFoodToolStripMenuItem1.Text = "&FastFood";
@@ -505,6 +507,13 @@ namespace WinFastFood.Inicio
             this.cmdNewPedido.Size = new System.Drawing.Size(23, 22);
             this.cmdNewPedido.Text = "Nuevo Pedido";
             // 
+            // stockToolStripMenuItem
+            // 
+            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(253, 22);
+            this.stockToolStripMenuItem.Text = "Stock";
+            this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
+            // 
             // frmInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,6 +597,7 @@ namespace WinFastFood.Inicio
         private System.Windows.Forms.ToolStripMenuItem rankingDeVentasPorArticuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripListaPedidos;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
     }
 }
 

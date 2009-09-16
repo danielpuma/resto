@@ -19,6 +19,7 @@ using FastFood.ABM.Cliente;
 using WinFastFood.Modulos.Pedido;
 using FastFood.SecurityCode;
 using WinFastFood.Reportes;
+using WinFastFood.Modulos.Stock;
 
 namespace WinFastFood.Inicio
 {
@@ -378,6 +379,11 @@ namespace WinFastFood.Inicio
         {
             ShowWindows(new frmRankingArticulo());
              
+        }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowWindows(new frmStockList());
         }
 
 

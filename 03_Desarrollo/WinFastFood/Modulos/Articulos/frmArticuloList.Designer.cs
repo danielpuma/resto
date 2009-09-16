@@ -30,6 +30,8 @@ namespace FastFood.ABM.Articulo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MyGrillaDatos = new System.Windows.Forms.DataGridView();
             this.cmdNuevo = new System.Windows.Forms.Button();
             this.cmdBuscar = new System.Windows.Forms.Button();
@@ -41,10 +43,16 @@ namespace FastFood.ABM.Articulo
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.cboGrupoArticulo = new Controles.FSOCombo();
             this.txtNombre = new Controles.FSOTextBox();
+            this.chkSoloStock = new System.Windows.Forms.CheckBox();
+            this.chkStockCritico = new System.Windows.Forms.CheckBox();
+            this.chkMostrarStock = new System.Windows.Forms.CheckBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MyGrillaDatos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,12 +69,15 @@ namespace FastFood.ABM.Articulo
             this.ID,
             this.Col1,
             this.Col2,
-            this.Col3});
-            this.MyGrillaDatos.Location = new System.Drawing.Point(0, 125);
+            this.Col3,
+            this.Column1,
+            this.Column3,
+            this.Column2});
+            this.MyGrillaDatos.Location = new System.Drawing.Point(0, 141);
             this.MyGrillaDatos.Name = "MyGrillaDatos";
             this.MyGrillaDatos.ReadOnly = true;
             this.MyGrillaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MyGrillaDatos.Size = new System.Drawing.Size(710, 395);
+            this.MyGrillaDatos.Size = new System.Drawing.Size(844, 379);
             this.MyGrillaDatos.TabIndex = 8;
             this.MyGrillaDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -74,7 +85,7 @@ namespace FastFood.ABM.Articulo
             // 
             this.cmdNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevo.Location = new System.Drawing.Point(662, 77);
+            this.cmdNuevo.Location = new System.Drawing.Point(808, 88);
             this.cmdNuevo.Name = "cmdNuevo";
             this.cmdNuevo.Size = new System.Drawing.Size(36, 31);
             this.cmdNuevo.TabIndex = 7;
@@ -86,7 +97,7 @@ namespace FastFood.ABM.Articulo
             // 
             this.cmdBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBuscar.Location = new System.Drawing.Point(621, 77);
+            this.cmdBuscar.Location = new System.Drawing.Point(767, 87);
             this.cmdBuscar.Name = "cmdBuscar";
             this.cmdBuscar.Size = new System.Drawing.Size(35, 31);
             this.cmdBuscar.TabIndex = 6;
@@ -143,7 +154,7 @@ namespace FastFood.ABM.Articulo
             this.panel1.ForeColor = System.Drawing.Color.Navy;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(710, 47);
+            this.panel1.Size = new System.Drawing.Size(844, 47);
             this.panel1.TabIndex = 78;
             // 
             // toolTip1
@@ -179,6 +190,42 @@ namespace FastFood.ABM.Articulo
             this.txtNombre.TabIndex = 82;
             this.toolTip1.SetToolTip(this.txtNombre, "Seleccione el Dominio (Patente)  del Articulo a buscar");
             // 
+            // chkSoloStock
+            // 
+            this.chkSoloStock.AutoSize = true;
+            this.chkSoloStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloStock.Location = new System.Drawing.Point(19, 115);
+            this.chkSoloStock.Name = "chkSoloStock";
+            this.chkSoloStock.Size = new System.Drawing.Size(166, 17);
+            this.chkSoloStock.TabIndex = 84;
+            this.chkSoloStock.Text = "Solo Articulos con Stock";
+            this.chkSoloStock.UseVisualStyleBackColor = true;
+            this.chkSoloStock.CheckedChanged += new System.EventHandler(this.chkSoloStock_CheckedChanged);
+            // 
+            // chkStockCritico
+            // 
+            this.chkStockCritico.AutoSize = true;
+            this.chkStockCritico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStockCritico.Location = new System.Drawing.Point(207, 115);
+            this.chkStockCritico.Name = "chkStockCritico";
+            this.chkStockCritico.Size = new System.Drawing.Size(208, 17);
+            this.chkStockCritico.TabIndex = 85;
+            this.chkStockCritico.Text = "Solo Articulos con Stock Crítico";
+            this.chkStockCritico.UseVisualStyleBackColor = true;
+            this.chkStockCritico.CheckedChanged += new System.EventHandler(this.chkStockCritico_CheckedChanged);
+            // 
+            // chkMostrarStock
+            // 
+            this.chkMostrarStock.AutoSize = true;
+            this.chkMostrarStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMostrarStock.Location = new System.Drawing.Point(655, 61);
+            this.chkMostrarStock.Name = "chkMostrarStock";
+            this.chkMostrarStock.Size = new System.Drawing.Size(149, 17);
+            this.chkMostrarStock.TabIndex = 86;
+            this.chkMostrarStock.Text = "Calcular Stock Actual";
+            this.chkMostrarStock.UseVisualStyleBackColor = true;
+            this.chkMostrarStock.CheckedChanged += new System.EventHandler(this.chkMostrarStock_CheckedChanged);
+            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -207,12 +254,39 @@ namespace FastFood.ABM.Articulo
             this.Col3.ReadOnly = true;
             this.Col3.Width = 250;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Controla Stock";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "N2";
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column3.HeaderText = "P. de Pedido";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column2.HeaderText = "Stock Actual";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // frmArticuloList
             // 
             this.AcceptButton = this.cmdBuscar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 520);
+            this.ClientSize = new System.Drawing.Size(844, 520);
+            this.Controls.Add(this.chkMostrarStock);
+            this.Controls.Add(this.chkStockCritico);
+            this.Controls.Add(this.chkSoloStock);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cboGrupoArticulo);
@@ -249,9 +323,15 @@ namespace FastFood.ABM.Articulo
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolTip toolTip1;
         private FSOTextBox txtNombre;
+        private System.Windows.Forms.CheckBox chkSoloStock;
+        private System.Windows.Forms.CheckBox chkStockCritico;
+        private System.Windows.Forms.CheckBox chkMostrarStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

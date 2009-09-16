@@ -40,8 +40,10 @@ namespace FastFood.ABM.Articulo
             MyGrillaDatos.Columns[1].DataPropertyName = "Codigo";
             MyGrillaDatos.Columns[2].DataPropertyName = "Nombre";
             MyGrillaDatos.Columns[3].DataPropertyName = "GrupoNombre";
-     
-            
+            MyGrillaDatos.Columns[4].DataPropertyName = "ManejaStock";
+            MyGrillaDatos.Columns[5].DataPropertyName = "PuntoDePedido";
+            MyGrillaDatos.Columns[6].DataPropertyName = "MyStock";
+
         }
         #region PrinteableForm Members
 
@@ -106,7 +108,7 @@ namespace FastFood.ABM.Articulo
         {
 
             Cursor.Current = Cursors.WaitCursor;
-            LosDatos = BB.GetFiltered(txtCodigo.Text , txtNombre.Text, GetIdSelected(cboGrupoArticulo));
+            LosDatos = BB.GetFiltered(txtCodigo.Text , txtNombre.Text, GetIdSelected(cboGrupoArticulo), chkMostrarStock.Checked,chkSoloStock.Checked, chkStockCritico.Checked);
             BindearGrilla();
             verificarLimitesDemo();
             Cursor.Current = Cursors.Default;
@@ -167,6 +169,22 @@ namespace FastFood.ABM.Articulo
                 throw new Exception("Seleccione un registro");
             }
         }
+
+        private void chkMostrarStock_CheckedChanged(object sender, EventArgs e)
+        {
+            BuscarDatos();
+        }
+
+        private void chkSoloStock_CheckedChanged(object sender, EventArgs e)
+        {
+            BuscarDatos();
+        }
+
+        private void chkStockCritico_CheckedChanged(object sender, EventArgs e)
+        {
+            BuscarDatos();
+        }
+
 
 
 

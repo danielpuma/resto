@@ -143,6 +143,15 @@ namespace FastFood.Core {
                 this.precioArticulo = value;
             }
         }
+        private decimal _MyStock;
+        /// <summary>
+        /// Esta propiedad debe ser calculada desde BBArticulo
+        /// </summary>
+        public virtual decimal MyStock
+        {
+            get { return _MyStock; }
+            set { _MyStock = value; }
+        }
     }
     
     [System.SerializableAttribute()]

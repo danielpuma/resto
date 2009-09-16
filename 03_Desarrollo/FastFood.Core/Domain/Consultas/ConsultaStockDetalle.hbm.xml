@@ -1,0 +1,13 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+    <sql-query name="spConsultaDetalleStockPorArticuloFecha">
+    <return  class="FastFood.Core.MovimientoStockDetalle, FastFood.Core"  alias="MovimientoStockDetalle">
+      <return-property column="IdMovimientoStockDetalle" name="ID" />
+      <return-property column="IdMovimientoStock" name="MyMovimientoStock" />
+      <return-property column="IdArticulo" name="MyArticulo" />
+      <return-property column="Cantidad" name="Cantidad" />
+      <return-property column="IdArticuloPadre" name="MyArticuloPadre" />
+      <return-property column="EsComponente" name="EsComponente" />
+    </return>
+    exec spConsultaDetalleStockPorArticuloFecha :xID, :FechaDesde, :FechaHasta
+  </sql-query>
+</hibernate-mapping>
