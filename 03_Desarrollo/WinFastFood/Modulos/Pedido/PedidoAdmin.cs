@@ -282,6 +282,7 @@ namespace WinFastFood.Modulos.Pedido
                  txtCant.DecimalValue = Convert.ToDecimal(dr.Cells[7].Value);
                  ActualizarPrecioUnitario();
                  dgCuerpo.Rows.RemoveAt(e.RowIndex);
+                 CalcularTotalesPedido();
              }
              
         }
@@ -298,7 +299,11 @@ namespace WinFastFood.Modulos.Pedido
             if (fsoListaPrecio.ObjetoActual != null && fsoArticulo.ObjetoActual != null)
             {
                 BBPrecioArticulo BBPA = new BBPrecioArticulo();
-                txtPU.DecimalValue = BBPA.GetByListaYArticulo(fsoListaPrecio.IdSelected, fsoArticulo.IdSelected).Neto;
+                PrecioArticulo pa = BBPA.GetByListaYArticulo(fsoListaPrecio.IdSelected, fsoArticulo.IdSelected);
+                if (pa != null)
+                    txtPU.DecimalValue = BBPA.GetByListaYArticulo(fsoListaPrecio.IdSelected, fsoArticulo.IdSelected).Neto;
+                else
+                    txtPU.DecimalValue = 0;
             }
             else {
                 txtPU.DecimalValue = 0;
@@ -437,10 +442,6 @@ namespace WinFastFood.Modulos.Pedido
                 Cursor.Current = Cursors.WaitCursor;
                 GetDatosFromScreen();
                 MyBB.Guardar(MyObject);
-                if (chkImprimir.Checked)
-                { 
-
-                }
                 Preguntar = false;
                 this.Close();
                 Cursor.Current = Cursors.Default;
@@ -461,7 +462,7 @@ namespace WinFastFood.Modulos.Pedido
             MyObject.Activo = true;
             MyObject.Usuario = (Usuario)fsoMozo.ObjetoActual;
             MyObject.Mesa = (Mesa)fsoMesa.ObjetoActual;
-            MyObject.NumeroInterno = 0;
+            MyObject.NumeroInterno = Convert.ToInt32(lblPedNro.Text);
             MyObject.PagaCon = Convert.ToDecimal(txtPagaCon.Text);
             MyObject.Pendiente = !chkCerrado.Checked;
             MyObject.TotalFacturado = Convert.ToDecimal(txtTotalFacturado.Text);

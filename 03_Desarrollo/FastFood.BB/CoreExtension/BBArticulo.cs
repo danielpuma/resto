@@ -113,7 +113,7 @@ namespace FastFood.BB.CoreExtension
                 {
                     IQuery query = Session.GetNamedQuery("spConsultaStockPorFecha");
                     query.SetInt32("xID", MyArticulo.ID);
-                    query.SetString("FechaHasta", FechaHasta.ToString("yyyyMMdd"));
+                    query.SetString("FechaHasta", FechaHasta.AddDays(-1).ToString("yyyyMMdd") + " 23:59");
                     IList<Stock> s = query.List<Stock>();
                     if (s.Count > 0)
                     {
