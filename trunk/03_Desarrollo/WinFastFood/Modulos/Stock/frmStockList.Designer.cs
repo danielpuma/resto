@@ -102,6 +102,7 @@
             this.cmdIngresos.TabIndex = 3;
             this.cmdIngresos.Text = "Ingresos";
             this.cmdIngresos.UseVisualStyleBackColor = true;
+            this.cmdIngresos.Click += new System.EventHandler(this.cmdIngresos_Click);
             // 
             // cmdEgresos
             // 
@@ -113,6 +114,7 @@
             this.cmdEgresos.TabIndex = 4;
             this.cmdEgresos.Text = "Egresos";
             this.cmdEgresos.UseVisualStyleBackColor = true;
+            this.cmdEgresos.Click += new System.EventHandler(this.cmdEgresos_Click);
             // 
             // cmdVerPedido
             // 
@@ -124,6 +126,7 @@
             this.cmdVerPedido.TabIndex = 5;
             this.cmdVerPedido.Text = "Ver Pedido";
             this.cmdVerPedido.UseVisualStyleBackColor = true;
+            this.cmdVerPedido.Click += new System.EventHandler(this.cmdVerPedido_Click);
             // 
             // dgDatos
             // 
@@ -147,6 +150,7 @@
             this.dgDatos.ReadOnly = true;
             this.dgDatos.Size = new System.Drawing.Size(979, 557);
             this.dgDatos.TabIndex = 6;
+            this.dgDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDatos_CellDoubleClick);
             // 
             // Column1
             // 

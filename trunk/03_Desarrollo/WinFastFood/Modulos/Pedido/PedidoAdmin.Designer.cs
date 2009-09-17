@@ -111,6 +111,7 @@ namespace WinFastFood.Modulos.Pedido
             // cmdGuardar
             // 
             this.cmdGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdGuardar.Location = new System.Drawing.Point(608, 95);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(95, 23);
@@ -136,6 +137,7 @@ namespace WinFastFood.Modulos.Pedido
             // 
             this.cmdCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cmdCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmdCancel.Location = new System.Drawing.Point(709, 94);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(91, 23);
@@ -348,6 +350,7 @@ namespace WinFastFood.Modulos.Pedido
             // 
             // lblPedNro
             // 
+            this.lblPedNro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPedNro.AutoSize = true;
             this.lblPedNro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPedNro.Location = new System.Drawing.Point(710, 19);
@@ -698,9 +701,11 @@ namespace WinFastFood.Modulos.Pedido
             // 
             // PedidoAdmin
             // 
+            this.AcceptButton = this.cmdGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
+            this.CancelButton = this.cmdCancel;
             this.ClientSize = new System.Drawing.Size(811, 470);
             this.Controls.Add(this.dgCuerpo);
             this.Controls.Add(this.pnlFoot);

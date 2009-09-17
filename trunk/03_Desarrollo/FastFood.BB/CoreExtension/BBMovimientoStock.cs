@@ -14,6 +14,7 @@ namespace FastFood.BB.CoreExtension
     {
         public void ActualizarStock(Pedido MyPedido)
         {
+            BBMovimientoStockDetalle BBMSD = new BBMovimientoStockDetalle();
             if (MyPedido.Activo)
             {
                 //Revisar si ya existe registro de stock para este Pedido
@@ -21,16 +22,27 @@ namespace FastFood.BB.CoreExtension
                 if (Mov != null)                
                 {
                     //No es null, entonces debo borrar el registro actual y crear uno nuevo.
-                    this.Delete(Mov);                  
+                    foreach (MovimientoStockDetalle msd in Mov.MyMovimientoStockDetalle)
+                    {
+                        BBMSD.Delete(msd);
+                        this.session.Flush();
+                    }
+                    this.Delete(Mov);
+                    this.session.Flush();
                 }
-                MovimientoStock MovNuevo = new MovimientoStock();
+                MovimientoStock MovNuevo = new MovimientoStock();                
                 MovNuevo.Activo = true;
                 MovNuevo.Fecha = MyPedido.FechaContable;
                 MovNuevo.IdMovimientoExterno = MyPedido.ID;
                 MovNuevo.Ingreso = false;
-                Guardar(MovNuevo);
+                MovNuevo.MyMovimientoStockDetalle = new List<MovimientoStockDetalle>();
+                Guardar(MovNuevo); // La Validación de stock se hace en BBPedido, es por eso que aqui puedo guardar
+                                   // el detalle del movimiento con la seguridad de que la validación esta hecha.
                 MovNuevo.MyMovimientoStockDetalle = GetDetalleStock(MyPedido, MovNuevo);
-                
+                foreach (MovimientoStockDetalle msd in MovNuevo.MyMovimientoStockDetalle)
+                {
+                    BBMSD.Guardar(msd);
+                }              
             }
             else
             {
@@ -42,8 +54,11 @@ namespace FastFood.BB.CoreExtension
                 }
             }
         }
-
-        private List<MovimientoStockDetalle> GetDetalleStock(Pedido MyPedido, MovimientoStock MyMov)
+        public override void ValidarDatos(MovimientoStock dominio)
+        {
+            ValidarStock(dominio);
+        }
+        public List<MovimientoStockDetalle> GetDetalleStock(Pedido MyPedido, MovimientoStock MyMov)
         {
             BBMovimientoStockDetalle BBMSD = new BBMovimientoStockDetalle();
             List<MovimientoStockDetalle> Detalle = new List<MovimientoStockDetalle>();
@@ -53,12 +68,10 @@ namespace FastFood.BB.CoreExtension
                 md.Cantidad = cp.Cantidad;
                 md.EsComponente = false;
                 md.MyArticulo = cp.Articulo;
-                md.MyArticuloPadre = null;//ERR
+                md.MyArticuloPadre = cp.Articulo;
                 md.MyMovimientoStock = MyMov;
-                BBMSD.Guardar(md);
                 Detalle.Add(md);
                 CompletarDetalleDeStockRecursivo(ref Detalle, md);
-
             }
             return Detalle;
         }
@@ -77,7 +90,7 @@ namespace FastFood.BB.CoreExtension
                     mdsub.MyArticulo = compo.ArticuloComponente;
                     mdsub.MyArticuloPadre = compo.ArticuloPadre;
                     mdsub.MyMovimientoStock = mdPadre.MyMovimientoStock;
-                    BBMSD.Guardar(mdsub);
+                    
                     Detalle.Add(mdsub);
                     if (compo.ArticuloComponente.EsCompuesto)
                     {
@@ -98,7 +111,21 @@ namespace FastFood.BB.CoreExtension
             else
                 return null;
         }
-
-
+        private void ValidarStock(MovimientoStock dominio)
+        {
+            BBArticulo BBA = new BBArticulo();
+            List<MovimientoStockDetalle> detalle = dominio.MyMovimientoStockDetalle;
+            foreach (MovimientoStockDetalle msd in detalle)
+            {
+                if (!msd.MyArticulo.PermiteStockNegativo)
+                {
+                    decimal stockactual = BBA.GetStockCantidad(msd.MyArticulo);
+                    if (stockactual - msd.Cantidad < 0)
+                    {
+                        throw new Exception("El Artículo: " + msd.MyArticulo.Nombre + " no permite stock en negativo.");
+                    }
+                }
+            }
+        }
     }
 }

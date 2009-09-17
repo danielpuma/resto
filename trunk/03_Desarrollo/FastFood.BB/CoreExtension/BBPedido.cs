@@ -27,10 +27,30 @@ namespace FastFood.BB.CoreExtension
             if(!dominio.Mesa.SolicitarCantidadOcupantes)
                 dominio.Ocupantes=0;
             else
-                if (dominio.Ocupantes <= 0)
+                if (dominio.Mesa.SolicitarCantidadOcupantes &&  dominio.Ocupantes <= 0)
                 {
                     throw new Exception("Debe indicar la cantidad de ocupantes de la mesa");
                 }
+            ValidarStock(dominio);
+        }
+
+        private void ValidarStock(Pedido dominio)
+        {
+            BBMovimientoStock BBMS = new BBMovimientoStock();
+            BBArticulo BBA = new BBArticulo();
+            List<MovimientoStockDetalle> detalle = BBMS.GetDetalleStock(dominio, new MovimientoStock());
+            foreach(MovimientoStockDetalle msd in detalle)
+            {                
+                if(!msd.MyArticulo.PermiteStockNegativo)
+                {
+                    decimal stockactual = BBA.GetStockCantidad(msd.MyArticulo);
+                    if(stockactual-msd.Cantidad<0)
+                    {
+                        throw new Exception ("El Artículo: " + msd.MyArticulo.Nombre + " no permite stock en negativo.");
+                    }
+                }
+            }
+
         }
         public override void OnPostSaveData(Pedido dominio)
         {

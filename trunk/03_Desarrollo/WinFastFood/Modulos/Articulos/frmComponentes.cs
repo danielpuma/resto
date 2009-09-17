@@ -138,5 +138,19 @@ namespace WinFastFood.Modulos.Articulos
             }
 			
         }
+
+        private void cmdEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgDatos.SelectedCells.Count > 0)
+            {
+
+                dgDatos.Rows.RemoveAt(dgDatos.SelectedCells[0].RowIndex);
+            }
+        }
+
+        private void cmdSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
