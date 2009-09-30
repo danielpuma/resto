@@ -30,9 +30,16 @@ namespace FastFood.ABM.Articulo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MyGrillaDatos = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmdNuevo = new System.Windows.Forms.Button();
             this.cmdBuscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,13 +53,6 @@ namespace FastFood.ABM.Articulo
             this.chkSoloStock = new System.Windows.Forms.CheckBox();
             this.chkStockCritico = new System.Windows.Forms.CheckBox();
             this.chkMostrarStock = new System.Windows.Forms.CheckBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.MyGrillaDatos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,151 +80,6 @@ namespace FastFood.ABM.Articulo
             this.MyGrillaDatos.Size = new System.Drawing.Size(844, 379);
             this.MyGrillaDatos.TabIndex = 8;
             this.MyGrillaDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // cmdNuevo
-            // 
-            this.cmdNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevo.Location = new System.Drawing.Point(808, 88);
-            this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Size = new System.Drawing.Size(36, 31);
-            this.cmdNuevo.TabIndex = 7;
-            this.toolTip1.SetToolTip(this.cmdNuevo, "Crear Nuevo Articulo");
-            this.cmdNuevo.UseVisualStyleBackColor = true;
-            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
-            // 
-            // cmdBuscar
-            // 
-            this.cmdBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBuscar.Location = new System.Drawing.Point(767, 87);
-            this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(35, 31);
-            this.cmdBuscar.TabIndex = 6;
-            this.toolTip1.SetToolTip(this.cmdBuscar, "Buscar Articulos");
-            this.cmdBuscar.UseVisualStyleBackColor = true;
-            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(260, 63);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Nombre:";
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(125, 61);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(99, 20);
-            this.txtCodigo.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.txtCodigo, "Seleccione el Dominio (Patente)  del Articulo a buscar");
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 65);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "Codigo:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(368, 31);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Administración de Articulos";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Navy;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.Color.Navy;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(844, 47);
-            this.panel1.TabIndex = 78;
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ToolTipTitle = "PostVenta";
-            // 
-            // cboGrupoArticulo
-            // 
-            this.cboGrupoArticulo.AnchoBoton = 20;
-            this.cboGrupoArticulo.AnchoLabel = 150;
-            this.cboGrupoArticulo.AnchoTxtCod = 100;
-            this.cboGrupoArticulo.CodigoActual = "";
-            this.cboGrupoArticulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cboGrupoArticulo.FiltrosCampos = "";
-            this.cboGrupoArticulo.FiltrosValores = "";
-            this.cboGrupoArticulo.IdSelected = -1;
-            this.cboGrupoArticulo.Location = new System.Drawing.Point(19, 87);
-            this.cboGrupoArticulo.Name = "cboGrupoArticulo";
-            this.cboGrupoArticulo.ObjetoActual = null;
-            this.cboGrupoArticulo.Size = new System.Drawing.Size(596, 21);
-            this.cboGrupoArticulo.TabIndex = 1;
-            this.cboGrupoArticulo.Texto = "Grupo de Articulo:";
-            this.toolTip1.SetToolTip(this.cboGrupoArticulo, "Seleccione aquí la marca de los Articulos a buscar");
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(320, 61);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(295, 20);
-            this.txtNombre.TabIndex = 82;
-            this.toolTip1.SetToolTip(this.txtNombre, "Seleccione el Dominio (Patente)  del Articulo a buscar");
-            // 
-            // chkSoloStock
-            // 
-            this.chkSoloStock.AutoSize = true;
-            this.chkSoloStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkSoloStock.Location = new System.Drawing.Point(19, 115);
-            this.chkSoloStock.Name = "chkSoloStock";
-            this.chkSoloStock.Size = new System.Drawing.Size(166, 17);
-            this.chkSoloStock.TabIndex = 84;
-            this.chkSoloStock.Text = "Solo Articulos con Stock";
-            this.chkSoloStock.UseVisualStyleBackColor = true;
-            this.chkSoloStock.CheckedChanged += new System.EventHandler(this.chkSoloStock_CheckedChanged);
-            // 
-            // chkStockCritico
-            // 
-            this.chkStockCritico.AutoSize = true;
-            this.chkStockCritico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkStockCritico.Location = new System.Drawing.Point(207, 115);
-            this.chkStockCritico.Name = "chkStockCritico";
-            this.chkStockCritico.Size = new System.Drawing.Size(208, 17);
-            this.chkStockCritico.TabIndex = 85;
-            this.chkStockCritico.Text = "Solo Articulos con Stock Crítico";
-            this.chkStockCritico.UseVisualStyleBackColor = true;
-            this.chkStockCritico.CheckedChanged += new System.EventHandler(this.chkStockCritico_CheckedChanged);
-            // 
-            // chkMostrarStock
-            // 
-            this.chkMostrarStock.AutoSize = true;
-            this.chkMostrarStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkMostrarStock.Location = new System.Drawing.Point(655, 61);
-            this.chkMostrarStock.Name = "chkMostrarStock";
-            this.chkMostrarStock.Size = new System.Drawing.Size(149, 17);
-            this.chkMostrarStock.TabIndex = 86;
-            this.chkMostrarStock.Text = "Calcular Stock Actual";
-            this.chkMostrarStock.UseVisualStyleBackColor = true;
-            this.chkMostrarStock.CheckedChanged += new System.EventHandler(this.chkMostrarStock_CheckedChanged);
             // 
             // ID
             // 
@@ -262,21 +117,171 @@ namespace FastFood.ABM.Articulo
             // 
             // Column3
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "N2";
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column3.HeaderText = "P. de Pedido";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column2
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column2.HeaderText = "Stock Actual";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            // 
+            // cmdNuevo
+            // 
+            this.cmdNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdNuevo.Location = new System.Drawing.Point(759, 115);
+            this.cmdNuevo.Name = "cmdNuevo";
+            this.cmdNuevo.Size = new System.Drawing.Size(73, 23);
+            this.cmdNuevo.TabIndex = 7;
+            this.cmdNuevo.Text = "Nuevo";
+            this.toolTip1.SetToolTip(this.cmdNuevo, "Crear Nuevo Articulo");
+            this.cmdNuevo.UseVisualStyleBackColor = true;
+            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
+            // 
+            // cmdBuscar
+            // 
+            this.cmdBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdBuscar.Location = new System.Drawing.Point(681, 115);
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Size = new System.Drawing.Size(72, 23);
+            this.cmdBuscar.TabIndex = 6;
+            this.cmdBuscar.Text = "Buscar";
+            this.toolTip1.SetToolTip(this.cmdBuscar, "Buscar Articulos");
+            this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(260, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Nombre:";
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(125, 61);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(99, 20);
+            this.txtCodigo.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.txtCodigo, "Seleccione el Dominio (Patente)  del Articulo a buscar");
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Código:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(368, 31);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Administración de Artículos";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Navy;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.Navy;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(844, 47);
+            this.panel1.TabIndex = 78;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.ToolTipTitle = "FastFood";
+            // 
+            // cboGrupoArticulo
+            // 
+            this.cboGrupoArticulo.AnchoBoton = 20;
+            this.cboGrupoArticulo.AnchoLabel = 150;
+            this.cboGrupoArticulo.AnchoTxtCod = 100;
+            this.cboGrupoArticulo.CodigoActual = "";
+            this.cboGrupoArticulo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cboGrupoArticulo.FiltrosCampos = "";
+            this.cboGrupoArticulo.FiltrosValores = "";
+            this.cboGrupoArticulo.IdSelected = -1;
+            this.cboGrupoArticulo.Location = new System.Drawing.Point(19, 87);
+            this.cboGrupoArticulo.Name = "cboGrupoArticulo";
+            this.cboGrupoArticulo.ObjetoActual = null;
+            this.cboGrupoArticulo.Size = new System.Drawing.Size(596, 21);
+            this.cboGrupoArticulo.TabIndex = 3;
+            this.cboGrupoArticulo.Texto = "Grupo de Artículo:";
+            this.toolTip1.SetToolTip(this.cboGrupoArticulo, "Seleccione aquí la marca de los Articulos a buscar");
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(320, 61);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(295, 20);
+            this.txtNombre.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.txtNombre, "Seleccione el Nombre del Artículo");
+            // 
+            // chkSoloStock
+            // 
+            this.chkSoloStock.AutoSize = true;
+            this.chkSoloStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSoloStock.Location = new System.Drawing.Point(19, 115);
+            this.chkSoloStock.Name = "chkSoloStock";
+            this.chkSoloStock.Size = new System.Drawing.Size(168, 17);
+            this.chkSoloStock.TabIndex = 4;
+            this.chkSoloStock.Text = "Solo Artículos con Stock";
+            this.toolTip1.SetToolTip(this.chkSoloStock, "Muestra solo artículos que manejan Stock");
+            this.chkSoloStock.UseVisualStyleBackColor = true;
+            this.chkSoloStock.CheckedChanged += new System.EventHandler(this.chkSoloStock_CheckedChanged);
+            // 
+            // chkStockCritico
+            // 
+            this.chkStockCritico.AutoSize = true;
+            this.chkStockCritico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStockCritico.Location = new System.Drawing.Point(207, 115);
+            this.chkStockCritico.Name = "chkStockCritico";
+            this.chkStockCritico.Size = new System.Drawing.Size(210, 17);
+            this.chkStockCritico.TabIndex = 5;
+            this.chkStockCritico.Text = "Solo Artículos con Stock Crítico";
+            this.toolTip1.SetToolTip(this.chkStockCritico, "Muestra solo los artículos con stock por debajo del punto de pedido");
+            this.chkStockCritico.UseVisualStyleBackColor = true;
+            this.chkStockCritico.CheckedChanged += new System.EventHandler(this.chkStockCritico_CheckedChanged);
+            // 
+            // chkMostrarStock
+            // 
+            this.chkMostrarStock.AutoSize = true;
+            this.chkMostrarStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkMostrarStock.Location = new System.Drawing.Point(655, 61);
+            this.chkMostrarStock.Name = "chkMostrarStock";
+            this.chkMostrarStock.Size = new System.Drawing.Size(149, 17);
+            this.chkMostrarStock.TabIndex = 2;
+            this.chkMostrarStock.Text = "Calcular Stock Actual";
+            this.toolTip1.SetToolTip(this.chkMostrarStock, "Incluye en el Listado los Valores actuales de Stock por cada articulo.");
+            this.chkMostrarStock.UseVisualStyleBackColor = true;
+            this.chkMostrarStock.CheckedChanged += new System.EventHandler(this.chkMostrarStock_CheckedChanged);
             // 
             // frmArticuloList
             // 
@@ -299,7 +304,7 @@ namespace FastFood.ABM.Articulo
             this.KeyPreview = true;
             this.Name = "frmArticuloList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Listado de Articulos";
+            this.Text = "Listado de Artículos";
             this.Load += new System.EventHandler(this.frmArticuloList_Load);
             this.SizeChanged += new System.EventHandler(this.frmArticuloList_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.MyGrillaDatos)).EndInit();

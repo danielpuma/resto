@@ -50,6 +50,7 @@ namespace FastFood.ABM.Cliente
             this.label9 = new System.Windows.Forms.Label();
             this.TxtNroDoc = new Shorty.Windows.Forms.NumericTextBox();
             this.dtFechaNacimiento = new Controles.DateTimeInputBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CmdDelete
@@ -272,11 +273,23 @@ namespace FastFood.ABM.Cliente
             // 
             // dtFechaNacimiento
             // 
+            this.dtFechaNacimiento.AlineacionTexto = System.Windows.Forms.HorizontalAlignment.Right;
             this.dtFechaNacimiento.FechaNuleable = null;
             this.dtFechaNacimiento.Location = new System.Drawing.Point(157, 166);
             this.dtFechaNacimiento.Name = "dtFechaNacimiento";
             this.dtFechaNacimiento.Size = new System.Drawing.Size(102, 20);
             this.dtFechaNacimiento.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(578, 140);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 20);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Localizar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmClienteAdmin
             // 
@@ -285,6 +298,7 @@ namespace FastFood.ABM.Cliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cmdCancel;
             this.ClientSize = new System.Drawing.Size(686, 239);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.TxtNroDoc);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dtFechaNacimiento);
@@ -339,5 +353,6 @@ namespace FastFood.ABM.Cliente
         private Controles.DateTimeInputBox dtFechaNacimiento;
         private System.Windows.Forms.Label label9;
         private Shorty.Windows.Forms.NumericTextBox TxtNroDoc;
+        private System.Windows.Forms.Button button1;
     }
 }

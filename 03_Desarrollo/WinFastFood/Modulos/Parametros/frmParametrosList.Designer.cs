@@ -29,15 +29,15 @@ namespace FastFood.ABM.Parametros
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Spliter = new System.Windows.Forms.SplitContainer();
             this.cmdNuevo = new System.Windows.Forms.Button();
             this.cmdBuscar = new System.Windows.Forms.Button();
-            this.txtDescripcion = new FSOTextBox();
+            this.txtDescripcion = new Controles.FSOTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCodigo = new FSOTextBox();
+            this.txtCodigo = new Controles.FSOTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GrillaDatos = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,22 +76,26 @@ namespace FastFood.ABM.Parametros
             // 
             // cmdNuevo
             // 
+            this.cmdNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevo.Location = new System.Drawing.Point(458, 53);
+            this.cmdNuevo.Location = new System.Drawing.Point(625, 104);
             this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Size = new System.Drawing.Size(36, 31);
+            this.cmdNuevo.Size = new System.Drawing.Size(84, 23);
             this.cmdNuevo.TabIndex = 47;
+            this.cmdNuevo.Text = "Nuevo";
             this.cmdNuevo.UseVisualStyleBackColor = true;
             this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
             // 
             // cmdBuscar
             // 
+            this.cmdBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBuscar.Location = new System.Drawing.Point(394, 53);
+            this.cmdBuscar.Location = new System.Drawing.Point(539, 105);
             this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(35, 31);
+            this.cmdBuscar.Size = new System.Drawing.Size(80, 22);
             this.cmdBuscar.TabIndex = 46;
+            this.cmdBuscar.Text = "Buscar";
             this.cmdBuscar.UseVisualStyleBackColor = true;
             this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
@@ -158,8 +162,8 @@ namespace FastFood.ABM.Parametros
             this.GrillaDatos.AllowUserToDeleteRows = false;
             this.GrillaDatos.AllowUserToOrderColumns = true;
             this.GrillaDatos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.GrillaDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GrillaDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.GrillaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GrillaDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,

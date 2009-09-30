@@ -27,12 +27,14 @@ namespace FastFood
 
                 if (validator.PuedoEjecutar())
                     Application.Run(new frmSplash());
+                   // Application.Run(new WinFastFood.Modulos.Cliente.frmGoogleEarth());
                 else
                 {
                     Application.Run(new frmActivacion());
                     //Vuelvo a preguntar por si lo active.
                     if (validator.PuedoEjecutar())
                         Application.Run(new frmSplash());
+                    //    Application.Run(new WinFastFood.Modulos.Cliente.frmGoogleEarth());
                 }
             }
             catch (Exception ex)

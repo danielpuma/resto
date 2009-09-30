@@ -29,9 +29,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Controles, Version=2.0.3299.437, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="AxInterop.SHDocVw, Version=1.1.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Shared\Controles\Controles.dll</HintPath>
+      <HintPath>..\..\..\..\..\Mis Documentos\Downloads\htmlgetshooked_demo\AxInterop.SHDocVw.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -47,10 +47,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Archivos de programa\CompletIT\DataGridView Extension\v1.1.1\Bin\DGVEExcelExporting.dll</HintPath>
     </Reference>
-    <Reference Include="FSO.NH, Version=2008.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Interop.SHDocVw, Version=1.1.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Shared\FSO_NH2\FSO.NH.dll</HintPath>
+      <HintPath>..\..\..\..\..\Mis Documentos\Downloads\htmlgetshooked_demo\Interop.SHDocVw.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
@@ -64,12 +65,9 @@
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="ToolBox, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Shared\ToolBox\ToolBox.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addins\GoogleEarthClassManager.cs" />
     <Compile Include="Base\frmBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +127,12 @@
     </Compile>
     <Compile Include="Modulos\Cliente\frmClienteList.Designer.cs">
       <DependentUpon>frmClienteList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Cliente\frmGoogleEarth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Cliente\frmGoogleEarth.Designer.cs">
+      <DependentUpon>frmGoogleEarth.cs</DependentUpon>
     </Compile>
     <Compile Include="Modulos\GenericParameter\frmParamAdmin.cs">
       <SubType>Form</SubType>
@@ -258,6 +262,10 @@
       <DependentUpon>frmClienteList.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Cliente\frmGoogleEarth.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGoogleEarth.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modulos\GenericParameter\frmParamAdmin.resx">
       <DependentUpon>frmParamAdmin.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -380,6 +388,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\FSO_NH2\trunk\FSO_NH2\FSO_NH2.csproj">
+      <Project>{1EEBBE8F-3011-4ACF-9708-EB1ADEDE3B4B}</Project>
+      <Name>FSO_NH2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\FSO_NH2\trunk\ToolBox\ToolBox.csproj">
+      <Project>{6946ED3D-8BA4-4B6B-A270-C1D7B26E28B2}</Project>
+      <Name>ToolBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\PSV2008\trunk\Desarrollo\PSV\Controles\Controles\Controles.csproj">
+      <Project>{95342C30-D349-4C81-BB12-A1D1202A5884}</Project>
+      <Name>Controles</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FastFood.BB\FastFood.BB.csproj">
       <Project>{BADB6870-139C-4844-A041-898371DEBD74}</Project>
       <Name>FastFood.BB</Name>
@@ -412,6 +432,8 @@
     <None Include="Resources\BaldosaSeleccionMesaOcupada1.jpg" />
     <None Include="Resources\gowebsite32.png" />
     <None Include="Resources\filefind.ico" />
+    <None Include="Resources\stock.GIF" />
+    <None Include="Resources\8web.gif" />
     <Content Include="windowb.ico" />
     <None Include="Resources\textfile32.png" />
     <None Include="Resources\money32.png" />
@@ -423,6 +445,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

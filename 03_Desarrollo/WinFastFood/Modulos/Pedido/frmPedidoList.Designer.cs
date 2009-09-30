@@ -52,6 +52,7 @@ namespace WinFastFood.Modulos.Pedido
             this.fsoMozo = new Controles.FSOCombo();
             this.cmdPreview = new System.Windows.Forms.Button();
             this.cmdBuscar = new System.Windows.Forms.Button();
+            this.cmdLocalizarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -320,12 +321,26 @@ namespace WinFastFood.Modulos.Pedido
             this.cmdBuscar.UseVisualStyleBackColor = true;
             this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
+            // cmdLocalizarCliente
+            // 
+            this.cmdLocalizarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.cmdLocalizarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdLocalizarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdLocalizarCliente.Location = new System.Drawing.Point(226, 105);
+            this.cmdLocalizarCliente.Name = "cmdLocalizarCliente";
+            this.cmdLocalizarCliente.Size = new System.Drawing.Size(157, 24);
+            this.cmdLocalizarCliente.TabIndex = 20;
+            this.cmdLocalizarCliente.Text = "Localizar Cliente";
+            this.cmdLocalizarCliente.UseVisualStyleBackColor = false;
+            this.cmdLocalizarCliente.Click += new System.EventHandler(this.cmdLocalizarCliente_Click);
+            // 
             // frmPedidoList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(831, 520);
+            this.Controls.Add(this.cmdLocalizarCliente);
             this.Controls.Add(this.cmdPreview);
             this.Controls.Add(this.chkAnulados);
             this.Controls.Add(this.chkActivos);
@@ -374,5 +389,6 @@ namespace WinFastFood.Modulos.Pedido
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMesa;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColEstado;
         private System.Windows.Forms.Button cmdPreview;
+        private System.Windows.Forms.Button cmdLocalizarCliente;
     }
 }

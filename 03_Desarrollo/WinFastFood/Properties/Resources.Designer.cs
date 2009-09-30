@@ -88,6 +88,13 @@ namespace WinFastFood.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap _8web {
+            get {
+                object obj = ResourceManager.GetObject("8web", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap add32 {
             get {
                 object obj = ResourceManager.GetObject("add32", resourceCulture);
@@ -210,6 +217,13 @@ namespace WinFastFood.Properties {
         internal static System.Drawing.Bitmap RestaurantSmall {
             get {
                 object obj = ResourceManager.GetObject("RestaurantSmall", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap stock {
+            get {
+                object obj = ResourceManager.GetObject("stock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

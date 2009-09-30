@@ -31,13 +31,15 @@ namespace ABM.Usuarios.FastFood
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Splitter = new System.Windows.Forms.SplitContainer();
+            this.cmdNuevo = new System.Windows.Forms.Button();
+            this.cmdBuscar = new System.Windows.Forms.Button();
             this.cmdVerRoles = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.cboTipoDocumento = new System.Windows.Forms.ComboBox();
-            this.txtNroDocumento = new FSOTextBox();
-            this.txtApellido = new FSOTextBox();
-            this.txtNombre = new FSOTextBox();
+            this.txtNroDocumento = new Controles.FSOTextBox();
+            this.txtApellido = new Controles.FSOTextBox();
+            this.txtNombre = new Controles.FSOTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@ namespace ABM.Usuarios.FastFood
             this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmdNuevo = new System.Windows.Forms.Button();
-            this.cmdBuscar = new System.Windows.Forms.Button();
             this.Splitter.Panel1.SuspendLayout();
             this.Splitter.Panel2.SuspendLayout();
             this.Splitter.SuspendLayout();
@@ -60,7 +60,7 @@ namespace ABM.Usuarios.FastFood
             // 
             // Splitter
             // 
-            this.Splitter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Splitter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Splitter.Location = new System.Drawing.Point(0, 0);
             this.Splitter.Name = "Splitter";
             this.Splitter.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -83,16 +83,43 @@ namespace ABM.Usuarios.FastFood
             // Splitter.Panel2
             // 
             this.Splitter.Panel2.Controls.Add(this.GrillaDatos);
-            this.Splitter.Size = new System.Drawing.Size(731, 523);
-            this.Splitter.SplitterDistance = 142;
+            this.Splitter.Size = new System.Drawing.Size(731, 582);
+            this.Splitter.SplitterDistance = 158;
             this.Splitter.TabIndex = 9;
+            // 
+            // cmdNuevo
+            // 
+            this.cmdNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdNuevo.Location = new System.Drawing.Point(643, 112);
+            this.cmdNuevo.Name = "cmdNuevo";
+            this.cmdNuevo.Size = new System.Drawing.Size(75, 27);
+            this.cmdNuevo.TabIndex = 50;
+            this.cmdNuevo.Text = "Nuevo";
+            this.cmdNuevo.UseVisualStyleBackColor = true;
+            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
+            // 
+            // cmdBuscar
+            // 
+            this.cmdBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmdBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdBuscar.Location = new System.Drawing.Point(560, 112);
+            this.cmdBuscar.Name = "cmdBuscar";
+            this.cmdBuscar.Size = new System.Drawing.Size(77, 27);
+            this.cmdBuscar.TabIndex = 49;
+            this.cmdBuscar.Text = "Buscar";
+            this.cmdBuscar.UseVisualStyleBackColor = true;
+            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
             // cmdVerRoles
             // 
+            this.cmdVerRoles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdVerRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdVerRoles.Location = new System.Drawing.Point(486, 90);
+            this.cmdVerRoles.Location = new System.Drawing.Point(443, 112);
             this.cmdVerRoles.Name = "cmdVerRoles";
-            this.cmdVerRoles.Size = new System.Drawing.Size(111, 31);
+            this.cmdVerRoles.Size = new System.Drawing.Size(111, 27);
             this.cmdVerRoles.TabIndex = 20;
             this.cmdVerRoles.Text = "Ver Roles";
             this.cmdVerRoles.UseVisualStyleBackColor = true;
@@ -216,7 +243,7 @@ namespace ABM.Usuarios.FastFood
             this.GrillaDatos.ReadOnly = true;
             this.GrillaDatos.RowHeadersVisible = false;
             this.GrillaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaDatos.Size = new System.Drawing.Size(731, 377);
+            this.GrillaDatos.Size = new System.Drawing.Size(731, 420);
             this.GrillaDatos.TabIndex = 0;
             this.GrillaDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaDatos_CellDoubleClick);
             // 
@@ -258,34 +285,12 @@ namespace ABM.Usuarios.FastFood
             this.NroDocumento.Name = "NroDocumento";
             this.NroDocumento.ReadOnly = true;
             // 
-            // cmdNuevo
-            // 
-            this.cmdNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevo.Location = new System.Drawing.Point(384, 90);
-            this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Size = new System.Drawing.Size(37, 31);
-            this.cmdNuevo.TabIndex = 50;
-            this.cmdNuevo.UseVisualStyleBackColor = true;
-            this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
-            // 
-            // cmdBuscar
-            // 
-            this.cmdBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBuscar.Location = new System.Drawing.Point(333, 90);
-            this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(40, 31);
-            this.cmdBuscar.TabIndex = 49;
-            this.cmdBuscar.UseVisualStyleBackColor = true;
-            this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
-            // 
             // frmUserList
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 523);
+            this.ClientSize = new System.Drawing.Size(727, 597);
             this.Controls.Add(this.Splitter);
             this.Name = "frmUserList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

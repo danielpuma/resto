@@ -34,9 +34,12 @@ namespace WinFastFood.Modulos.Stock
 
         private void BuscarDatos()
         {
+            BBMovimientoStock BBMS = new BBMovimientoStock();
+            Cursor.Current = Cursors.WaitCursor;
             BBMovimientoStockDetalle BBMSD = new BBMovimientoStockDetalle();
             BBPedido BBP = new BBPedido();
             BBArticulo BBA = new BBArticulo();
+            MovimientoStock Mov;
             decimal SaldoStock = 0;
             dgDatos.Rows.Clear();
 
@@ -57,21 +60,22 @@ namespace WinFastFood.Modulos.Stock
                 {
 
                     Object[] MyDatos = new Object[8];
-                    MyDatos[0] = msd.MyMovimientoStock.ID;
-                    MyDatos[1] = msd.MyMovimientoStock.IdMovimientoExterno;
-                    MyDatos[2] = msd.MyMovimientoStock.Ingreso ? "Ingreso" : "Egreso";
-                    MyDatos[3] = msd.MyMovimientoStock.Fecha.ToString("dd/MM/yyyy");
-                    if (msd.MyMovimientoStock.IdMovimientoExterno != 0)
+                    MyDatos[0] = msd.IdMovimientoStock;
+                    Mov = BBMS.GetById(msd.IdMovimientoStock, false);
+                    MyDatos[1] = Mov.IdMovimientoExterno;
+                    MyDatos[2] = Mov.Ingreso ? "Ingreso" : "Egreso";
+                    MyDatos[3] = Mov.Fecha.ToString("dd/MM/yyyy");
+                    if (Mov.IdMovimientoExterno != 0)
                     {
-                        MyDatos[4] = BBP.GetById(msd.MyMovimientoStock.IdMovimientoExterno, false).NumeroInterno.ToString();
+                        MyDatos[4] = "Pedido";
                     }
                     else
                     {
-                        MyDatos[4] = "N/A";
+                        MyDatos[4] = "Stock";
                     }
                     MyDatos[5] = msd.MyArticulo.Nombre;
                     MyDatos[6] = msd.Cantidad.ToString("N2");
-                    if (msd.MyMovimientoStock.Ingreso)
+                    if (Mov.Ingreso)
                         SaldoStock += msd.Cantidad;
                     else
                         SaldoStock -= msd.Cantidad;
@@ -79,7 +83,9 @@ namespace WinFastFood.Modulos.Stock
                     dgDatos.Rows.Add(MyDatos);
 
                 }
-            }
+            } 
+            Cursor.Current = Cursors.Default;
+			
         }
 
         #region PrinteableForm Members
@@ -98,37 +104,36 @@ namespace WinFastFood.Modulos.Stock
 
         private void dgDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int IdMov = Convert.ToInt32(dgDatos.Rows[e.RowIndex].Cells[0].Value);
-            frmStockAdmin f = new frmStockAdmin();
-            f.IdMovimientoStock = IdMov;
-            f.ShowDialog(this);
-            BuscarDatos();
+            if (e.RowIndex >= 0)
+            {
+                int IdMov = Convert.ToInt32(dgDatos.Rows[e.RowIndex].Cells[0].Value);
+                frmStockAdmin f = new frmStockAdmin();
+                f.IdMovimientoStock = IdMov;
+                f.ShowDialog(this);
+                BuscarDatos();
+            }
         }
 
         private void cmdEgresos_Click(object sender, EventArgs e)
         {
-            if (dgDatos.SelectedCells.Count > 0)
-            {
                 int IdMov = 0;
                 frmStockAdmin f = new frmStockAdmin();
                 f.IdMovimientoStock = IdMov;
                 f.EsIngreso = false;
                 f.ShowDialog(this);
                 BuscarDatos();
-            }
+
         }
 
         private void cmdIngresos_Click(object sender, EventArgs e)
         {
-            if (dgDatos.SelectedCells.Count > 0)
-            {
                 int IdMov = 0;
                 frmStockAdmin f = new frmStockAdmin();
                 f.IdMovimientoStock = IdMov;
                 f.EsIngreso = true;
                 f.ShowDialog(this);
                 BuscarDatos();
-            }
+
         }
 
         private void cmdVerPedido_Click(object sender, EventArgs e)
@@ -142,9 +147,15 @@ namespace WinFastFood.Modulos.Stock
                 {
                     BBPedido BBP = new BBPedido();
                     FastFood.Core.Pedido p = BBP.GetById(ms.IdMovimientoExterno, false);
-                    PedidoAdmin frmPed = new PedidoAdmin();
-                    frmPed.MyObject = p;
-                    frmPed.ShowDialog(this);
+                    if (!p.Pendiente)
+                    {
+                        PedidoAdmin frmPed = new PedidoAdmin();
+                        frmPed.MyObject = p;
+                        frmPed.ShowDialog(this);
+                    }
+                    else {
+                        MessageBox.Show("No pueden consultarse pedidos pendientes.");
+                    }
                 }
                 else
                 {

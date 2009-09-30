@@ -180,10 +180,11 @@ namespace FastFood.ABM.Cliente
             this.cmdNuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdNuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevo.Location = new System.Drawing.Point(882, 158);
+            this.cmdNuevo.Location = new System.Drawing.Point(849, 161);
             this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Size = new System.Drawing.Size(36, 31);
+            this.cmdNuevo.Size = new System.Drawing.Size(69, 28);
             this.cmdNuevo.TabIndex = 7;
+            this.cmdNuevo.Text = "Nuevo";
             this.cmdNuevo.UseVisualStyleBackColor = true;
             this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
             // 
@@ -191,10 +192,11 @@ namespace FastFood.ABM.Cliente
             // 
             this.cmdBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBuscar.Location = new System.Drawing.Point(841, 158);
+            this.cmdBuscar.Location = new System.Drawing.Point(770, 161);
             this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(35, 31);
+            this.cmdBuscar.Size = new System.Drawing.Size(73, 28);
             this.cmdBuscar.TabIndex = 6;
+            this.cmdBuscar.Text = "Buscar";
             this.cmdBuscar.UseVisualStyleBackColor = true;
             this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
@@ -236,7 +238,7 @@ namespace FastFood.ABM.Cliente
             this.cmdPedido.Size = new System.Drawing.Size(75, 24);
             this.cmdPedido.TabIndex = 9;
             this.cmdPedido.Text = "Pedidos";
-            this.cmdPedido.UseVisualStyleBackColor = false;            
+            this.cmdPedido.UseVisualStyleBackColor = false;
             // 
             // cmdNuevoPedido
             // 

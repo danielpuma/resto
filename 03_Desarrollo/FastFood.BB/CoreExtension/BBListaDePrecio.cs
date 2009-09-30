@@ -26,7 +26,7 @@ namespace FastFood.BB.CoreExtension
             BBParametro_FastFood p = new BBParametro_FastFood(subtipo);
             p.ValidarDatos(dominio);
             ListaDePrecio X = GetPredeterminada();
-            if (X != null && X.ID != dominio.ID)
+            if (dominio.Predeterminado && X != null && X.ID != dominio.ID)
             {
                 X.Predeterminado = false;
                 Update(X);
@@ -61,6 +61,16 @@ namespace FastFood.BB.CoreExtension
                 return null;
         }
 
+        public override void OnPreDelete(ListaDePrecio dominio)
+        {
+            if (dominio.Predeterminado)
+            {
+                throw new Exception("No puede eliminar la lista predeterminada");
+            }
+            BBPrecioArticulo BBPA = new BBPrecioArticulo();
+            BBPA.DeleteByListaDePrecio(dominio);
+
+        }
 
         public  ListaDePrecio GetPredeterminada()
         {
