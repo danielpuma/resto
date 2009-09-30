@@ -11,6 +11,7 @@ using FSO.NH.ClasesBase.Core;
 using FSO.NH.Seguridad.BB;
 using FSO.NH.Auditoria;
 using FastFood.BASE;
+using WinFastFood.Modulos.Cliente;
 
 
 namespace FastFood.ABM.Cliente
@@ -52,7 +53,7 @@ namespace FastFood.ABM.Cliente
             BindearCombos();
             BindearData(); 
             Cursor.Current = Cursors.Default;
-			
+
         }
 
         #region DataBinding
@@ -141,6 +142,14 @@ namespace FastFood.ABM.Cliente
         {
             new BBCliente().CancelarCambios(MyObject);
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmGoogleEarth f = new frmGoogleEarth();
+            f.Desde = System.Configuration.ConfigurationSettings.AppSettings["DomicilioEmpresa"];
+            f.Hasta = txtDireccion.Text;
+            f.ShowDialog(this);
         }
 
         

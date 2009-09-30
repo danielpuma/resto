@@ -99,7 +99,7 @@ namespace FastFood.ABM.Articulo
             this.CmdDelete.Location = new System.Drawing.Point(12, 460);
             this.CmdDelete.Name = "CmdDelete";
             this.CmdDelete.Size = new System.Drawing.Size(75, 23);
-            this.CmdDelete.TabIndex = 14;
+            this.CmdDelete.TabIndex = 12;
             this.CmdDelete.TabStop = false;
             this.CmdDelete.Text = "Eliminar";
             this.CmdDelete.UseVisualStyleBackColor = false;
@@ -114,7 +114,7 @@ namespace FastFood.ABM.Articulo
             this.cmdCancel.Location = new System.Drawing.Point(617, 460);
             this.cmdCancel.Name = "cmdCancel";
             this.cmdCancel.Size = new System.Drawing.Size(75, 23);
-            this.cmdCancel.TabIndex = 13;
+            this.cmdCancel.TabIndex = 11;
             this.cmdCancel.Text = "&Cancelar";
             this.cmdCancel.UseVisualStyleBackColor = false;
             this.cmdCancel.Click += new System.EventHandler(this.cmdCancel_Click);
@@ -127,7 +127,7 @@ namespace FastFood.ABM.Articulo
             this.cmdGuardar.Location = new System.Drawing.Point(536, 460);
             this.cmdGuardar.Name = "cmdGuardar";
             this.cmdGuardar.Size = new System.Drawing.Size(75, 23);
-            this.cmdGuardar.TabIndex = 12;
+            this.cmdGuardar.TabIndex = 10;
             this.cmdGuardar.Text = "&Guardar";
             this.cmdGuardar.UseVisualStyleBackColor = false;
             this.cmdGuardar.Click += new System.EventHandler(this.cmdGuardar_Click);
@@ -149,7 +149,7 @@ namespace FastFood.ABM.Articulo
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescripcion.Size = new System.Drawing.Size(264, 243);
-            this.txtDescripcion.TabIndex = 11;
+            this.txtDescripcion.TabIndex = 3;
             // 
             // chkPermiteStockNeg
             // 
@@ -159,7 +159,7 @@ namespace FastFood.ABM.Articulo
             this.chkPermiteStockNeg.Location = new System.Drawing.Point(12, 396);
             this.chkPermiteStockNeg.Name = "chkPermiteStockNeg";
             this.chkPermiteStockNeg.Size = new System.Drawing.Size(178, 17);
-            this.chkPermiteStockNeg.TabIndex = 8;
+            this.chkPermiteStockNeg.TabIndex = 7;
             this.chkPermiteStockNeg.Text = "Permite Stock en Negativo";
             this.chkPermiteStockNeg.UseVisualStyleBackColor = true;
             // 
@@ -170,7 +170,7 @@ namespace FastFood.ABM.Articulo
             this.txtNombre.Location = new System.Drawing.Point(121, 39);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(445, 20);
-            this.txtNombre.TabIndex = 65;
+            this.txtNombre.TabIndex = 1;
             // 
             // label3
             // 
@@ -205,7 +205,7 @@ namespace FastFood.ABM.Articulo
             this.dgPrecios.Name = "dgPrecios";
             this.dgPrecios.RowHeadersVisible = false;
             this.dgPrecios.Size = new System.Drawing.Size(407, 243);
-            this.dgPrecios.TabIndex = 67;
+            this.dgPrecios.TabIndex = 4;
             this.dgPrecios.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPrecios_CellValueChanged);
             // 
             // IdPrecioTarea
@@ -237,7 +237,7 @@ namespace FastFood.ABM.Articulo
             this.chkStock.Location = new System.Drawing.Point(12, 373);
             this.chkStock.Name = "chkStock";
             this.chkStock.Size = new System.Drawing.Size(104, 17);
-            this.chkStock.TabIndex = 69;
+            this.chkStock.TabIndex = 5;
             this.chkStock.Text = "Maneja Stock";
             this.chkStock.UseVisualStyleBackColor = true;
             this.chkStock.CheckedChanged += new System.EventHandler(this.chkStock_CheckedChanged);
@@ -250,7 +250,7 @@ namespace FastFood.ABM.Articulo
             this.chkCompuesto.Location = new System.Drawing.Point(12, 419);
             this.chkCompuesto.Name = "chkCompuesto";
             this.chkCompuesto.Size = new System.Drawing.Size(106, 17);
-            this.chkCompuesto.TabIndex = 70;
+            this.chkCompuesto.TabIndex = 8;
             this.chkCompuesto.Text = "Es Compuesto";
             this.chkCompuesto.UseVisualStyleBackColor = true;
             this.chkCompuesto.CheckedChanged += new System.EventHandler(this.chkCompuesto_CheckedChanged);
@@ -262,7 +262,7 @@ namespace FastFood.ABM.Articulo
             this.lnkVerComp.Location = new System.Drawing.Point(135, 419);
             this.lnkVerComp.Name = "lnkVerComp";
             this.lnkVerComp.Size = new System.Drawing.Size(91, 13);
-            this.lnkVerComp.TabIndex = 71;
+            this.lnkVerComp.TabIndex = 9;
             this.lnkVerComp.TabStop = true;
             this.lnkVerComp.Text = "Ver Componentes";
             this.lnkVerComp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkVerComp_LinkClicked);
@@ -280,7 +280,7 @@ namespace FastFood.ABM.Articulo
             this.txtPDP.Location = new System.Drawing.Point(454, 371);
             this.txtPDP.Name = "txtPDP";
             this.txtPDP.Size = new System.Drawing.Size(100, 20);
-            this.txtPDP.TabIndex = 72;
+            this.txtPDP.TabIndex = 6;
             this.txtPDP.Text = "0";
             this.txtPDP.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 

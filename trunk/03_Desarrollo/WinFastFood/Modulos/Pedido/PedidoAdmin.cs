@@ -89,17 +89,17 @@ namespace WinFastFood.Modulos.Pedido
 
         private void BindearDatos()
         {
-            if (MyObject.ID!=0)
+            if (MyObject.ID != 0)
             {
                 fsoCliente.ObjetoActual = MyObject.Cliente;
-                fsoMozo.ObjetoActual=MyObject.Usuario;
-                fsoMesa.ObjetoActual = MyObject.Mesa ;
-                string nro = "00000000000000000"+MyObject.NumeroInterno.ToString("N0");
+                fsoMozo.ObjetoActual = MyObject.Usuario;
+                fsoMesa.ObjetoActual = MyObject.Mesa;
+                string nro = "00000000000000000" + MyObject.NumeroInterno.ToString("N0");
                 lblPedNro.Text = nro.Substring(nro.Length - 7, 7);
                 this.Text += "[Ped. Nro: " + lblPedNro.Text + "]";
                 ManejarControles(!MyObject.Pendiente);
                 txtPagaCon.Text = MyObject.PagaCon.ToString("N2");
-                chkCerrado.Checked=!MyObject.Pendiente;
+                chkCerrado.Checked = !MyObject.Pendiente;
                 txtTotalFacturado.Text = MyObject.TotalFacturado.ToString("N2");
                 TxtVuelto.Text = MyObject.Vuelto.ToString("N2");
                 txtDescRec.Text = MyObject.DescuentoRecargo.ToString("N2"); ;
@@ -114,12 +114,15 @@ namespace WinFastFood.Modulos.Pedido
                     dgCuerpo.ReadOnly = true;
                     lblAnulación.Visible = true;
                     lblAnulación.Text = "ANU: " +
-                        MyObject.FechaAnulacion.Value.ToString("dd/MM/yyyy hh:mm")+ " - Usuario: " +
+                        MyObject.FechaAnulacion.Value.ToString("dd/MM/yyyy hh:mm") + " - Usuario: " +
                             MyObject.UsuarioAnulacion.UserName;
                 }
                 txtOcupantes.DecimalValue = MyObject.Ocupantes;
                 CargarLineas(MyObject);
-                
+
+            }
+            else {
+                fsoMesa.ObjetoActual = MyObject.Mesa;
             }
         }
 
@@ -458,7 +461,7 @@ namespace WinFastFood.Modulos.Pedido
         }
         private void GetDatosFromScreen()
         {
-           MyObject.Cliente = (Cliente)fsoCliente.ObjetoActual;
+            MyObject.Cliente = (FastFood.Core.Cliente)fsoCliente.ObjetoActual;
             MyObject.Activo = true;
             MyObject.Usuario = (Usuario)fsoMozo.ObjetoActual;
             MyObject.Mesa = (Mesa)fsoMesa.ObjetoActual;

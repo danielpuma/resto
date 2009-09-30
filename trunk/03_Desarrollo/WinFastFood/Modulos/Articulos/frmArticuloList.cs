@@ -10,6 +10,8 @@ using ToolBox;
 using FastFood.BB.CoreExtension;
 using Controles;
 using FSO.NH.CodigoDeSeguridad;
+using FSO.NH.Seguridad.BB;
+using FSO.NH.Auditoria;
 
 namespace FastFood.ABM.Articulo
 {
@@ -30,7 +32,12 @@ namespace FastFood.ABM.Articulo
             BB = new BBArticulo();
             mTituloImpresion = "Listado de Articulos";
             cboGrupoArticulo.SetComboBinding(new BBGrupoArticulo(), "", "");
-            MyFrmAdmin = new frmArticuloAdmin();
+            
+             BBUsuario BBU = new BBUsuario();
+             if (!BBU.TienePermiso(Win32Session.UsuarioActual, "StockList"))
+             {
+                 chkMostrarStock.Enabled = false;
+             }
         }
         protected  void BindearGrilla()
         {

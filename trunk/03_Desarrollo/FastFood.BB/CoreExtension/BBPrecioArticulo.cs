@@ -28,5 +28,23 @@ namespace FastFood.BB.CoreExtension
             else
                 return null;
         }
+        public List<PrecioArticulo> GetByLista(ListaDePrecio LdP)
+        {
+            List<ICriterion> filtrosActivos = new List<ICriterion>();
+
+            ICriterion f2 = Expression.Eq("ListaDePrecio.ID", LdP.ID);
+            filtrosActivos.Add(f2);
+
+            return  this.GetAll((filtrosActivos));
+        }
+
+        internal void DeleteByListaDePrecio(ListaDePrecio dominio)
+        {
+            List<PrecioArticulo> listas = GetByLista(dominio);
+            foreach (PrecioArticulo ldp in listas)
+            {
+                base.Delete(ldp);//No usa el eliminar para evitar el flush!. esto se usa desde BBListadePrecio
+            }
+        }
     }
 }

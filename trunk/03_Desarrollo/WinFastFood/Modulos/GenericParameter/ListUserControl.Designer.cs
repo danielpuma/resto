@@ -29,10 +29,10 @@ namespace FastFood.ABM.GenericParameter
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmdNuevo = new System.Windows.Forms.Button();
             this.cmdBuscar = new System.Windows.Forms.Button();
-            this.txtDescripcion = new FSOTextBox();
+            this.txtDescripcion = new Controles.FSOTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.GrillaDatos = new System.Windows.Forms.DataGridView();
@@ -40,7 +40,7 @@ namespace FastFood.ABM.GenericParameter
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtCodigo = new FSOTextBox();
+            this.txtCodigo = new Controles.FSOTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaDatos)).BeginInit();
             this.panel1.SuspendLayout();
@@ -53,11 +53,12 @@ namespace FastFood.ABM.GenericParameter
             this.cmdNuevo.FlatAppearance.BorderSize = 0;
             this.cmdNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdNuevo.Location = new System.Drawing.Point(531, 68);
+            this.cmdNuevo.Location = new System.Drawing.Point(612, 68);
             this.cmdNuevo.Name = "cmdNuevo";
-            this.cmdNuevo.Size = new System.Drawing.Size(36, 31);
+            this.cmdNuevo.Size = new System.Drawing.Size(77, 31);
             this.cmdNuevo.TabIndex = 57;
             this.cmdNuevo.TabStop = false;
+            this.cmdNuevo.Text = "Nuevo";
             this.cmdNuevo.UseVisualStyleBackColor = true;
             this.cmdNuevo.Click += new System.EventHandler(this.cmdNuevo_Click);
             // 
@@ -67,11 +68,12 @@ namespace FastFood.ABM.GenericParameter
             this.cmdBuscar.FlatAppearance.BorderSize = 0;
             this.cmdBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmdBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdBuscar.Location = new System.Drawing.Point(490, 68);
+            this.cmdBuscar.Location = new System.Drawing.Point(528, 68);
             this.cmdBuscar.Name = "cmdBuscar";
-            this.cmdBuscar.Size = new System.Drawing.Size(35, 31);
+            this.cmdBuscar.Size = new System.Drawing.Size(78, 31);
             this.cmdBuscar.TabIndex = 56;
             this.cmdBuscar.TabStop = false;
+            this.cmdBuscar.Text = "Buscar";
             this.cmdBuscar.UseVisualStyleBackColor = true;
             this.cmdBuscar.Click += new System.EventHandler(this.cmdBuscar_Click);
             // 
@@ -110,8 +112,8 @@ namespace FastFood.ABM.GenericParameter
             this.GrillaDatos.AllowUserToDeleteRows = false;
             this.GrillaDatos.AllowUserToOrderColumns = true;
             this.GrillaDatos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.GrillaDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GrillaDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GrillaDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
@@ -124,7 +126,7 @@ namespace FastFood.ABM.GenericParameter
             this.GrillaDatos.Name = "GrillaDatos";
             this.GrillaDatos.ReadOnly = true;
             this.GrillaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GrillaDatos.Size = new System.Drawing.Size(568, 325);
+            this.GrillaDatos.Size = new System.Drawing.Size(690, 312);
             this.GrillaDatos.TabIndex = 50;
             this.GrillaDatos.TabStop = false;
             this.GrillaDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrillaDatos_CellDoubleClick);
@@ -180,7 +182,7 @@ namespace FastFood.ABM.GenericParameter
             this.panel1.ForeColor = System.Drawing.Color.Navy;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(574, 47);
+            this.panel1.Size = new System.Drawing.Size(696, 47);
             this.panel1.TabIndex = 51;
             // 
             // ListUserControl
@@ -196,7 +198,7 @@ namespace FastFood.ABM.GenericParameter
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.panel1);
             this.Name = "ListUserControl";
-            this.Size = new System.Drawing.Size(574, 433);
+            this.Size = new System.Drawing.Size(696, 420);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaDatos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -11,10 +11,12 @@ using FSO.NH.Seguridad.Core;
 using FastFood.Core;
 using FSO.NH.Auditoria;
 using ToolBox;
+using WinFastFood.Modulos.Cliente;
+using Controles;
 
 namespace WinFastFood.Modulos.Pedido
 {
-    public partial class frmPedidoList : Form,  PrinteableForm
+    public partial class frmPedidoList : Form,  PrinteableForm, IfrmLockUp
     {
         List<FastFood.Core.Pedido> LosDatos;
         BBPedido BB;
@@ -61,7 +63,7 @@ namespace WinFastFood.Modulos.Pedido
         private void BuscarDatos()
         {
             Cursor.Current = Cursors.WaitCursor;
-            LosDatos = BB.GetFiltered((Usuario)fsoMozo.ObjetoActual, (Mesa)fsoMesa.ObjetoActual, (Cliente)fsoCliente.ObjetoActual, dtRange1.Desde, dtRange1.Hasta, chkActivos.Checked, chkAnulados.Checked, chkPendientes.Checked, chkCerrados.Checked);
+            LosDatos = BB.GetFiltered((Usuario)fsoMozo.ObjetoActual, (Mesa)fsoMesa.ObjetoActual, (FastFood.Core.Cliente)fsoCliente.ObjetoActual, dtRange1.Desde, dtRange1.Hasta, chkActivos.Checked, chkAnulados.Checked, chkPendientes.Checked, chkCerrados.Checked);
             dgDatos.AutoGenerateColumns = false;
             dgDatos.DataSource = LosDatos;
             dgDatos.Columns[0].DataPropertyName = "ID";
@@ -84,8 +86,19 @@ namespace WinFastFood.Modulos.Pedido
         {
             if (e.RowIndex >= 0)
             {
+                    
                     Int32 Id = Convert.ToInt32(dgDatos.SelectedRows[0].Cells[0].Value);
-                    ShowABMForm(Id);
+                    if (IsCalledFromLockUp)
+                    {
+                        if (IdSelected != null)
+                        {
+                            IdSelected(Id);
+                        }
+                    }
+                    else
+                    {
+                        ShowABMForm(Id);
+                    }
             }
         }
         private void ShowABMForm(Int32 ID)
@@ -193,5 +206,64 @@ namespace WinFastFood.Modulos.Pedido
             }
         }
 
+        private void cmdLocalizarCliente_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (dgDatos.SelectedRows.Count > 0)
+                {
+                    Int32 Id = Convert.ToInt32(dgDatos.SelectedRows[0].Cells[0].Value);
+                    FastFood.Core.Pedido p = BB.GetById(Id, false);
+                    frmGoogleEarth f = new frmGoogleEarth();
+                    f.Desde = System.Configuration.ConfigurationSettings.AppSettings["DomicilioEmpresa"];
+                    f.Hasta = p.Cliente.Direccion;
+                    f.ShowDialog(this);
+                } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message);
+            }
+			
+        }
+
+
+        #region IfrmLockUp Members
+
+            public event SeleccionDeID IdSelected;
+
+            public void RefiltrarDatos()
+            {
+                BuscarDatos();
+            }
+
+
+            private string _MyFiltros;
+            public string MyFiltros
+            {
+                get
+                {
+                    return _MyFiltros;
+                }
+                set
+                {
+                    _MyFiltros = value;
+                }
+            }
+            private bool _IsCalledFromLockUp;
+            public bool IsCalledFromLockUp
+            {
+                get
+                {
+                    return _IsCalledFromLockUp;
+                }
+                set
+                {
+                    _IsCalledFromLockUp = value;
+                }
+            }
+
+        #endregion
     }
 }

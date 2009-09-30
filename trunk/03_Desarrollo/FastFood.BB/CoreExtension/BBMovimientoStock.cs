@@ -7,6 +7,7 @@ using FSO.NHDATA.DataInterfaces;
 using FastFood.Core.Domain;
 using FastFood.Core;
 using NHibernate.Criterion;
+using System.Collections;
 
 namespace FastFood.BB.CoreExtension
 {
@@ -35,6 +36,7 @@ namespace FastFood.BB.CoreExtension
                 MovNuevo.Fecha = MyPedido.FechaContable;
                 MovNuevo.IdMovimientoExterno = MyPedido.ID;
                 MovNuevo.Ingreso = false;
+                MovNuevo.IdUsuarioCarga = FSO.NH.Auditoria.Win32Session.UsuarioActual.ID;
                 MovNuevo.MyMovimientoStockDetalle = new List<MovimientoStockDetalle>();
                 Guardar(MovNuevo); // La Validación de stock se hace en BBPedido, es por eso que aqui puedo guardar
                                    // el detalle del movimiento con la seguridad de que la validación esta hecha.
@@ -54,6 +56,27 @@ namespace FastFood.BB.CoreExtension
                 }
             }
         }
+
+        public override void OnPreSaveData(MovimientoStock dominio)
+        {
+            //Supongo que:
+            // 1- Un nuevo movimiento siempre tiene fecha de carga y nunca de anulación
+            // 2- Una vez que el movimiento se anulo no puede volver a ser guardado, queda solo lectura.  
+            if (dominio.Activo)
+                dominio.FechaCarga = DateTime.Now;
+            else            
+                dominio.FechaAnulacion = DateTime.Now; //La fecha de carga siempre queda seteada, ya que un mov. nuevo no puede crearse anulado.
+            
+        }
+        public override void OnPostSaveData(MovimientoStock dominio)
+        {
+            BBMovimientoStockDetalle BBMSD = new BBMovimientoStockDetalle();
+            foreach (MovimientoStockDetalle msd in dominio.MyMovimientoStockDetalle)
+            {
+                msd.IdMovimientoStock = dominio.ID;
+                BBMSD.SaveOrUpdate(msd);
+            }
+        }
         public override void ValidarDatos(MovimientoStock dominio)
         {
             ValidarStock(dominio);
@@ -69,7 +92,7 @@ namespace FastFood.BB.CoreExtension
                 md.EsComponente = false;
                 md.MyArticulo = cp.Articulo;
                 md.MyArticuloPadre = cp.Articulo;
-                md.MyMovimientoStock = MyMov;
+                md.IdMovimientoStock= MyMov.ID;
                 Detalle.Add(md);
                 CompletarDetalleDeStockRecursivo(ref Detalle, md);
             }
@@ -89,7 +112,7 @@ namespace FastFood.BB.CoreExtension
                     mdsub.EsComponente = true;
                     mdsub.MyArticulo = compo.ArticuloComponente;
                     mdsub.MyArticuloPadre = compo.ArticuloPadre;
-                    mdsub.MyMovimientoStock = mdPadre.MyMovimientoStock;
+                    mdsub.IdMovimientoStock = mdPadre.IdMovimientoStock;
                     
                     Detalle.Add(mdsub);
                     if (compo.ArticuloComponente.EsCompuesto)
@@ -113,8 +136,10 @@ namespace FastFood.BB.CoreExtension
         }
         private void ValidarStock(MovimientoStock dominio)
         {
+            if (dominio.Ingreso)
+                return;
             BBArticulo BBA = new BBArticulo();
-            List<MovimientoStockDetalle> detalle = dominio.MyMovimientoStockDetalle;
+            IList detalle = dominio.MyMovimientoStockDetalle;
             foreach (MovimientoStockDetalle msd in detalle)
             {
                 if (!msd.MyArticulo.PermiteStockNegativo)

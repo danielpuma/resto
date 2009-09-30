@@ -66,8 +66,10 @@ namespace FastFood.ABM.Parametros
                     ParamAdmin = new BBParametro_FastFood("Comprobante");
                     break;
             }
+            
             LstParams = ParamAdmin.GetAll();
             BindearGrilla();
+
         }
         private void BindearGrilla()
         {

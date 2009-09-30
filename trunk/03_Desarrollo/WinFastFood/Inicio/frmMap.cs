@@ -84,6 +84,9 @@ namespace WinFastFood.Inicio
 
         private void cmdUbicarMesa_Click(object sender, EventArgs e)
         {
+
+            try
+            {
                 CambiarImagenDeCelda = true;
                 dgMap.Enabled = true;
                 pnlAddMesa.Visible = false;
@@ -103,21 +106,22 @@ namespace WinFastFood.Inicio
                         BBM.Guardar(MesaAnterior);
                     }
                     else
-                    
-                    if (M.Fila >= 0) //Esta Ubicada, redibujo la ubicacion anterior como libre
-                    {
-                        dgMap.Rows[M.Fila].Cells[M.Columna].Tag = "Libre";
-                        redibujarcelda(dgMap.Rows[M.Fila].Cells[M.Columna],false);
-                    }
-                                    
+
+                        if (M.Fila >= 0) //Esta Ubicada, redibujo la ubicacion anterior como libre
+                        {
+                            dgMap.Rows[M.Fila].Cells[M.Columna].Tag = "Libre";
+                            redibujarcelda(dgMap.Rows[M.Fila].Cells[M.Columna], false);
+                        }
+
 
                     M.Fila = _Fila;
                     M.Columna = _Columna;
                     BBM.Guardar(M);
 
-                    DibujarMesa(M,true);
+                    DibujarMesa(M, true);
                 }
-                else {
+                else
+                {
                     //Buscar si habia una mesa aqui.
                     if (MesasMapeadas[_Fila, _Columna] != 0)
                     {
@@ -130,7 +134,13 @@ namespace WinFastFood.Inicio
                     dgMap.SelectedCells[0].Tag = "Libre";
                     redibujarcelda(dgMap.SelectedCells[0], true);
                 }
-                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message);
+            }
+			
           
 
         }
@@ -139,26 +149,35 @@ namespace WinFastFood.Inicio
         {
 
 
-            MesasMapeadas[M.Fila, M.Columna] = M.ID;
-            dgMap.Rows[M.Fila].Cells[M.Columna].Tag = M.Ocupada ? "MesaOcupada" : "MesaLibre";
-            string sToolTip = "Mesa: " + M.MiDescripcion;
-            if (M.Ocupada)
-            {
-                BBPedido BBP = new BBPedido();
-                Pedido PedActual = BBP.GetPedidoPendientePorMesa(M.ID);
-                if (PedActual != null)
-                {
-                    sToolTip += " - Mozo: " + PedActual.Usuario.Nombre;
-                    if (PedActual.Ocupantes > 0)
-                    {
-                        sToolTip += " - Ocup: " + PedActual.Ocupantes;
-                    }
-                }
-                sToolTip += " - Facturación Actual: " + PedActual.TotalFacturado.ToString("N2");
-            }
 
-            dgMap.Rows[M.Fila].Cells[M.Columna].ToolTipText = sToolTip;
-            redibujarcelda(dgMap.Rows[M.Fila].Cells[M.Columna], DibujarConSeleccion);
+            try
+            {
+                MesasMapeadas[M.Fila, M.Columna] = M.ID;
+                dgMap.Rows[M.Fila].Cells[M.Columna].Tag = M.Ocupada ? "MesaOcupada" : "MesaLibre";
+                string sToolTip = "Mesa: " + M.MiDescripcion;
+                if (M.Ocupada)
+                {
+                    BBPedido BBP = new BBPedido();
+                    Pedido PedActual = BBP.GetPedidoPendientePorMesa(M.ID);
+                    if (PedActual != null)
+                    {
+                        sToolTip += " - Mozo: " + PedActual.Usuario.Nombre;
+                        if (PedActual.Ocupantes > 0)
+                        {
+                            sToolTip += " - Ocup: " + PedActual.Ocupantes;
+                        }
+                    }
+                    sToolTip += " - Facturación Actual: " + PedActual.TotalFacturado.ToString("N2");
+                }
+
+                dgMap.Rows[M.Fila].Cells[M.Columna].ToolTipText = sToolTip;
+                redibujarcelda(dgMap.Rows[M.Fila].Cells[M.Columna], DibujarConSeleccion); 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message);
+            }
+			
         }
 
         private void frmMap_Load(object sender, EventArgs e)
@@ -221,8 +240,13 @@ namespace WinFastFood.Inicio
                 BBPedido BP = new BBPedido();
                 Pedido p = BP.GetPedidoPendientePorMesa(IdMesa);
                 PedidoAdmin frmPed = new PedidoAdmin();
-                if(p!=null)
-                    frmPed.MyObject=p;
+                if (p != null)
+                    frmPed.MyObject = p;
+                else {
+                    p = new Pedido();
+                    p.Mesa = new BBMesa().GetById(IdMesa, false);
+                    frmPed.MyObject = p;
+                }
                 frmPed.ShowDialog(this);
                 InicializarGrilla();
                 

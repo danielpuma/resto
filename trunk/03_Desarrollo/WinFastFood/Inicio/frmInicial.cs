@@ -56,7 +56,7 @@ namespace WinFastFood.Inicio
                 HabilitarMenu(XrolesToolStripMenuItem1);
                 HabilitarMenu(XpermisosToolStripMenuItem1);
                 HabilitarMenu(xCmdNuevoPedido);
-                
+                HabilitarMenu(stockToolStripMenuItem);
 
             }
             catch (Exception ex)

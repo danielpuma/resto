@@ -19,8 +19,8 @@ namespace FastFood.BB.CoreExtension
             {
                 IQuery query = Session.GetNamedQuery("spConsultaDetalleStockPorArticuloFecha");
                 query.SetInt32("xID", IdArticulo);
-                query.SetDateTime("FechaDesde", Desde);
-                query.SetDateTime("FechaHasta", Hasta);
+                query.SetDateTime("FechaDesde", new DateTime(Desde.Year,Desde.Month, Desde.Day));
+                query.SetDateTime("FechaHasta", new DateTime(Hasta.Year, Hasta.Month, Hasta.Day).AddMinutes(1439));
                 return query.List<MovimientoStockDetalle>();
             }
             catch (Exception ex)
