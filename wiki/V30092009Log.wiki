@@ -1,0 +1,58 @@
+#summary Mejoras y Correcciones realizadas
+
+= Introducción V30-09-09 =
+
+Se detallan las Mejoras y correcciones realizadas en esta versión del sistema
+
+
+= Detalles =
+
+==Mejoras==
+   Se agrega funcionalidad de Gestión de Stock
+   Se Agrega funcionalidad de Integración con Google Map para localizar direcciones, esto  será útil en caso de manejar delivery.
+
+
+==Correcciones==
+    * Orden de tabulación en alta de articulo - OK
+    * Poder Borrar una lista de precios - OK
+    * Enter por defecto en alta de articulo -OK
+    * Buscar con enter en lista de articulo -OK
+    * Icono en menu de stock - ok
+    * Permisos para
+	- Consultar Stock	OK	
+	- Crear Movimiento de stock  OK
+    * Permisos a Mozos por cada lista de precio.
+    * Error al buscar cliente por Documento en lock de clientes, en pedidos Buscar ingresando el Nro de Documento, presionar tab   volver al lockup e intentar abrir el combo de busqueda. (No el F2)   - No se pudeo reproducir
+    * Al modificar un alista de precio se pierde la Lista prederminada. ok
+    * Se puede eliminar la lista predeterminada OK
+    * Errores Reportados por Javier San Martín. (No esta Estadisticas en Mapa, prox entrega.
+
+==Pendientes==
+
+    * NO todos los articulo deben estar diponibles para la venta, ej: Harina
+    * Calcular Estadisticas en mapa
+    * Definir las Cajas
+    * Reporte de Articulos vendidos por Mesa
+    * Reporte de articulos vendidos por mozo
+    * Ranking por Mozo, en importe vendido
+    * Ranking por Mesa, en importe vendido
+    * Cierre de Caja y Reportes
+
+	Total Facturado en la caja.
+	Fecha y hora de apertura y cierre.
+	Detalle de mesas pendientes al cierre.
+	Importe pendiente a cobrar al cierre.
+	Pedidos Pendientes recibidos de caja anterior
+	(Se deberán manejar dos nros. de caja, el nro de caja de apertura y el de cierre)
+	Los movimientos siempre pertenecen al de cierre, el de apertura es solo informativo.
+
+	Detalle de movimientos de stock por caja.	
+
+   * Consulta de Cierre de Cajas.
+   * Exportación de Movimientos a Kumbre Gestión.
+   * Modulo delivery
+	El pedido delivery debe estar asignado a una mesa especial "Delivery"
+	Los mozos pueden representar los cadetes.
+	
+
+
