@@ -1,0 +1,21 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FastFood.Core.MovimientoStockDetalle, FastFood.Core" table="MovimientoStockDetalle">
+    <id name="ID" type="System.Int32" column="IdMovimientoStockDetalle" unsaved-value="0">
+      <generator class="native" />
+    </id>
+
+    <many-to-one name="MyArticulo" class="FastFood.Core.Articulo, FastFood.Core" fetch="select">
+      <column name="IdArticulo" not-null="true" />
+    </many-to-one>
+    <many-to-one name="MyArticuloPadre" class="FastFood.Core.Articulo, FastFood.Core" fetch="select">
+      <column name="IdArticuloPadre" not-null="true" />
+    </many-to-one>
+
+    <property name="Cantidad" type="System.Decimal" column="Cantidad" not-null="true" />
+    
+    <property name="EsComponente" type="System.Boolean" column="EsComponente" not-null="true" />
+    
+    <property name="IdMovimientoStock" type="System.Int32" column="IdMovimientoStock" not-null="true" />
+
+  </class>
+</hibernate-mapping>

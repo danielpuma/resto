@@ -1,0 +1,22 @@
+﻿<hibernate-mapping default-cascade="none" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="FastFood.Core.MovimientoStock, FastFood.Core" table="MovimientoStock">
+      <id name="ID" type="System.Int32" column="IdMovimientoStock" unsaved-value="0">
+        <generator class="native" />
+      </id>
+      <property name="Fecha" type="System.DateTime" column="Fecha" not-null="true" />
+      <property name="Activo" type="System.Boolean" column="Activo" not-null="true" />
+      <property name="IdMovimientoExterno" type="System.Int32" column="IdMovimientoExterno" not-null="true" />
+      <property name="Ingreso" type="System.Boolean" column="Ingreso" not-null="true" />
+      <bag name="MyMovimientoStockDetalle" inverse="false" lazy="false" cascade="none" >
+        <key>
+          <column name="IdMovimientoStock" not-null="false" />
+        </key>
+        <one-to-many class="FastFood.Core.MovimientoStockDetalle, FastFood.Core" />
+      </bag>
+    <property name="FechaCarga" type="System.DateTime" column="FechaCarga" not-null="false" />
+    <property name="FechaAnulacion" type="System.DateTime" column="FechaAnulacion" not-null="false" />
+
+    <property name="IdUsuarioCarga" type="System.Int32" column="IdUsuarioCarga" not-null="true" />
+    <property name="IdUsuarioAnula" type="System.Int32" column="IdUsuarioAnula" not-null="false" />
+  </class>
+</hibernate-mapping>
